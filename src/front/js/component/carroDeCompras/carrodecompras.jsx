@@ -1,12 +1,11 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
 export const CarroDeCompras = () => {
   return (
     <>
-      <div>
-        <div>
-          HOLA
+      <div className="bg-dark ">
+        <div className="bg-primary">
+          HOLA QUE PASA
           <button>IR A PAGAR</button>
         </div>
       </div>

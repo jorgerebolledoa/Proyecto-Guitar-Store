@@ -2,7 +2,8 @@ import React, { useContext } from "react";
 import { Context } from "../store/appContext";
 import rigoImageUrl from "../../img/rigo-baby.jpg";
 import "../../styles/home.css";
-import { Link, useParams } from "react-router-dom";
+import { Route } from "react-router-dom";
+import { BsCart2 } from "react-icons/bs";
 import { CarroDeCompras } from "../component/carroDeCompras/carrodecompras.jsx";
 
 export const Home = () => {
@@ -24,9 +25,10 @@ export const Home = () => {
           Read documentation
         </a>
       </p>
-      <Link to="/carroDeCompras">
-        <span>Hola</span>
-      </Link>
+      <Route path="/carroDeCompras">
+        <BsCart2 />
+        <CarroDeCompras />
+      </Route>
     </div>
   );
 };
