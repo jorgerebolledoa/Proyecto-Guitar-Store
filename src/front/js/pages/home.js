@@ -3,14 +3,14 @@ import { Context } from "../store/appContext";
 import rigoImageUrl from "../../img/rigo-baby.jpg";
 import "../../styles/home.css";
 import Cards from "./Cards.jsx";
-import Carousel from "./Carousel-home.jsx";
+import Carousel from "./Carousel-home";
 
 export const Home = () => {
   const { store, actions } = useContext(Context);
 
   return (
     <>
-      <Carousel img="https://picsum.photos/1080/720" />
+      <Carousel img="https://picsum.photos/400/300" />
       <Cards />
       <div className="text-center mt-5">
         <h1>Hello Rigo!!</h1>
