@@ -3,7 +3,7 @@ import { Context } from "../store/appContext";
 import rigoImageUrl from "../../img/rigo-baby.jpg";
 import "../../styles/home.css";
 import Cards from "./Cards.jsx";
-import Carousel from "./Carousel-home";
+import Carousel from "./Carousel-home.jsx";
 
 export const Home = () => {
   const { store, actions } = useContext(Context);
