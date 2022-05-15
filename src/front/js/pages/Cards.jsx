@@ -11,8 +11,8 @@ const Cards = () => {
               img="https://picsum.photos/400/300"
               title="Card title"
               text="Some quick example text to build on the card"
-              linkbtn="https://picsum.photos/400/300"
-              textbtn="Go somewhere"
+              linkbtn="/Producto"
+              textbtn="Producto"
             />
           </div>
           <div className=" col-12 ">
