@@ -5,7 +5,7 @@ import { FaShoppingCart } from "react-icons/fa";
 
 export const Navbar = () => {
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top ">
+    <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top mb-5">
       <div className="container d-flex">
         <Link className="navbar-brand text-warning ml-5" to="/">
           <GiGuitarHead />
