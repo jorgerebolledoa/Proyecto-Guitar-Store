@@ -12,6 +12,7 @@ import injectContext from "./store/appContext";
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
 import { CarroDeCompras } from "./component/carroDeCompras/carrodecompras.jsx";
+import { CarroDeComprasVacio } from "./component/carroDeCompras/vistaCarroVacio.jsx";
 
 //create your first component
 const Layout = () => {
@@ -36,6 +37,9 @@ const Layout = () => {
             </Route>
             <Route path="/carroDeCompras">
               <CarroDeCompras />
+            </Route>
+            <Route path="carroDeComprasVacio">
+              <CarroDeComprasVacio />
             </Route>
             <Route exact path="/demo">
               <Demo />
