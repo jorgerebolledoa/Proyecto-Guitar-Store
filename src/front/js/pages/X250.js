@@ -4,6 +4,7 @@ import "../../styles/home.css";
 import Cardlateral from "/src/front/js/component/Vista principal/Producto-descripcion.jsx";
 import CardDerecha from "/src/front/js/component/Vista principal/CardimgDerecha.jsx";
 import X250 from "../../img/X250BKfull.png";
+import X2502 from "../../img/X250-2.jpg";
 
 export const X250page = () => {
   const { store, actions } = useContext(Context);
@@ -19,9 +20,9 @@ export const X250page = () => {
           textbtn="comparar"
         />
         <CardDerecha
-          img={X250}
-          title="Guitarra2"
-          text="Some quick example text to build on the card"
+          img={X2502}
+          title="Cuerpo de Meranti"
+          text="El cuerpo de Meranti tiene características tonales similares a las de Caoba con un rango medio-medio fuerte que cortará la mezcla con autoridad para el ritmo mientras proporciona dulces agudos para solos melodiosos."
           linkbtn="https://picsum.photos/400/300"
           textbtn="Comprar"
         />
