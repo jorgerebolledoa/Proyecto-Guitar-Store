@@ -6,7 +6,6 @@
 No Descomentar, podrian haber conflicto con  otras clases con el mismo nombre, solo esta de prueba
 */
 
-/*///// Register///// 
 .register {
   background-image: url("https://strandbergguitars.com/wp-content/uploads/2020/03/strandberg-boden-fusion-guitar-gallery_27-1200x630.jpg");
   background-repeat: no-repeat;
@@ -23,6 +22,7 @@ No Descomentar, podrian haber conflicto con  otras clases con el mismo nombre, s
   opacity: 0.9;
   padding: 50px 0 50px 0;
   width: auto;
+  background-size: cover;
 }
 .login {
   background-image: url("https://strandbergguitars.com/cdn-cgi/image/onerror=redirect,quality=85,format=auto,metadata=copyright,width=2124,height=1150,fit=cover/wp-content/uploads/2020/03/strandberg-boden-metal-guitar-gallery_04.jpg");
@@ -42,8 +42,7 @@ a:hover {
   text-decoration: none;
 }
 
-/* Main Form 
-.login-form-1 {
+Main Form .login-form-1 {
   width: 600px;
   border-radius: 5px;
   display: inline-block;
@@ -94,8 +93,7 @@ a:hover {
 .box {
   margin-right: 5px;
 }
-/* Login Button 
-.login-form-1 .login-button {
+Login Button .login-form-1 .login-button {
   position: absolute;
   right: -25px;
   top: 50%;
