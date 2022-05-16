@@ -36,7 +36,7 @@ export const Navbar = () => {
 									Inicia sesión
 									</a>
 									<ul className="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
-										<li><a className="dropdown-item text-warning" href="#">Inicia sesión</a></li>  {/* Agregar Link a LOGIN */}
+										<li><a className="dropdown-item text-warning" href="#">Inicia sesión</a></li>{/* Agregar Link a LOGIN */}
 										<li><a className="dropdown-item text-warning" href="#">Registrate</a></li> {/* Agregar Link a REGISTER*/}
 										<li><a className="dropdown-item text-warning" href="#">Mi cuenta</a></li> {/* Agregar Link a PERFIL */}
 									</ul>
