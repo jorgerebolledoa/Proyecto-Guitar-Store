@@ -3,6 +3,7 @@ import { Context } from "../store/appContext";
 import "../../styles/home.css";
 import Cards from "./Cards.jsx";
 import Cardlateral from "/src/front/js/component/Vista principal/Producto-descripcion.jsx";
+import CardDerecha from "/src/front/js/component/Vista principal/CardimgDerecha.jsx";
 import X250 from "../../img/X250BKfull.png";
 
 export const Producto = () => {
@@ -18,7 +19,8 @@ export const Producto = () => {
           linkbtn="/X250"
           textbtn="Comprar"
         />
-        <Cardlateral
+        <CardDerecha
+          bg="bg-secondary"
           img={X250}
           title="Guitarra2"
           text="Some quick example text to build on the card"
