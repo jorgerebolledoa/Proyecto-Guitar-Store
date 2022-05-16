@@ -15,8 +15,8 @@ export const X250page = () => {
           img={X250}
           title="X250"
           text="La X250 ofrece un valor excelente con una plétora de excelentes características que se encuentran en los modelos de la serie X de gama alta, como la configuración de pastilla versátil HSH con humbuckers EMG SRO OC1 y pastilla de bobina simple Alnico V, un sistema de trémolo de doble bloqueo para una excelente estabilidad de afinación y cuerpo de madera de Meranti con mástil de Arce de roca dura. Disponible en tres acabados geniales: Lágrima Rosada, Azul Kona y Negro."
-          linkbtn="https://picsum.photos/400/300"
-          textbtn="Comprar"
+          linkbtn="/Comparar"
+          textbtn="comparar"
         />
         <CardDerecha
           img={X250}

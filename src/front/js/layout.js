@@ -4,6 +4,7 @@ import ScrollToTop from "./component/scrollToTop";
 
 import { Home } from "./pages/home";
 import { Producto } from "./pages/producto";
+import { Comparar } from "./pages/comparar";
 import { X250page } from "./pages/X250";
 import { Demo } from "./pages/demo";
 import { Single } from "./pages/single";
@@ -33,6 +34,9 @@ const Layout = () => {
             </Route>
             <Route exact path="/X250">
               <X250page />
+            </Route>
+            <Route exact path="/Comparar">
+              <Comparar />
             </Route>
             <Route path="/carroDeCompras">
               <CarroDeCompras />
