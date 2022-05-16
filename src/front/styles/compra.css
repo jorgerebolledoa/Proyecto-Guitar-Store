@@ -127,12 +127,12 @@
 @media only screen and (min-width: 990px) {
     .tituloCarro {
         padding: 80px 0px 40px;
-        width: 600px;
+        width: 570px;
         color: #DB962E;
     }
 
     .cajaProducto {
-        width: 600px;
+        width: 570px;
         border-radius: 10px;
         height: 200px;
     }
@@ -147,14 +147,14 @@
 
     .cajaDescripcionProducto {
         margin: auto;
-        width: 390px;
+        width: 380px;
         padding: 0;
         padding-left: 15px;
     }
 
     .cajaDescripcionProducto h5 {
         font-size: 23px;
-        width: 390px;
+        width: 380px;
         margin-left: 0px;
     }
 
@@ -164,7 +164,7 @@
 
     .cajaDescripcionProducto p {
         font-size: 19px;
-        width: 400px;
+        width: 390px;
         color: #DB962E;
 
     }
