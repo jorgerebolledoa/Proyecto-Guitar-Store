@@ -4,16 +4,19 @@ import rigoImageUrl from "../../img/rigo-baby.jpg";
 import "../../styles/home.css";
 import Cards from "./Cards.jsx";
 import Carousel from "./Carousel-home.jsx";
+<<<<<<< HEAD
 import { GiGuitarHead } from "react-icons/gi";
 
 
+=======
+>>>>>>> 9d23ed098c6ea10b0f286f589853672c1ab1d3fb
 
 export const Home = () => {
   const { store, actions } = useContext(Context);
 
   return (
     <>
-      <Carousel img="https://picsum.photos/400/300" />
+      <Carousel img="https://picsum.photos/1080/720" />
       <Cards />
 
       <div className="text-center mt-5">
