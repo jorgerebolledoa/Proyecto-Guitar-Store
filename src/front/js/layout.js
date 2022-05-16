@@ -15,7 +15,6 @@ import { Footer } from "./component/footer";
 import { CarroDeCompras } from "./component/carroDeCompras/carrodecompras.jsx";
 import { CarroDeComprasVacio } from "./component/carroDeCompras/vistaCarroVacio.jsx";
 
-
 //create your first component
 const Layout = () => {
   //the basename is used when your project is published in a subdirectory and not in the root of the domain
@@ -43,7 +42,7 @@ const Layout = () => {
             <Route path="/carroDeCompras">
               <CarroDeCompras />
             </Route>
-            <Route path="carroDeComprasVacio">
+            <Route path="/carroDeComprasVacio">
               <CarroDeComprasVacio />
             </Route>
             <Route exact path="/demo">
