@@ -13,7 +13,7 @@ export const FormularioDePago = () => {
             type="text"
             class="form-control"
             id="validationCustom01"
-            value="Mark"
+            placeholder="Mark"
             required
           />
           <div class="valid-feedback">Looks good!</div>
@@ -26,7 +26,7 @@ export const FormularioDePago = () => {
             type="text"
             class="form-control"
             id="validationCustom02"
-            value="Otto"
+            placeholder="Suck it"
             required
           />
           <div class="valid-feedback">Looks good!</div>
