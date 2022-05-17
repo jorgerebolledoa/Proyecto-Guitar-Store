@@ -11,7 +11,14 @@ export const CarroDeComprasVacio = () => {
           style={{ background: "#323332" }}
         >
           <h3 className="text-warning tituloCarroVacio pt-5">
-            Tu carro <FaShoppingCart className="text-white" />
+            Tu carro{" "}
+            <Link
+              className="LinkCarro "
+              to="/formularioDePago"
+              href="/formularioDePago"
+            >
+              <FaShoppingCart className="text-white" />
+            </Link>
           </h3>
 
           <p className="card-text text-white parrafoCarro">
