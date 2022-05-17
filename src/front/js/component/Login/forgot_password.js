@@ -2,10 +2,10 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { GiGuitarHead } from "react-icons/gi";
 
-const Login = () => {
+const Forgot_password = () => {
   return (
     ///////////Faltan detalles//////////
-    <div className="container Container2 bg-secondary m-0 p-0">
+    <div className="container-fluid Container2 bg-secondary m-0 p-0">
       <div className="forgot_password text-center mb-3">
         <div className="logo text-warning m-1">
           <GiGuitarHead />
@@ -24,7 +24,7 @@ const Login = () => {
             <div className="main-login-form">
               <div className="login-group">
                 <div className="form-group">
-                  <label for="fp_email" className="sr-only">
+                  <label form="fp_email" className="sr-only">
                     Email address
                   </label>
                   <input
@@ -37,16 +37,16 @@ const Login = () => {
                 </div>
               </div>
               <button type="submit" className="login-button">
-                <i className="fa fa-chevron-right"></i>
+                <i className="fa fa-chevron-right">Go</i>
               </button>
             </div>
             <div className="etc-login-form text-warning m-3">
               <p>
-                Already have an account? <a href="#">login here</a>
-              </p>{" "}
-              {/*//////////Agregar Links/////////*/}
+                Already have an account? <a href="#">login here</a>{/*//////////Agregar Links/////////*/}
+              </p>
+             
               <p>
-                New user? <a href="#">create new account</a>
+                New user? <a href="#">create new account</a> {/*//////////Agregar Links/////////*/}
               </p>
             </div>
           </form>
@@ -55,4 +55,4 @@ const Login = () => {
     </div>
   );
 };
-export default Login;
+export default Forgot_password;

@@ -3,7 +3,7 @@ import { Context } from "../store/appContext";
 import rigoImageUrl from "../../img/rigo-baby.jpg";
 import "../../styles/home.css";
 import Cards from "./Cards.jsx";
-import Login from "./forgot_password.js";
+import Forgot_password from "../component/Login/forgot_password.js";
 import Carousel from "./Carousel-home.jsx";
 import { GiGuitarHead } from "react-icons/gi";
 
@@ -31,7 +31,9 @@ export const Home = () => {
           </a>
         </p>
       </div>
-      <Login />
+      <Forgot_password />
+     
+      
     </>
   );
 };
