@@ -6,6 +6,7 @@ import Cards from "./Cards.jsx";
 import Forgot_password from "../component/Login/forgot_password.js";
 import Carousel from "./Carousel-home.jsx";
 import { GiGuitarHead } from "react-icons/gi";
+import { Link } from "react-router-dom";
 
 export const Home = () => {
   const { store, actions } = useContext(Context);
@@ -32,8 +33,31 @@ export const Home = () => {
         </p>
       </div>
       <Forgot_password />
-     
+
       
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     </>
   );
 };
+
+
+
+
+
+
+
