@@ -1,3 +1,7 @@
+import React from "react";
+import { Link } from "react-router-dom";
+import { GiGuitarHead } from "react-icons/gi";
+
 const Forgot_password = () => {
   return (
     ///////////Faltan detalles//////////
@@ -11,7 +15,6 @@ const Forgot_password = () => {
           <form id="forgot-password-form" className="text-left">
             <div className="etc-login-form text-warning m-3">
               <p>
-                {" "}
                 Oops! It happens to the best of us. Input your email address to
                 fix the issue.
               </p>
@@ -33,18 +36,16 @@ const Forgot_password = () => {
                 </div>
               </div>
               <button type="submit" className="login-button">
-                <i className="fa-brands fa-golang-right"></i>
+                <i className="fa fa-chevron-right">Go</i>
               </button>
             </div>
             <div className="etc-login-form text-warning m-3">
               <p>
-                Already have an account? <a href="#">login here</a>
-                {/*//////////Agregar Links/////////*/}
+                Already have an account? <a href="#">login here</a>{/*//////////Agregar Links/////////*/}
               </p>
-
+             
               <p>
-                New user? <a href="#">create new account</a>{" "}
-                {/*//////////Agregar Links/////////*/}
+                New user? <a href="#">create new account</a> {/*//////////Agregar Links/////////*/}
               </p>
             </div>
           </form>

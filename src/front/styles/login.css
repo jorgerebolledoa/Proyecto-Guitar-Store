@@ -2,7 +2,7 @@
 No Descomentar, podrian haber conflicto con  otras clases con el mismo nombre, solo esta de prueba
 */
 
-.Container3 {
+/*.Container3 {
     background-image: url("https://strandbergguitars.com/cdn-cgi/image/onerror=redirect,quality=85,format=auto,metadata=copyright,width=1920,height=1280,fit=cover/eu/wp-content/uploads/sites/2/2019/09/strandberg-boden-metal-black-headless-guitar-20.jpg");
     background-repeat: no-repeat;
     background-size: cover;
@@ -38,7 +38,7 @@ No Descomentar, podrian haber conflicto con  otras clases con el mismo nombre, s
     text-decoration: none;
   }
   
-  /*Main Form */
+  /*Main Form 
   .login-form-1 {
     width: 350px;
     border-radius: 5px;
@@ -90,8 +90,8 @@ No Descomentar, podrian haber conflicto con  otras clases con el mismo nombre, s
   .box {
     margin-right: 5px;
   }
-  /*Login Button*/ 
-  .login-form-1 .login-button {
+  /*Login Button
+  /*.login-form-1 .login-button {
     position: absolute;
     right: -25px;
     top: 50%;
@@ -115,3 +115,5 @@ No Descomentar, podrian haber conflicto con  otras clases con el mismo nombre, s
   .logo2 {
     font-size: 30px;
   }
+
+  
