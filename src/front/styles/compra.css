@@ -6,15 +6,24 @@
 /* PANTALLA CELULAR CARRO DE COMPRA LLENO */
 
 @media only screen and (min-width: 520px) {
+
     .tituloCarro {
         padding: 80px 0px 40px;
         width: 400px;
         color: #DB962E;
     }
 
+
+
     .cajaProducto {
         width: 400px;
-        border-radius: 10px;
+        border-radius: 50px;
+        box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6),
+        ;
+        border: none;
+        outline: none;
+        background-color: rgba(0, 0, 0, 0.11);
+
 
     }
 

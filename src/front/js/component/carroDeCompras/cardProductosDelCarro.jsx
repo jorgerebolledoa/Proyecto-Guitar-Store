@@ -5,12 +5,8 @@ import { Link } from "react-router-dom/cjs/react-router-dom.min";
 export const CardProductosDelCarro = () => {
   return (
     <>
-      <div
-        className="cajaProducto card mx-auto flex-row mb-5  "
-        style={{ background: "#323332" }}
-      >
+      <div className="cajaProducto card mx-auto flex-row mb-5  ">
         <AiFillMinusCircle className="text-danger position-absolute top-0 start-100 translate-middle fs-2" />
-
         <img
           src="https://picsum.photos/150"
           className="imgProducto img-fluid "

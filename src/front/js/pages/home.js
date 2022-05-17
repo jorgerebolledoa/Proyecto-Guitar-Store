@@ -6,9 +6,8 @@ import Cards from "./Cards.jsx";
 import Forgot_password from "../component/Login/forgot_password.js";
 import Carousel from "./Carousel-home.jsx";
 import { GiGuitarHead } from "react-icons/gi";
-import { PanelDeControlAdm } from "../component/Admin/PanelDeControlAdm";
-import { UploadAdm } from "../component/Admin/UploadAdm";
-import { EditPostAdm } from "../component/Admin/EditPostAdm";
+import { Link } from "react-router-dom";
+
 
 export const Home = () => {
   const { store, actions } = useContext(Context);
@@ -27,19 +26,33 @@ export const Home = () => {
           {store.message ||
             "Loading message from the backend (make sure your python backend is running)..."}
         </div>
-        <p>
-          <PanelDeControlAdm />
-        </p>
-        <p>
-           <UploadAdm />
-        </p>
-        <p>
-           <EditPostAdm />
-        </p>
       </div>
       <Forgot_password />
-     
+
       
+
+
     </>
   );
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

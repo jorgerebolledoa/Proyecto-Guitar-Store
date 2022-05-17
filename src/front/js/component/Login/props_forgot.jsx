@@ -15,7 +15,6 @@ const Forgot_password = () => {
           <form id="forgot-password-form" className="text-left">
             <div className="etc-login-form text-warning m-3">
               <p>
-                {" "}
                 Oops! It happens to the best of us. Input your email address to
                 fix the issue.
               </p>
