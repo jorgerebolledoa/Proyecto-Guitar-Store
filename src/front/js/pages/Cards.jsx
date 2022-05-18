@@ -1,5 +1,6 @@
 import React from "react";
 import Card from "./Card.jsx";
+import X250 from "../../img/X250BKfull.png";
 
 const Cards = () => {
   return (
@@ -8,7 +9,7 @@ const Cards = () => {
         <>
           <div className=" col-12 p-1 ">
             <Card
-              img="https://picsum.photos/400/300"
+              img={X250}
               title="Card title"
               text="Some quick example text to build on the card"
               linkbtn="/Producto"
@@ -17,7 +18,7 @@ const Cards = () => {
           </div>
           <div className=" col-12 p-1">
             <Card
-              img="https://picsum.photos/400/300"
+              img={X250}
               title="Card title"
               text="Some quick example text to build on the card"
               linkbtn="https://picsum.photos/400/300"
@@ -26,7 +27,7 @@ const Cards = () => {
           </div>
           <div className=" col-12 p-1">
             <Card
-              img="https://picsum.photos/400/300"
+              img={X250}
               title="Card title"
               text="Some quick example text to build on the card"
               linkbtn="https://picsum.photos/400/300"
@@ -35,7 +36,7 @@ const Cards = () => {
           </div>
           <div className=" col-12 p-1">
             <Card
-              img="https://picsum.photos/400/300"
+              img={X250}
               title="Card title"
               text="Some quick example text to build on the card"
               linkbtn="https://picsum.photos/400/300"
