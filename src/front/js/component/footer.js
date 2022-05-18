@@ -38,7 +38,7 @@ export const Footer = () => {
 
               <div className="col-md-2">
                 <h6 className="font-weight-bold">
-                  <Link to= "" href="" className="text-warning">Term of Use</Link>
+                  <Link to= "/admin" href="/admin" className="text-warning">Term of Use</Link>
                 </h6>
               </div>
 
