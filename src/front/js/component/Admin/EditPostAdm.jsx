@@ -1,5 +1,5 @@
 import React from "react";
-
+import "/workspace/Proyecto-final-en-grupo-landing-guitarra-/src/front/styles/admin.css";
 
 export const EditPostAdm = () => {
     return (
@@ -58,3 +58,4 @@ export const EditPostAdm = () => {
       </>
     );
   };
+  

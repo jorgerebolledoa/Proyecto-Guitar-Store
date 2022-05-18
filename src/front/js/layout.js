@@ -8,6 +8,10 @@ import { Comparar } from "./pages/comparar";
 import { X250page } from "./pages/X250";
 import { Demo } from "./pages/demo";
 import { Single } from "./pages/single";
+import { EditPostAdm } from "./component/Admin/EditPostAdm.jsx";
+import { UploadAdm } from "./component/Admin/UploadAdm.jsx";
+import { PanelDeControlAdm } from "./component/Admin/PanelDeControlAdm.jsx";
+
 import injectContext from "./store/appContext";
 
 import { Navbar } from "./component/navbar";
@@ -51,6 +55,15 @@ const Layout = () => {
             </Route>
             <Route exact path="/demo">
               <Demo />
+            </Route>
+            <Route path="/admin">
+              <PanelDeControlAdm />
+            </Route>
+            <Route path="/upload">
+              <UploadAdm />
+            </Route>
+            <Route path="/editpost">
+              <EditPostAdm />
             </Route>
             <Route exact path="/single/:theid">
               <Single />
