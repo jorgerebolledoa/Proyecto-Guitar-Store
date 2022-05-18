@@ -1,6 +1,6 @@
-.navbar-brand {
-  margin-left: 10px;
-}
+/*
+No Descomentar, podrian haber conflicto con  otras clases con el mismo nombre, solo esta de prueba
+*/
 
 .Container3 {
   background-image: url("https://strandbergguitars.com/cdn-cgi/image/onerror=redirect,quality=85,format=auto,metadata=copyright,width=1920,height=1280,fit=cover/eu/wp-content/uploads/sites/2/2019/09/strandberg-boden-metal-black-headless-guitar-20.jpg");
@@ -8,8 +8,8 @@
   background-size: cover;
   opacity: 0.9;
   padding: 50px 0 50px 0;
-  height:100%;
-  
+  height: 100%;
+
 }
 
 .Container2 {
@@ -18,38 +18,42 @@
   background-size: cover;
   opacity: 0.9;
   padding: 50px 0 50px 0;
- 
+
 }
-.Container1{
+
+.Container1 {
   background-image: url("https://strandbergguitars.com/cdn-cgi/image/onerror=redirect,quality=85,format=auto,metadata=copyright,width=2124,height=1150,fit=cover/wp-content/uploads/2020/03/strandberg-boden-metal-guitar-gallery_04.jpg");
   background-repeat: no-repeat;
-  background-size:cover;
+  background-size: cover;
   opacity: 0.9;
   padding: 50px 0 50px 0;
-  
+
 }
 
 a {
   color: #ecebe3d6;
   transition: all ease-in-out 200ms;
 }
+
 a:hover {
   color: #d1b309b6;
   text-decoration: none;
 }
 
-/*Main Form */
-.login-form-1 {
+Main Form .login-form-1 {
   width: 350px;
   border-radius: 5px;
   display: inline-block;
 }
+
 .main-login-form {
   position: relative;
 }
+
 .login-form-1 .form-group:hover {
   border-color: rgba(255, 255, 255, 0.752);
 }
+
 .login-form-1 .form-control {
   border: 0;
   box-shadow: 0 0 0;
@@ -60,6 +64,7 @@ a:hover {
   font-weight: light;
   height: auto;
 }
+
 .login-form-1 .form-control::-webkit-input-placeholder {
   color: #efc804de;
 }
@@ -83,15 +88,17 @@ a:hover {
   border-radius: 8px;
   padding: 10px 20px;
 }
+
 .login-group:hover {
   box-shadow: 2px 2px 4px rgba(45, 45, 45, 0.092),
     inset 2px 2px 6px rgba(255, 255, 255, 0.5);
 }
+
 .box {
   margin-right: 5px;
 }
-/*Login Button*/ 
-.login-form-1 .login-button {
+
+Login Button .login-form-1 .login-button {
   position: absolute;
   right: -25px;
   top: 50%;
@@ -103,19 +110,18 @@ a:hover {
   margin-top: -25px;
   border: 5px solid #efc804de;
   border-radius: 50%;
-  transition: all ease-in-out 400ms;
+  transition: all ease-in-out 500ms;
 }
+
 .login-form-1 .login-button:hover {
   color: #efc804de;
-  transform: rotate(358deg);
+  transform: rotate(450deg);
 }
+
 .logo {
   font-size: 60px;
 }
+
 .logo2 {
   font-size: 30px;
 }
-
-/* 
-    General Styles used on every website (Don't Repeat Yourself)
-*/

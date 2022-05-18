@@ -5,33 +5,75 @@ import { Link } from "react-router-dom";
 export const Footer = () => {
 
 	return (
-		<div className="footer expand-lg  bg-dark text-warning ">
+		<div className="container-fluid my-2 p-0">
+
+        <footer className="bg-dark text-center text-warning">
+          <section className="mt-5">
+
+            <div className="row text-center d-flex justify-content-center pt-4">
+
+              <div className="col-md-2 text-warning ">
+                <Link to= "" href="" className="text-warning">< GiGuitarHead /></Link>
+
+              </div>
+
+              <div className="col-md-2">
+                <h6 className="font-weight-bold">
+                  <Link to= "" href="" className="text-warning">Costumer Services</Link>
+                </h6>
+              </div>
 
 
-			<div className="container d-flex justify-content-center ">
-				<span className="nav-item text-warning">
-					< GiGuitarHead />
-				</span>
+              <div className="col-md-2">
+                <h6 className="font-weight-bold">
+                  <Link to= "" href="" className="text-warning">Community FAQ</Link>
+                </h6>
+              </div>
 
-				<span className="nav-item">
-					<Link className="nav-link active text-warning" to="agregar link" href="#">Customer Services</Link>
-				</span>
-				<span className="nav-item">
-					<Link className="nav-link active text-warning" to="agregar link" href="#">Comunnity FQA</Link>
-				</span>
-				<span className="nav-item dropdown">
-					<Link className="nav-link active text-warning" to="agregar link" href="#">Contact</Link>
-				</span>
-				<span className="nav-item">
-					<Link className="nav-link active text-warning" to="agregar link" href="#">Term of Use</Link>
-				</span>
-				<span className="nav-item">
-					<Link className="nav-link active text-warning" to="agregar link" href="#">Privacy Policy</Link>
-				</span>
+              <div className="col-md-2">
+                <h6 className="font-weight-bold">
+                  <Link to= "" href="" className="text-warning">Contact</Link>
+                </h6>
+              </div>
 
+              <div className="col-md-2">
+                <h6 className="font-weight-bold">
+                  <Link to= "" href="" className="text-warning">Term of Use</Link>
+                </h6>
+              </div>
 
-			</div>
-		</div>
+            </div>
+
+          </section>
+
+          <hr className="my-3" />
+
+          <div className="container p-1 pb-0">
+
+            <section className="mb-2">
+
+              <Link className="btn btn-outline-warning btn-floating m-3" to= "" href="" role="button">
+                <i className="fab fa-facebook-f"></i>
+              </Link>
+              <Link className="btn btn-outline-warning btn-floating m-3" to= "" href="" role="button">
+                <i className="fab fa-twitter"></i>
+              </Link>
+              <Link className="btn btn-outline-warning btn-floating m-3" to= "" href="" role="button">
+                <i className="fab fa-instagram"></i>
+              </Link>
+            </section>
+          </div>
+          <div className="d-inline-flex p-2 m-1 text-warning">
+            <p> Copyright © 2022</p>
+
+          </div>
+
+        </footer>
+
+      </div>
 	)
+
+
+
 
 };

@@ -1,7 +1,85 @@
 /*
-    home.css: This website contains selectors only used in home.css
-
-    All pages share the styles on index.css but you should create 
-    one more css for each page that will contain the selected used 
-    on that page only (the ones not reused in other pages).
+ADMIN CSS
 */
+body{
+   
+    background: #111215;
+}
+/* === Wrapper Styles === */
+#FileUpload {
+    display: flex;
+    justify-content: center;
+  }
+  .wrapper {
+    margin: 30px;
+    padding: 10px;
+
+    border-radius: 10px;
+    background-color: #212225;
+    width: 415px;
+    
+  }
+  
+  /* === Upload Box === */
+  .upload {
+    margin: 10px;
+    height: 185px;
+    border: 8px dashed #DB962E;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+  }
+  .upload p {
+    margin-top: 10px;
+    line-height: 0;
+    font-size: 22px;
+    color: #DCAC00;
+    letter-spacing: 1.5px;
+  }
+  .upload__button {
+    background-color: #f0eaea;
+    border-radius: 10px;
+    padding: 0px 8px 0px 10px;
+    opacity: 0.2;
+  }
+  .upload__button:hover {
+    cursor: pointer;
+    opacity: 0.8;
+  }
+  
+  /* === Uploaded Files === */
+  .uploaded {
+    width: 375px;
+    margin: 10px;
+    background-color: #111215;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  .file {
+    display: flex;
+    flex-direction: column;
+  }
+  .file__name {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+    width: 300px;
+    line-height: 0;
+    color: #9C7A00;
+    font-size: 18px;
+    letter-spacing: 1.5px;
+  }
+  .fa-times:hover {
+    cursor: pointer;
+    opacity: 0.8;
+  }
+  .uploaded img {
+
+max-width: 60px;
+max-height: 60px;
+  }

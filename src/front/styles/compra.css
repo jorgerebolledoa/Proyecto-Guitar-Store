@@ -3,18 +3,28 @@
     width: 200px;
 }
 
-/* PANTALLA CELULAR */
+/* PANTALLA CELULAR CARRO DE COMPRA LLENO */
 
 @media only screen and (min-width: 520px) {
+
     .tituloCarro {
         padding: 80px 0px 40px;
         width: 400px;
         color: #DB962E;
     }
 
+
+
     .cajaProducto {
         width: 400px;
-        border-radius: 10px;
+        border-radius: 50px;
+        box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6),
+        ;
+        border: none;
+        outline: none;
+        background-color: rgba(0, 0, 0, 0.11);
+
+
     }
 
     .imgProducto {
@@ -59,7 +69,7 @@
 
 }
 
-/* PANTALLA TABLET */
+/* PANTALLA TABLET  CARRO DE COMPRA LLENO */
 
 @media only screen and (min-width: 760px) {
     .tituloCarro {
@@ -122,24 +132,24 @@
 
 }
 
-/* PANTALLA LAPTOP */
+/* PANTALLA LAPTOP CARRO DE COMPRA LLENO */
 
 @media only screen and (min-width: 990px) {
     .tituloCarro {
         padding: 80px 0px 40px;
-        width: 600px;
+        width: 570px;
         color: #DB962E;
     }
 
     .cajaProducto {
-        width: 600px;
+        width: 570px;
         border-radius: 10px;
         height: 200px;
     }
 
     .imgProducto {
-        width: 170px;
-        height: 170px;
+        width: 160px;
+        height: 160px;
         margin: auto;
         margin-left: 10px;
 
@@ -147,14 +157,14 @@
 
     .cajaDescripcionProducto {
         margin: auto;
-        width: 390px;
+        width: 380px;
         padding: 0;
         padding-left: 15px;
     }
 
     .cajaDescripcionProducto h5 {
         font-size: 23px;
-        width: 390px;
+        width: 380px;
         margin-left: 0px;
     }
 
@@ -164,7 +174,7 @@
 
     .cajaDescripcionProducto p {
         font-size: 19px;
-        width: 400px;
+        width: 390px;
         color: #DB962E;
 
     }
@@ -186,7 +196,7 @@
 
 }
 
-/* PANTALLA GRANDE */
+/* PANTALLA GRANDE CARRO DE COMPRA LLENO */
 @media only screen and (min-width: 1200px) {
     .tituloCarro {
         padding: 80px 0px 40px;
@@ -248,4 +258,76 @@
     }
 
 
+}
+
+/* separación */
+
+/* RESPONSIVE CARRO VACIO */
+@media only screen and (min-width: 520px) {
+    .cajaProductoVacio {
+        margin-top: 30px;
+        width: 50%;
+        border-radius: 25px;
+    }
+
+    .botonPagar {
+        width: 50%;
+        margin-bottom: 50px;
+    }
+
+    .tituloCarroVacio {
+
+        text-align: center;
+        margin: auto;
+        margin-bottom: 50px;
+    }
+
+    .parrafoCarro {
+        margin: auto;
+    }
+
+    .fondoCarroVacio {
+        height: 100%;
+    }
+}
+
+/* CSS PARA BOTON */
+
+.button {
+    padding: 15px 25px;
+    border: unset;
+    border-radius: 15px;
+    color: #212121;
+    z-index: 1;
+    background: #DB962E;
+    position: relative;
+    font-weight: 1000;
+    font-size: 17px;
+    /* -webkit-box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+    box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27); */
+    transition: all 250ms;
+    overflow: hidden;
+}
+
+.button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    border-radius: 15px;
+    background-color: #be8226;
+    z-index: -1;
+    /* -webkit-box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+    box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27); */
+    transition: all 250ms
+}
+
+.button:hover {
+    color: #e8e8e8;
+}
+
+.button:hover::before {
+    width: 100%;
 }

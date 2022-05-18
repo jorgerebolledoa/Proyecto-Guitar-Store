@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { FaShoppingCart } from "react-icons/fa";
+import { MdErrorOutline } from "react-icons/md";
 
-export const CarroDeComprasVacio = () => {
+export const ErrorDePago = () => {
   return (
     <>
       <div className="fondoCarroVacio container-fluid bg-dark pb-5 pt-5">
@@ -11,14 +11,11 @@ export const CarroDeComprasVacio = () => {
           style={{ background: "#323332" }}
         >
           <h3 className="text-warning tituloCarroVacio pt-5">
-            Tu carro{" "}
-            <Link className="LinkCarro " to="/errorDePago" href="/errorDePago">
-              <FaShoppingCart className="text-white" />
-            </Link>
+            Error de pago <MdErrorOutline className="fs-1 text-danger" />
           </h3>
 
           <p className="card-text text-white parrafoCarro">
-            El carro de compras está vacío.
+            Ha ocurrido un problema al procesar tu pago.
           </p>
           <button
             type="button"
