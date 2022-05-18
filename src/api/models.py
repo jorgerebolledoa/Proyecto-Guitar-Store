@@ -1,76 +1,71 @@
-import os
-import sys
-from sqlalchemy import Column, ForeignKey, Integer, String
-from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.orm import relationship
-from sqlalchemy import create_engine
-from eralchemy import render_er
+from flask_sqlalchemy import SQLAlchemy
 
 db = SQLAlchemy()
 
 
 class User(db.Model):
-    __tablename__ = 'User'
-    id = Column(Integer, primary_key=True)
-    name = Column(String(50), nullable=False)
-    nameAdm = Column(String(50), nullable=False)
-    password = Column(Integer, nullable=False)
-    passwordAdm = Column(Integer, nullable=False)
-    email = Column(String(50), nullable=False)
-    phone = Column(Integer, nullable=False)
-    default_shipping_address = Column(Integer, nullable=False)
+    __tablename__ = 'users'
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(50), nullable=False)
+    nameAdm = db.Column(db.String(50), nullable=False)
+    password = db.Column(db.Integer, nullable=False)
+    passwordAdm = db.Column(db.Integer, nullable=False)
+    email = db.Column(db.String(50), nullable=False)
+    phone = db.Column(db.Integer, nullable=False)
+    default_shipping_address = db.Column(db.Integer, nullable=False)
 
 
-class Products(db.Model):
-    __tablename__ = 'Products'
-    id = Column(Integer, primary_key=True)
-    sku = Column(Integer, nullable=False)
-    name = Column(String(50), nullable=False)
-    img = Column(String(250), nullable=False)
-    description = Column(String(250), nullable=False)
-    price = Column(Integer, nullable=False)
-    thumbnail = Column(String(250), nullable=False)
-    category_id = Column(Integer, ForeignKey("Categories.id"))
-    categories = relationship("Categories")
+class Product(db.Model):
+    __tablename__ = 'product'
+    id = db.Column(db.Integer, primary_key=True)
+    sku = db.Column(db.Integer, nullable=False)
+    name = db.Column(db.String(50), nullable=False)
+    img = db.Column(db.String(250), nullable=False)
+    description = db.Column(db.String(250), nullable=False)
+    price = db.Column(db.Integer, nullable=False)
+    thumbnail = db.Column(db.String(250), nullable=False)
+    category_id = db.Column(db.Integer, db.ForeignKey("Category.id"))
+    categories = db.relationship("Category")
 
 
-class Categories(db.Model):
-    __tablename__ = 'Categories'
-    id = Column(Integer, primary_key=True)
-    name = Column(String(50), nullable=False)
-    description = Column(String(250), nullable=False)
-    thumbnail = Column(String(250), nullable=False)
+class Category(db.Model):
+    __tablename__ = 'categories'
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(50), nullable=False)
+    description = db.Column(db.String(250), nullable=False)
+    thumbnail = db.Column(db.String(250), nullable=False)
 
 
 class Order(db.Model):
     __tablename__ = "Order"
-    id = Column(Integer, primary_key=True)
-    user_id = Column(Integer, ForeignKey("User.id"))
-    amount = Column(Integer, primary_key=True)
-    shipping_address = Column(Integer, primary_key=True)
-    order_addres = Column(Integer, primary_key=True)
-    order_date = Column(Integer, primary_key=True)
-    order_email = Column(String(250), nullable=False)
-    order_status = Column(String(250), nullable=False)
-    user = relationship("User")
+    id = db.Column(db.Integer, primary_key=True)
+    user_id = db.Column(db.Integer, db.ForeignKey("User.id"))
+    amount = db.Column(db.Integer, primary_key=True)
+    shipping_address = db.Column(db.Integer, primary_key=True)
+    order_addres = db.Column(db.Integer, primary_key=True)
+    order_date = db.Column(db.Integer, primary_key=True)
+    order_email = db.Column(db.String(250), nullable=False)
+    order_status = db.Column(db.String(250), nullable=False)
+    user = db.relationship("User")
 
 
-class OrderDetails(db.Model):
-    __tablename__ = "OrderDetails"
-    id = Column(Integer, primary_key=True)
-    order_id = Column(Integer, ForeignKey("Order.id"))
-    product_id = Column(Integer, ForeignKey("Products.id"))
-    price = Column(Integer, primary_key=True)
-    quatity = Column(Integer, primary_key=True)
-    order = relationship("Order")
-    products = relationship("Products")
+class OrderDetail(db.Model):
+    __tablename__ = "order_details"
+    id = db.Column(db.Integer, primary_key=True)
+    order_id = db.Column(db.Integer, db.ForeignKey("Order.id"))
+    product_id = db.Column(db.Integer, db.ForeignKey("Product.id"))
+    price = db.Column(db.Integer, primary_key=True)
+    quatity = db.Column(db.Integer, primary_key=True)
+    order = db.relationship("Order")
+    products = db.relationship("Product")
 
 
-class Messsages(db.Model):
-    __tablename__ = "Messages"
-    id = Column(Integer, primary_key=True)
-    user_id = Column(Integer, ForeignKey("User.id"))
-    message = Column(String(250), nullable=False)
+class Messsage(db.Model):
+    __tablename__ = "messages"
+    id = db.Column(db.Integer, primary_key=True)
+    user_id = db.Column(db.Integer, db.ForeignKey("User.id"))
+    message = db.Column(db.String(250), nullable=False)
+    user = db.relationship('User')
 
     def __repr__(self):
         return f'<User {self.email}>'
