@@ -10,9 +10,13 @@ export const Home = () => {
 
   return (
     <>
-      <Carousel img="https://picsum.photos/1080/720" />
+      <Carousel
+        img="https://picsum.photos/id/1/1080/720"
+        img2="https://picsum.photos/id/69/1080/720"
+        img3="https://picsum.photos/id/40/1080/720"
+      />
       <Cards />
-      <Login />
+
       <Forgot_password />
     </>
   );

@@ -6,7 +6,7 @@ const Cards = () => {
     <div className="container">
       <div className="row mb-2">
         <>
-          <div className=" col-12 ">
+          <div className=" col-12 p-1 ">
             <Card
               img="https://picsum.photos/400/300"
               title="Card title"
@@ -15,7 +15,7 @@ const Cards = () => {
               textbtn="Producto"
             />
           </div>
-          <div className=" col-12 ">
+          <div className=" col-12 p-1">
             <Card
               img="https://picsum.photos/400/300"
               title="Card title"
@@ -24,7 +24,7 @@ const Cards = () => {
               textbtn="Go somewhere"
             />
           </div>
-          <div className=" col-12 ">
+          <div className=" col-12 p-1">
             <Card
               img="https://picsum.photos/400/300"
               title="Card title"
@@ -33,7 +33,7 @@ const Cards = () => {
               textbtn="Go somewhere"
             />
           </div>
-          <div className=" col-12 ">
+          <div className=" col-12 p-1">
             <Card
               img="https://picsum.photos/400/300"
               title="Card title"

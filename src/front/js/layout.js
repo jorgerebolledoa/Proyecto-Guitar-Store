@@ -10,6 +10,7 @@ import { Demo } from "./pages/demo";
 import { Single } from "./pages/single";
 import { EditPostAdm } from "./component/Admin/EditPostAdm.jsx";
 import { UploadAdm } from "./component/Admin/UploadAdm.jsx";
+import { UsersViewAdm } from "./component/Admin/UsersViewAdm.jsx";
 import { PanelDeControlAdm } from "./component/Admin/PanelDeControlAdm.jsx";
 
 import injectContext from "./store/appContext";
@@ -64,6 +65,9 @@ const Layout = () => {
             </Route>
             <Route path="/editpost">
               <EditPostAdm />
+            </Route>
+            <Route path="/usersview">
+              <UsersViewAdm />
             </Route>
             <Route exact path="/single/:theid">
               <Single />
