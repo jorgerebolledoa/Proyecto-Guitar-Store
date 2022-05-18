@@ -9,7 +9,6 @@ No Descomentar, podrian haber conflicto con  otras clases con el mismo nombre, s
   opacity: 0.9;
   padding: 50px 0 50px 0;
   height: 100%;
-
 }
 
 .Container2 {
@@ -18,7 +17,6 @@ No Descomentar, podrian haber conflicto con  otras clases con el mismo nombre, s
   background-size: cover;
   opacity: 0.9;
   padding: 50px 0 50px 0;
-
 }
 
 .Container1 {
@@ -27,7 +25,6 @@ No Descomentar, podrian haber conflicto con  otras clases con el mismo nombre, s
   background-size: cover;
   opacity: 0.9;
   padding: 50px 0 50px 0;
-
 }
 
 a {
@@ -120,8 +117,44 @@ Login Button .login-form-1 .login-button {
 
 .logo {
   font-size: 60px;
+  
 }
 
 .logo2 {
   font-size: 30px;
+}
+
+#btnFooter {
+  font-size: 16px;
+  padding: 8px 12px;
+  transition: all 0.4s;
+  color: rgba(223, 176, 7, 0.81);
+  background-color: rgba(49, 47, 47, 0.462);
+}
+
+#btnFooter:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 6px rgba(14, 14, 14, 0.607);
+}
+
+
+#btnFooter::after {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all 0.4s;
+}
+
+#btnFooter::after {
+  background-color: rgba(243, 235, 210, 0.03);
+}
+
+#btnFooter:hover::after {
+  transform: scaleX(1.4) scaleY(1.6);
+  opacity: 0;
 }
