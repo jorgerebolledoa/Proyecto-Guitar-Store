@@ -14,7 +14,10 @@ export const Comparar = () => {
             <CardComparacion
               img={X250}
               title="X250"
-              text="Some quick example text to build on the card"
+              select="X7000"
+              select2="X300"
+              select3="X500"
+              text="Selectiona la guitarra a comparar y podras ver sus especificaciones"
               item="body: madera"
               item2="body"
               item3="body"
@@ -28,7 +31,10 @@ export const Comparar = () => {
             <CardComparacion
               img={X250}
               title="X300"
-              text="Some quick example text to build on the card"
+              select="X250"
+              select2="X400"
+              select3="X500"
+              text="Selectiona la guitarra a comparar y podras ver sus especificaciones"
               item="body: cuero "
               item2="body"
               item3="body"
