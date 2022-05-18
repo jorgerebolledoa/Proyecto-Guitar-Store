@@ -1,5 +1,5 @@
 import React from "react";
-
+import "/workspace/Proyecto-final-en-grupo-landing-guitarra-/src/front/styles/admin.css";
 export const PanelDeControlAdm = () => {
     return (
       <>
@@ -108,7 +108,7 @@ export const PanelDeControlAdm = () => {
   role="group"
   aria-label="Basic checkbox toggle button group">
   <div className= "col-md-12 d-flex justify-content-center gap-3 mb-4">
-  <label className="btn btn-outline-warning col-md-4" htmlFor="btncheck1">
+  <label className="btn btn-outline-warning col-md-4">
     Crear publicaciónes
   </label>
   <label className="btn btn-outline-warning col-md-4" htmlFor="btncheck2">

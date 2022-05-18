@@ -36,7 +36,15 @@ export const Footer = () => {
 
         <hr className="my-3" />
 
+
+              <div className="col-md-2">
+                <h6 className="font-weight-bold">
+                  <Link to= "/admin" href="/admin" className="text-warning">Term of Use</Link>
+                </h6>
+              </div>
+
         <div className="container p-1 pb-0">
+
 
           <section className="mb-2">
 
