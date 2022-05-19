@@ -1,8 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { GiGuitarHead } from "react-icons/gi";
+import PropTypes from "prop-types";
 
-export const Register = () => {
+export const Register = (props) => {
   return (                   ///////////Faltan detalles//////////
   <div className="container-fluid Container3 m-0 p-0">
   <div className="register text-center mb-3">
