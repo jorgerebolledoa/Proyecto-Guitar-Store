@@ -1,8 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { GiGuitarHead } from "react-icons/gi";
+import PropTypes from "prop-types";
 
-const Forgot_password = () => {
+const Forgot_password = (props) => {
   return (
     ///////////Faltan detalles//////////
     <div className="container-fluid Container2 m-0 p-0">
@@ -10,14 +11,12 @@ const Forgot_password = () => {
         <div className="logo text-warning m-1">
           <GiGuitarHead />
         </div>
-        <div className="logo2 text-warning m-3">Forgot your password? </div>
+        <div className="logo2 text-warning m-3"> {props.logo2} </div>
         <div className="login-form-1">
           <form id="forgot-password-form" className="text-left">
             <div className="etc-login-form text-warning m-3">
-              <p>
-                {" "}
-                Oops! It happens to the best of us. Input your email address to
-                fix the issue.
+              <p>            
+              {props.parrafo}
               </p>
             </div>
             <div className="login-form-main-message"></div>
@@ -25,7 +24,7 @@ const Forgot_password = () => {
               <div className="login-group">
                 <div className="form-group">
                   <label form="fp_email" className="sr-only">
-                    Email address
+                  {props.fp_email}
                   </label>
                   <input
                     type="text"
@@ -42,11 +41,11 @@ const Forgot_password = () => {
             </div>
             <div className="etc-login-form text-warning m-3">
               <p>
-                Already have an account? <a href="#">login here</a>{/*//////////Agregar Links/////////*/}
+              {props.text_preg1} <a href={props.boton_login}>{props. text_botonLogin}</a>{/*//////////Agregar Links/////////*/}
               </p>
              
               <p>
-                New user? <a href="#">create new account</a> {/*//////////Agregar Links/////////*/}
+              {props.text_preg2} <a href={props.boton__newAccount}>{props.text_botonNew}</a> {/*//////////Agregar Links/////////*/}
               </p>
             </div>
           </form>
@@ -55,4 +54,19 @@ const Forgot_password = () => {
     </div>
   );
 };
+
+Forgot_password.propTypes = {
+  
+  logo2: PropTypes.string,
+  parrafo: PropTypes.string,
+  fp_email: PropTypes.string,
+  boton_login: PropTypes.string,
+  boton__newAccount: PropTypes.string,
+  text_botonLogin: PropTypes.string,
+  text_botonNew: PropTypes.string,
+  text_preg1: PropTypes.string,
+  text_preg2: PropTypes.string,
+};
 export default Forgot_password;
+
+
