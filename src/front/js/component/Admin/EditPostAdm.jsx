@@ -9,11 +9,11 @@ export const EditPostAdm = () => {
       <br></br>
       <br id="pageTop"></br>
       <div className="container">
-        <h1 className="text-white">Edita tu publicación</h1>
+        <h1 className="text-white text-center">Edita tu publicación</h1>
       <div id="FileUpload">
   <div className="wrapper">
     <div className="upload">
-      <p>
+      <p className="text-center">
         Arrastra las imagenes acá o...{" "}
         <span className="upload__button">Buscar</span>
       </p>

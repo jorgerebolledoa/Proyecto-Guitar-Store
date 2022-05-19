@@ -50,15 +50,31 @@ export const Navbar = () => {
                 </Link>
               </li>
             </ul>
-            <form className="d-flex me-5 ">
-              <Link
-                className="btn btn-outline text-warning"
-                to="/carroDeCompras"
-                href="/carroDeCompras"
-              >
-                <FaShoppingCart />
-              </Link>
-            </form>
+            <form className="d-flex me-5 " />
+
+            <div className="btn-group">
+              <ul className="navbar-nav">
+                <li className="nav-item dropdown">
+                  <a className="nav-link dropdown-toggle text-warning" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Login
+                  </a>
+                  <ul className="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+                    <li><a className="dropdown-item text-warning" href="#">Login</a></li>
+                    <li><a className="dropdown-item text-warning" href="#">Register</a></li>
+                    <li><a className="dropdown-item text-warning" href="#">Something else here</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+
+            <Link
+              className="btn btn-outline text-warning"
+              to="/carroDeCompras"
+              href="/carroDeCompras"
+            >
+              <FaShoppingCart />
+            </Link>
+            <form />
           </div>
         </div>
       </nav>

@@ -37,7 +37,9 @@ a:hover {
   text-decoration: none;
 }
 
-Main Form .login-form-1 {
+/*Main Form*/ 
+
+.login-form-1 {
   width: 350px;
   border-radius: 5px;
   display: inline-block;
@@ -95,7 +97,9 @@ Main Form .login-form-1 {
   margin-right: 5px;
 }
 
-Login Button .login-form-1 .login-button {
+/*Login Button */
+
+.login-form-1 .login-button {
   position: absolute;
   right: -25px;
   top: 50%;
