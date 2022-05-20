@@ -95,7 +95,7 @@ def delete_user(user_id):
 @api.route("/products", methods=['GET'])
 def get_products():
     products = Product.query.all()
-    products = list(map(lambda role: product.serialize(), products))
+    products = list(map(lambda product: product.serialize(), products))
     return jsonify(products), 200
 
 
@@ -105,9 +105,13 @@ def create_products():
     products.sku = request.json.get('sku')
     products.name = request.json.get('name')
     products.img = request.json.get('img')
-    products.description = request.json.get('description')
+    products.description_1 = request.json.get('description_1')
+    products.description_2 = request.json.get('description_2')
+    products.description_3 = request.json.get('description_3')
+    products.description_4 = request.json.get('description_4')
     products.price = request.json.get('price')
     products.thumbnail = request.json.get('thumbnail')
+    products.category_id = request.json.get('category_id')
     products.save()
     return jsonify(products.serialize()), 201
 
@@ -118,7 +122,14 @@ def update_products(products_id):
     products.sku = request.json.get('sku')
     products.name = request.json.get('name')
     products.img = request.json.get('img')
-    products.description = request.json.get('description')
+    products.description_1 = request.json.get('description_1')
+    products.description_2 = request.json.get('description_2')
+    products.description_3 = request.json.get('description_3')
+    products.description_4 = request.json.get('description_4')
+    products.tittle_description_1 = request.json.get('tittle_description_1')
+    products.tittle_description_2 = request.json.get('tittle_description_2')
+    products.tittle_description_3 = request.json.get('tittle_description_3')
+    products.tittle_description_4 = request.json.get('tittle_description_4')
     products.price = request.json.get('price')
     products.thumbnail = request.json.get('thumbnail')
     products.update()
@@ -139,7 +150,7 @@ def delete_products(products_id):
 @api.route("/categories", methods=['GET'])
 def get_categories():
     categories = Category.query.all()
-    categories = list(map(lambda role: category.serialize(), categories))
+    categories = list(map(lambda category: category.serialize(), categories))
     return jsonify(categories), 200
 
 
@@ -150,6 +161,7 @@ def create_categories():
     categories.description = request.json.get('description')
     categories.thumbnail = request.json.get('thumbnail')
     categories.save()
+    return jsonify(categories.serialize()), 201
 
 
 @api.route('/categories/<int:categories_id>', methods=['PUT'])

@@ -73,10 +73,6 @@ def serve_any_other_file(path):
     return response
 
 
-def pagina_no_encontrada(error):
-    return "<h1>La pagina que intentas buscar no existe :(</h1>"
-
-
 # this only runs if `$ python src/main.py` is executed
 if __name__ == '__main__':
     PORT = int(os.environ.get('PORT', 3001))
