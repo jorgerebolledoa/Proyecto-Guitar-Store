@@ -6,7 +6,7 @@ import { FaShoppingCart } from "react-icons/fa";
 export const Navbar = () => {
   return (
     <div className="container-fluid m-0 p-0">
-      <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top mb-5">
+      <nav className="navbar navbar-expand-lg navbar-dark bg-transparent fixed-top mb-5">
         <div className="container d-flex">
           <Link className="navbar-brand text-warning ml-5" to="/">
             <GiGuitarHead />
@@ -16,10 +16,10 @@ export const Navbar = () => {
               <li className="nav-item">
                 <Link
                   className="nav-link active text-warning"
-                  to="algun lado"
+                  to="/producto"
                   href="#"
                 >
-                  Marca 1
+                  Cort
                 </Link>
               </li>
               <li className="nav-item">
@@ -28,7 +28,7 @@ export const Navbar = () => {
                   to="algun lado"
                   href="#"
                 >
-                  Marca 2
+                  Strandbergguitars
                 </Link>
               </li>
               <li className="nav-item dropdown">
@@ -37,7 +37,7 @@ export const Navbar = () => {
                   to="algun lado"
                   href="#"
                 >
-                  Marca 3
+                  Fender
                 </Link>
               </li>
               <li className="nav-item">
@@ -46,7 +46,7 @@ export const Navbar = () => {
                   to="algun lado"
                   href="#"
                 >
-                  Marca 4
+                  prsguitars
                 </Link>
               </li>
             </ul>
@@ -55,13 +55,41 @@ export const Navbar = () => {
             <div className="btn-group">
               <ul className="navbar-nav">
                 <li className="nav-item dropdown">
-                  <a className="nav-link dropdown-toggle text-warning" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <a
+                    className="nav-link dropdown-toggle text-warning"
+                    href="#"
+                    id="navbarDarkDropdownMenuLink"
+                    role="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
                     Login
                   </a>
-                  <ul className="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
-                    <li><a className="dropdown-item text-warning" href="/login">Login</a></li>
-                    <li><a className="dropdown-item text-warning" href="/register">Register</a></li>
-                    <li><a className="dropdown-item text-warning" href="/forgot_password">Forgot password</a></li>
+                  <ul
+                    className="dropdown-menu dropdown-menu-dark"
+                    aria-labelledby="navbarDarkDropdownMenuLink"
+                  >
+                    <li>
+                      <a className="dropdown-item text-warning" href="/login">
+                        Login
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        className="dropdown-item text-warning"
+                        href="/register"
+                      >
+                        Register
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        className="dropdown-item text-warning"
+                        href="/forgot_password"
+                      >
+                        Forgot password
+                      </a>
+                    </li>
                   </ul>
                 </li>
               </ul>
