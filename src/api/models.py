@@ -67,12 +67,12 @@ class User(db.Model):
 class Product(db.Model):
     __tablename__ = 'products'
     id = db.Column(db.Integer, primary_key=True)
-    sku = db.Column(db.Integer, nullable=False)
+    sku = db.Column(db.String(50), nullable=False)
     name = db.Column(db.String(50), nullable=False)
     img = db.Column(db.String(250), nullable=False)
-    description = db.Column(db.String(250), nullable=False)
-    price = db.Column(db.Integer, nullable=False)
-    thumbnail = db.Column(db.String(250), nullable=False)
+    description = db.Column(db.String(2500), nullable=False)
+    price = db.Column(db.String(50), nullable=False)
+    thumbnail = db.Column(db.String(500), nullable=False)
     category_id = db.Column(db.Integer, db.ForeignKey("categories.id"))
     categories = db.relationship("Category")
 
@@ -106,6 +106,7 @@ class Category(db.Model):
     name = db.Column(db.String(50), nullable=False)
     description = db.Column(db.String(250), nullable=False)
     thumbnail = db.Column(db.String(250), nullable=False)
+    products = db.relationship('Product', backref="category")
 
     def serialize(self):
         return {

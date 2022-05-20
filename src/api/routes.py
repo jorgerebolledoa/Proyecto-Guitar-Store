@@ -95,7 +95,7 @@ def delete_user(user_id):
 @api.route("/products", methods=['GET'])
 def get_products():
     products = Product.query.all()
-    products = list(map(lambda role: product.serialize(), products))
+    products = list(map(lambda product: product.serialize(), products))
     return jsonify(products), 200
 
 
@@ -108,6 +108,7 @@ def create_products():
     products.description = request.json.get('description')
     products.price = request.json.get('price')
     products.thumbnail = request.json.get('thumbnail')
+    products.category_id = request.json.get('category_id')
     products.save()
     return jsonify(products.serialize()), 201
 
@@ -139,7 +140,7 @@ def delete_products(products_id):
 @api.route("/categories", methods=['GET'])
 def get_categories():
     categories = Category.query.all()
-    categories = list(map(lambda role: category.serialize(), categories))
+    categories = list(map(lambda category: category.serialize(), categories))
     return jsonify(categories), 200
 
 

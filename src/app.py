@@ -73,6 +73,7 @@ def serve_any_other_file(path):
     return response
 
 
+@app.route('/*', methods=['GET'])
 def pagina_no_encontrada(error):
     return "<h1>La pagina que intentas buscar no existe :(</h1>"
 
