@@ -6,6 +6,7 @@ import ReactDOM from "react-dom";
 import "../styles/index.css";
 import "../styles/compra.css";
 import "../styles/login.css";
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 
 //import your own components
 import Layout from "./layout";

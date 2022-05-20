@@ -59,9 +59,9 @@ export const Navbar = () => {
                     Login
                   </a>
                   <ul className="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
-                    <li><a className="dropdown-item text-warning" href="#">Login</a></li>
-                    <li><a className="dropdown-item text-warning" href="#">Register</a></li>
-                    <li><a className="dropdown-item text-warning" href="#">Something else here</a></li>
+                    <li><a className="dropdown-item text-warning" href="/login">Login</a></li>
+                    <li><a className="dropdown-item text-warning" href="/register">Register</a></li>
+                    <li><a className="dropdown-item text-warning" href="/forgot_password">Forgot password</a></li>
                   </ul>
                 </li>
               </ul>

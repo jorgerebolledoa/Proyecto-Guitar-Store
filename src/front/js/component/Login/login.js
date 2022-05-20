@@ -4,7 +4,7 @@ import { GiGuitarHead } from "react-icons/gi";
 import PropTypes from "prop-types";
 
 
-export const Login = (props) => {
+const Login = (props) => {
 	return (
 
 		<div className="container-fluid Container1 m-0 p-0">
@@ -25,12 +25,12 @@ export const Login = (props) => {
 								<label form="lg_password" className="sr-only">{props.lg_password}</label>
 								<input type="password" className="form-control" id="lg_password" name="lg_password" placeholder="Password" />
 							</div>
-							<button type="submit" class="login-button"><i class="fa fa-chevron-right">Go</i></button>
-							<div class="etc-login-form m-3">
+							<button type="submit" className="login-button"><i className="fa fa-chevron-right">Go</i></button>
+							<div className="etc-login-form m-3">
 								<input type="checkbox" className="box" id="lg_remember" name="lg_remember" />
 								<label form="lg_remember">{props.lg_remember}</label>
-								<p>{props.text_preg1} <a href={props.link_forgotPass} >{props.text_linkForg}</a></p>				{/*//////////Agregar Links/////////*/}
-								<p>{props.text_preg2} <a href={props.link__newAccount} >{props.text_linkNew}</a></p>
+								<p>{props.text_preg1} <a href={props.boton_forgotPass} >{props.text_linkForg}</a></p>				{/*//////////Agregar Links/////////*/}
+								<p>{props.text_preg2} <a href={props.boton_newAccount} >{props.text_linkNew}</a></p>
 							</div>
 
 						</div>
@@ -49,23 +49,9 @@ Login.propTypes = {
 	lg_remember: PropTypes.string,
 	text_preg1: PropTypes.string,
 	text_preg2: PropTypes.string,
-	link_forgotPass: PropTypes.string,
-	link__newAccount: PropTypes.string,
+	boton_forgotPass: PropTypes.string,
+	boton_newAccount: PropTypes.string,
 	text_linkForg: PropTypes.string,
 	text_linkNew: PropTypes.string,
 };
-
-<>
-	<Login
-		logo2="Login"
-		lg_username="Username"
-		lg_password=" Password"
-		lg_remember="Remember me."
-		text_preg1="Forgot your password?"
-		text_preg2="Dont have account?"
-		boton_forgotPass=" "
-  		boton__newAccount=" "
-		text_linkForg="click here"
-		text_linkNew="create new account"
-	/>
-</>
+export default Login
