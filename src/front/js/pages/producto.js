@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { Context } from "../store/appContext";
 import "../../styles/home.css";
 import Cardlateral from "/src/front/js/component/Vista principal/Producto-descripcion.jsx";
@@ -11,6 +11,7 @@ export const Producto = () => {
   return (
     <>
       <CarouselM img={X250} />
+
       <div className="m-2 p-2">
         <Cardlateral
           img={X250}

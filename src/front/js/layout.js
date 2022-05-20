@@ -21,6 +21,9 @@ import { CarroDeCompras } from "./pages/carroDeCompras.js";
 import { CarroDeComprasVacio } from "./component/carroDeCompras/vistaCarroVacio.jsx";
 import { FormularioDePago } from "./component/carroDeCompras/formularioDePago.jsx";
 import { ErrorDePago } from "./component/carroDeCompras/errorDePago.jsx";
+import { Page_login } from "./pages/login";
+import { Page_register } from "./pages/register";
+import { Page_forgot_password } from "./pages/forgot_password";
 //create your first component
 const Layout = () => {
   //the basename is used when your project is published in a subdirectory and not in the root of the domain
@@ -35,6 +38,15 @@ const Layout = () => {
           <Switch>
             <Route exact path="/">
               <Home />
+            </Route>
+            <Route exact path="/login">
+              <Page_login />
+            </Route>
+            <Route exact path="/register">
+              <Page_register />
+            </Route>
+            <Route exact path="/forgot_password">
+              <Page_forgot_password />
             </Route>
             <Route exact path="/Producto">
               <Producto />

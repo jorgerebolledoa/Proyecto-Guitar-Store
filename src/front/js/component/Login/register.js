@@ -1,9 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { GiGuitarHead } from "react-icons/gi";
+import {AiOutlineCheckCircle } from "react-icons/ai";
 import PropTypes from "prop-types";
 
-export const Register = (props) => {
+const Register = (props) => {
   return (                   ///////////Faltan detalles//////////
   <div className="container-fluid Container3 m-0 p-0">
   <div className="register text-center mb-3">
@@ -18,6 +19,7 @@ export const Register = (props) => {
               <div className="form-group">
                 <label form="reg_fullname" className="sr-only">{props.reg_fullname}</label>
                 <input type="text" className="form-control" id="reg_fullname" name="reg_fullname required" placeholder="Full name" />
+                
               </div>
               <label form="reg_email" className="sr-only">{props.reg_email}</label>
               <input type="text" className="form-control" id="reg_email" name="reg_email required" placeholder="Enter email address" />
@@ -36,7 +38,7 @@ export const Register = (props) => {
             </div>
             <div className="form-group">
               <label form="reg_country" className="sr-only">{props.reg_country}</label>
-              <input type="text" className="form-control" id="reg_country" name="reg_countryrequired" placeholder="Country" />
+              <input type="text" className="form-control" id="reg_country" name="reg_country required" placeholder="Country" />
             </div>
             <div className="form-group">
               <label form="reg_phone" className="sr-only">{props.reg_phone}</label>
@@ -51,9 +53,7 @@ export const Register = (props) => {
               <label form="reg_password_confirm" className="sr-only">{props.reg_password_confirm}</label>
               <input type="password" className="form-control" id="reg_password_confirm" name="reg_password_confirm required" placeholder="Confirm password" />
             </div>
-            {/*  <div className="form-group login-group-checkbox">*/}
-
-            {/* </div>*/}
+           
           </div>
           <button type="submit" className="login-button"><i className="fa fa-chevron-right">Go</i></button>
         </div>
@@ -92,24 +92,5 @@ Register.propTypes = {
   text_linkLogin2:PropTypes.string,
 };
 
-<>
-	<Register
-		logo2="Register"
-		reg_fullname="Full Name"
-		reg_email="Enter email address"
-		reg_username="Username"
-		reg_street="Street Address"
-	  reg_city="City"
-		reg_country="Country"
-    reg_phone="Phone Number"
-    reg_password="Password"
-    reg_password_confirm="Password Confirm"
-		text_linkAgree="I agree with"
-    link_agree=" "
-    text_linkAgree2="terms"
-		text_linkLogin="Already have an account?"
-    link_login=" "
-    text_linkLogin2="Login here"
-	/>
-</>
+export default Register
 

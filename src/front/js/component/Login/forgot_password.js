@@ -41,11 +41,11 @@ const Forgot_password = (props) => {
             </div>
             <div className="etc-login-form text-warning m-3">
               <p>
-              {props.text_preg1} <a href={props.boton_login}>{props. text_botonLogin}</a>{/*//////////Agregar Links/////////*/}
+              {props.text_preg1} <a href={props.boton_login}>{props. text_botonLogin}</a>
               </p>
              
               <p>
-              {props.text_preg2} <a href={props.boton__newAccount}>{props.text_botonNew}</a> {/*//////////Agregar Links/////////*/}
+              {props.text_preg2} <a href={props.boton_newAccount}>{props.text_botonNew}</a> 
               </p>
             </div>
           </form>
@@ -61,7 +61,7 @@ Forgot_password.propTypes = {
   parrafo: PropTypes.string,
   fp_email: PropTypes.string,
   boton_login: PropTypes.string,
-  boton__newAccount: PropTypes.string,
+  boton_newAccount: PropTypes.string,
   text_botonLogin: PropTypes.string,
   text_botonNew: PropTypes.string,
   text_preg1: PropTypes.string,
