@@ -70,7 +70,14 @@ class Product(db.Model):
     sku = db.Column(db.String(50), nullable=False)
     name = db.Column(db.String(50), nullable=False)
     img = db.Column(db.String(250), nullable=False)
-    description = db.Column(db.String(2500), nullable=False)
+    description_1 = db.Column(db.String(2500), nullable=False)
+    description_2 = db.Column(db.String(2500), nullable=False)
+    description_3 = db.Column(db.String(2500), nullable=False)
+    description_4 = db.Column(db.String(2500), nullable=False)
+    tittle_description_1 = db.Column(db.String(500), nullable=False)
+    tittle_description_2 = db.Column(db.String(500), nullable=False)
+    tittle_description_3 = db.Column(db.String(500), nullable=False)
+    tittle_description_4 = db.Column(db.String(500), nullable=False)
     price = db.Column(db.String(50), nullable=False)
     thumbnail = db.Column(db.String(500), nullable=False)
     category_id = db.Column(db.Integer, db.ForeignKey("categories.id"))
@@ -82,7 +89,14 @@ class Product(db.Model):
             "sku": self.sku,
             "name": self.name,
             "img": self.img,
-            "description": self.description,
+            "description_1": self.description_1,
+            "description_2": self.description_2,
+            "description_3": self.description_3,
+            "description_4": self.description_4,
+            "tittle_description_1": self.tittle_description_1,
+            "tittle_description_2": self.tittle_description_2,
+            "tittle_description_3": self.tittle_description_3,
+            "tittle_description_4": self.tittle_description_4,
             "price": self.price,
             "thumbnail": self.thumbnail,
             "category_id": self.category_id
