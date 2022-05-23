@@ -4,10 +4,10 @@ import "/workspace/Proyecto-final-en-grupo-landing-guitarra-/src/front/styles/ad
 export const UploadAdm = () => {
     return (
       <>
-      <br></br>
-      <br></br>
-      <br></br>
       <br id="pageTop"></br>
+      <br></br>
+      <br></br>
+      <br></br>
       <div className="container">
         <h1 className="text-white text-center">Crea tu publicación</h1>
       <div id="FileUpload">
@@ -90,9 +90,10 @@ export const UploadAdm = () => {
   </button>
 </form>
 
-  <a className="scroll-to-top rounded" href="#pageTop">
+<a className="scroll-to-top rounded" href="#pageTop">
     <i className="fas fa-angle-up bg-dark text-white col-md-12 d-flex justify-content-center fs-1" />
   </a>
+  <a href="/admin" className="text-warning col-md-12 d-flex justify-content-center fs-3 m-3">volver al panel de control</a>
 
   </div>
       </>
