@@ -3,9 +3,9 @@ import React from "react";
 export const UsersViewAdm = () => {
     return (
       <>
-      <br></br>
-      <br></br>
       <br id="pageTop"></br>
+      <br></br>
+      <br></br>
       <div className="container">
   <div className="row flex-lg-nowrap">
   <div className="col">
@@ -799,6 +799,7 @@ export const UsersViewAdm = () => {
 <a className="scroll-to-top rounded" href="#pageTop">
     <i className="fas fa-angle-up bg-dark text-white col-md-12 d-flex justify-content-center fs-1" />
   </a>
+  <a href="/admin" className="text-warning col-md-12 d-flex justify-content-center fs-3 m-3">volver al panel de control</a>
   </div>
       </>
     );
