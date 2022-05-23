@@ -6,7 +6,48 @@ import CarouselM from "/src/front/js/component/Vista principal/Carousel-Marca.js
 import X250 from "../../img/X250BKfull.png";
 
 export const Producto = () => {
-  const { store, actions } = useContext(Context);
+  const [lista, setlista] = useState([]);
+
+  const urlApi =
+    "https://assets.breatheco.de/apis/fake/todos/user/jorgerebolledo";
+
+  useEffect(() => {
+    getTask(urlApi);
+  }, []);
+
+  const getTask = (url) => {
+    fetch(url)
+      .then((Response) => Response.json())
+      .then((data) => console.log(data))
+      .catch((error) => console.log(error));
+  };
+
+  const updateTask = (url, task) => {
+    fetch(url, {
+      method: "PUT",
+      body: JSON.stringify(task),
+      headers: {
+        "content-type": "application/json",
+      },
+    })
+      .then((response) => response.json())
+      .then((data) => console.log(data))
+      .catch((error) => console.log(error));
+  };
+
+  const crear = (e) => {
+    if (e.keyCode === 13 && e.target.value !== "") {
+      let newlist = [...lista, { label: e.target.value, done: true }];
+      setlista(newlist);
+      updateTask(urlApi, newlist);
+      e.target.value = "";
+    }
+  };
+  const deletelist = (index) => {
+    lista.splice(index, 1);
+    setlista([...lista]);
+    updateTask(urlApi, [...lista]);
+  };
 
   return (
     <>
