@@ -8,8 +8,9 @@ export const UploadAdm = () => {
       <br></br>
       <br></br>
       <br></br>
-      <div className="container">
-        <h1 className="text-white text-center">Crea tu publicación</h1>
+      <div className="container col-md-6 p-4 rounded bg-dark">
+      <a href="/admin" className="text-warning float-end">volver</a>
+        <h1 className="text-white opacity-70 text-center m-4">Crea tu publicación</h1>
       <div id="FileUpload">
   <div className="wrapper">
     <div className="upload">
@@ -69,7 +70,7 @@ export const UploadAdm = () => {
     </label>
     <input
       type="text"
-      className="form-control"
+      className="form-control bg-white opacity-50"
     />
   </div>
   <div className="mb-3">
@@ -77,24 +78,22 @@ export const UploadAdm = () => {
       Marca
     </label>
     <input
-      type="ext"
-      className="form-control"
+      type="text"
+      className="form-control bg-white opacity-50"
     />
   </div>
   <div class="mb-3">
   <label for="exampleFormControlTextarea1" class="form-label text-warning opacity-75">Descripción</label>
-  <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>
+  <textarea className="form-control bg-white opacity-50" id="exampleFormControlTextarea1" rows="6"></textarea>
 </div>
   <button type="submit" className="btn btn-warning">
     Submit
   </button>
 </form>
 
-<a className="scroll-to-top rounded" href="#pageTop">
-    <i className="fas fa-angle-up bg-dark text-white col-md-12 d-flex justify-content-center fs-1" />
-  </a>
-  <a href="/admin" className="text-warning col-md-12 d-flex justify-content-center fs-3 m-3">volver al panel de control</a>
-
+<a className="scroll-to-top rounded d-flex justify-content-center" href="#pageTop">
+        <i className="fas fa-angle-up bg-dark text-white col-1 d-flex justify-content-center fs-1" />
+      </a>
   </div>
       </>
     );

@@ -3,21 +3,21 @@ import "/workspace/Proyecto-final-en-grupo-landing-guitarra-/src/front/styles/ad
 export const PanelDeControlAdm = () => {
   return (
     <>
-      <br></br>
-      <br></br>
-      <br></br>
       <br id="pageTop"></br>
-      <div className="container">
-        <div className="row">
+      <br></br>
+      <br></br>
+      <br></br>
+      <div className="container p-4 rounded bg-dark">
+        <div className="row p-4">
           <div className="col-xl-3 col-md-6 mb-4">
             <div className="card border-left-primary shadow h-100 py-2 bg-dark text-white">
               <div className="card-body ">
                 <div className="row align-items-center ">
                   <div className="col mr-2 ">
-                    <div className="text-xs font-weight-bold text-white text-uppercase mb-1">
+                    <div className="text-xs font-weight-bold text-white text-uppercase mb-1 ">
                       Ganancias (Mensuales)
                     </div>
-                    <div className="h5 mb-0 font-weight-bold text-gray-800">
+                    <div className="h5 mb-0 font-weight-bold text-gray-800 opacity-75">
                       $44.067.000
                     </div>
                   </div>
@@ -36,7 +36,7 @@ export const PanelDeControlAdm = () => {
                     <div className="text-xs font-weight-bold text-white text-uppercase mb-1">
                       Ganancias (Anuales)
                     </div>
-                    <div className="h5 mb-0 font-weight-bold text-gray-800">
+                    <div className="h5 mb-0 font-weight-bold text-gray-800 opacity-75">
                       $234.415.000
                     </div>
                   </div>
@@ -57,7 +57,7 @@ export const PanelDeControlAdm = () => {
                     </div>
                     <div className="row no-gutters align-items-center">
                       <div className="col-auto">
-                        <div className="h5 mb-0 mr-3 font-weight-bold text-gray-800">
+                        <div className="h5 mb-0 mr-3 font-weight-bold text-gray-800 opacity-75">
                           50%
                         </div>
                       </div>
@@ -83,9 +83,8 @@ export const PanelDeControlAdm = () => {
             </div>
           </div>
 
-          <button
-            type="button"
-            href=""
+          <a
+            href="/contactadmin"
             className="bg-dark text-white col-xl-3 col-md-6 mb-4"
           >
             <div className="card border-left-white shadow h-100 py-2 bg-dark text-white">
@@ -95,7 +94,7 @@ export const PanelDeControlAdm = () => {
                     <div className="text-xs font-weight-bold text-uppercase mb-1">
                       Mensajes
                     </div>
-                    <div className="h5 mb-0 font-weight-bold text-gray-800 ">
+                    <div className="h5 mb-0 font-weight-bold text-gray-800 opacity-75">
                       18
                     </div>
                   </div>
@@ -106,7 +105,7 @@ export const PanelDeControlAdm = () => {
                 </div>
               </div>
             </div>
-          </button>
+          </a>
         </div>
         <div
           className="btn-group container"
@@ -140,7 +139,7 @@ export const PanelDeControlAdm = () => {
                 </h6>
               </div>
               <div className="card-body">
-                <h4 className="small font-weight-bold">
+                <h4 className="small font-weight-bold opacity-75">
                   Actualización de stock{" "}
                   <span className="float-right">20%</span>
                 </h4>
@@ -154,7 +153,7 @@ export const PanelDeControlAdm = () => {
                     aria-valuemax={100}
                   />
                 </div>
-                <h4 className="small font-weight-bold">
+                <h4 className="small font-weight-bold opacity-75">
                   Rastreo de envíos <span className="float-right">40%</span>
                 </h4>
                 <div className="progress mb-4">
@@ -167,7 +166,7 @@ export const PanelDeControlAdm = () => {
                     aria-valuemax={100}
                   />
                 </div>
-                <h4 className="small font-weight-bold">
+                <h4 className="small font-weight-bold opacity-75">
                   Revisar base de datos de usuarios{" "}
                   <span className="float-right">60%</span>
                 </h4>
@@ -181,7 +180,7 @@ export const PanelDeControlAdm = () => {
                     aria-valuemax={100}
                   />
                 </div>
-                <h4 className="small font-weight-bold">
+                <h4 className="small font-weight-bold opacity-75">
                   Tranferir sueldos <span className="float-right">80%</span>
                 </h4>
                 <div className="progress mb-4">
@@ -194,7 +193,7 @@ export const PanelDeControlAdm = () => {
                     aria-valuemax={100}
                   />
                 </div>
-                <h4 className="small font-weight-bold">
+                <h4 className="small font-weight-bold opacity-75">
                   Capacitación empleados{" "}
                   <span className="float-right">Complete!</span>
                 </h4>
@@ -214,8 +213,8 @@ export const PanelDeControlAdm = () => {
         </div>
       </div>
 
-      <a className="scroll-to-top rounded" href="#pageTop">
-        <i className="fas fa-angle-up bg-dark text-white col-md-12 d-flex justify-content-center fs-1" />
+      <a className="scroll-to-top rounded d-flex justify-content-center mt-4" href="#pageTop">
+        <i className="fas fa-angle-up bg-dark text-white col-1 d-flex justify-content-center fs-1" />
       </a>
       <div />
     </>
