@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import ScrollToTop from "./component/scrollToTop";
 
 import { Home } from "./pages/home";
+import { Contacto } from "./pages/Contacto.jsx"
 import { Producto } from "./pages/producto";
 import { Comparar } from "./pages/comparar";
 import { X250page } from "./pages/X250";
@@ -12,6 +13,7 @@ import { EditPostAdm } from "./component/Admin/EditPostAdm.jsx";
 import { UploadAdm } from "./component/Admin/UploadAdm.jsx";
 import { UsersViewAdm } from "./component/Admin/UsersViewAdm.jsx";
 import { PanelDeControlAdm } from "./component/Admin/PanelDeControlAdm.jsx";
+import { ContactViewAdm } from "./component/Admin/ContactViewAdm.jsx";
 
 import injectContext from "./store/appContext";
 
@@ -38,6 +40,9 @@ const Layout = () => {
           <Switch>
             <Route exact path="/">
               <Home />
+            </Route>
+            <Route exact path="/contacto">
+              <Contacto />
             </Route>
             <Route exact path="/login">
               <Page_login />
@@ -80,6 +85,9 @@ const Layout = () => {
             </Route>
             <Route path="/usersview">
               <UsersViewAdm />
+            </Route>
+            <Route path="/contactadmin">
+              <ContactViewAdm />
             </Route>
             <Route exact path="/single/:theid">
               <Single />

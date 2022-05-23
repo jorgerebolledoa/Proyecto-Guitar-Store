@@ -6,7 +6,8 @@ export const UsersViewAdm = () => {
       <br id="pageTop"></br>
       <br></br>
       <br></br>
-      <div className="container">
+      <div className="container p-4 col-md-10 p-4 rounded bg-dark">
+      <a href="/admin" className="text-warning float-end">volver</a>
   <div className="row flex-lg-nowrap">
   <div className="col">
     <div className="row flex-lg-nowrap">
@@ -15,8 +16,7 @@ export const UsersViewAdm = () => {
           <div className="card-body">
             <div className="card-title">
               <h6 className="mr-2">
-                <span>Users</span>
-                <small className="px-1">Be a wise leader</small>
+                <small className="px-1">Dashboard de Usuarios</small>
               </h6>
             </div>
             <div className="e-table">
@@ -796,10 +796,9 @@ export const UsersViewAdm = () => {
     </div>
   </div>
 </div>
-<a className="scroll-to-top rounded" href="#pageTop">
-    <i className="fas fa-angle-up bg-dark text-white col-md-12 d-flex justify-content-center fs-1" />
-  </a>
-  <a href="/admin" className="text-warning col-md-12 d-flex justify-content-center fs-3 m-3">volver al panel de control</a>
+<a className="scroll-to-top rounded d-flex justify-content-center" href="#pageTop">
+        <i className="fas fa-angle-up bg-dark text-white col-1 d-flex justify-content-center fs-1" />
+      </a>
   </div>
       </>
     );
