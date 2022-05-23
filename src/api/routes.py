@@ -68,9 +68,9 @@ def create_user():
     return jsonify(user.serialize()), 201
 
 
-@api.route('/users/<int:user_id>', methods=['PUT'])
-def update_user(user_id):
-    user = User.query.get(user_id)
+@api.route('/users/<int:id>', methods=['PUT'])
+def update_user(id):
+    user = User.query.get(id)
     user.name = request.json.get('name')
     user.password = request.json.get('password')
     user.email = request.json.get('email')

@@ -32,7 +32,7 @@ class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(50), nullable=False)
     password = db.Column(db.String(200), nullable=False)
-    email = db.Column(db.String(200), nullable=False)
+    email = db.Column(db.String(200), nullable=False, unique=True)
     phone = db.Column(db.String(200), nullable=False)
     default_shipping_address = db.Column(db.String(200), nullable=False)
     role_id = db.Column(db.Integer, db.ForeignKey("roles.id"))
@@ -45,8 +45,7 @@ class User(db.Model):
             "role_id": self.role_id,
             "email": self.email,
             "phone": self.phone,
-            "default_shipping_address": self.default_shipping_address,
-            "role": self.role.name
+            "default_shipping_address": self.default_shipping_address
         }
     # get role solo la uso para muchos a muchos, no para 1 a 1
     # def get_roles(self):
@@ -71,13 +70,13 @@ class Product(db.Model):
     name = db.Column(db.String(50), nullable=False)
     img = db.Column(db.String(2500), nullable=False)
     description_1 = db.Column(db.String(5000), nullable=False)
-    description_2 = db.Column(db.String(5000), nullable=False)
-    description_3 = db.Column(db.String(5000), nullable=False)
-    description_4 = db.Column(db.String(5000), nullable=False)
+    description_2 = db.Column(db.String(5000), nullable=True)
+    description_3 = db.Column(db.String(5000), nullable=True)
+    description_4 = db.Column(db.String(5000), nullable=True)
     tittle_description_1 = db.Column(db.String(500), nullable=False)
-    tittle_description_2 = db.Column(db.String(500), nullable=False)
-    tittle_description_3 = db.Column(db.String(500), nullable=False)
-    tittle_description_4 = db.Column(db.String(5000), nullable=False)
+    tittle_description_2 = db.Column(db.String(500), nullable=True)
+    tittle_description_3 = db.Column(db.String(500), nullable=True)
+    tittle_description_4 = db.Column(db.String(5000), nullable=True)
     price = db.Column(db.String(50), nullable=False)
     thumbnail = db.Column(db.String(5000), nullable=False)
     category_id = db.Column(db.Integer, db.ForeignKey("categories.id"))
