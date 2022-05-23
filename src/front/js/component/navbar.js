@@ -1,12 +1,32 @@
-import React from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import { GiGuitarHead } from "react-icons/gi";
 import { FaShoppingCart } from "react-icons/fa";
 
 export const Navbar = () => {
+  const [state, setState] = useState({
+    bg: "transparent",
+    variant: "dark",
+    shadow: null,
+  });
+  const listenScrollEvent = (e) => {
+    if (window.scrollY > 50) {
+      setState({ bg: "dark", shadow: "shadow" });
+    } else {
+      setState({ bg: "transparent", shadow: null });
+    }
+  };
+  useEffect(() => {
+    window.addEventListener("scroll", listenScrollEvent);
+  }, []);
+
   return (
     <div className="container-fluid m-0 p-0">
-      <nav className="navbar navbar-expand-lg navbar-dark bg-transparent fixed-top mb-5">
+      <nav
+        className={`navbar mb-5 navbar-expand-lg  bg-${state.bg} fixed-top ${
+          !!state.shadow ? state.shadow : ""
+        }`}
+      >
         <div className="container d-flex">
           <Link className="navbar-brand text-warning ml-5" to="/">
             <GiGuitarHead />
