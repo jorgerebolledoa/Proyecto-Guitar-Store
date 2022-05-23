@@ -1,27 +1,59 @@
 import React, { useContext } from "react";
 import { Context } from "../store/appContext";
 import "../../styles/home.css";
-import Cards from "./Cards.jsx";
+import Card from "../component/Vista principal/Card.jsx";
+import X250 from "../../img/X250BKfull.png";
 
-import Carousel from "./Carousel-home.jsx";
+import Carousel from "/src/front/js/component/Vista principal/Carousel.jsx";
 
 export const Home = () => {
   const { store, actions } = useContext(Context);
 
   return (
     <>
-      <Carousel
-        img="https://picsum.photos/id/1/1080/720"
-        img2="https://picsum.photos/id/69/1080/720"
-        img3="https://picsum.photos/id/40/1080/720"
-      />
-      <Cards />
-
-     
+      <Carousel img={X250} img2={X250} img3={X250} />
+      <div className="container">
+        <div className="row mb-2">
+          <>
+            <div className=" col-12 p-1 ">
+              <Card
+                img={X250}
+                title="Card title"
+                text="Some quick example text to build on the card"
+                linkbtn="/Producto"
+                textbtn="Producto"
+              />
+            </div>
+            <div className=" col-12 p-1">
+              <Card
+                img={X250}
+                title="Card title"
+                text="Some quick example text to build on the card"
+                linkbtn="https://picsum.photos/400/300"
+                textbtn="Go somewhere"
+              />
+            </div>
+            <div className=" col-12 p-1">
+              <Card
+                img={X250}
+                title="Card title"
+                text="Some quick example text to build on the card"
+                linkbtn="https://picsum.photos/400/300"
+                textbtn="Go somewhere"
+              />
+            </div>
+            <div className=" col-12 p-1">
+              <Card
+                img={X250}
+                title="Card title"
+                text="Some quick example text to build on the card"
+                linkbtn="https://picsum.photos/400/300"
+                textbtn="Go somewhere"
+              />
+            </div>
+          </>
+        </div>
+      </div>
     </>
   );
 };
-
-
-       
-
