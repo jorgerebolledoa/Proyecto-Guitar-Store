@@ -1,6 +1,6 @@
 import React from "react";
-import Mapeo_cardlateral from "/src/front/js/component/Vista principal/Mapeo-categories.jsx";
-import Mapeo_Carousel from "/src/front/js/component/Vista principal/Mapeo-Carousel.jsx";
+import Mapeo_cardlateral from "../component/Vista_principal/Mapeo-categories.jsx";
+import Mapeo_Carousel from "../component/Vista_principal/Mapeo-Carousel.jsx";
 
 export const Producto = () => {
   return (

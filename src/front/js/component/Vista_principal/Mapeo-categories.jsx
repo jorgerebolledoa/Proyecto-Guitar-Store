@@ -1,6 +1,5 @@
 import React, { useContext, useState, useEffect } from "react";
-
-import Cardlateral from "/src/front/js/component/Vista principal/Cardlateral.jsx";
+import Cardlateral from "./Cardlateral.jsx";
 
 const Mapeo_cardlateral = () => {
   const [lista, setlista] = useState([]);
@@ -30,7 +29,7 @@ const Mapeo_cardlateral = () => {
           img={tastk.img}
           title={tastk.name}
           text={tastk.description_1}
-          linkbtn="/X250"
+          linkbtn={"/producto/" + tastk.name}
           textbtn="Comprar"
         />
       );

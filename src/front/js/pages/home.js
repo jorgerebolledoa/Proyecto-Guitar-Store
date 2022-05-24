@@ -1,14 +1,10 @@
-import React, { useContext } from "react";
-import { Context } from "../store/appContext";
+import React from "react";
 import "../../styles/home.css";
-import Card from "../component/Vista principal/Card.jsx";
+import Card from "../component/Vista_principal/Card.jsx";
 import X250 from "../../img/X250BKfull.png";
-
-import Carousel from "/src/front/js/component/Vista principal/Carousel.jsx";
+import Carousel from "../component/Vista_principal/Carousel.jsx";
 
 export const Home = () => {
-  const { store, actions } = useContext(Context);
-
   return (
     <>
       <Carousel img={X250} img2={X250} img3={X250} />

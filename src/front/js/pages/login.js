@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { Context } from "../store/appContext";
 import "../../styles/home.css";
-import Login from "/src/front/js/component/Login/login.js";
+import Login from "../component/Login/login.js";
 
 
 export const Page_login = () => {

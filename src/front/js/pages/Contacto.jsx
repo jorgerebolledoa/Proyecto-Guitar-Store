@@ -1,6 +1,4 @@
 import React from "react";
-
-
 export const Contacto = () => {
   return (
     <>
@@ -9,7 +7,6 @@ export const Contacto = () => {
       <br></br>
 
       <div className="container col-md-10 p-4 rounded bg-dark">
-        
         <div className=" text-center">
           <h1 className="text-warning">¡Comunícate con nosotros!</h1>
         </div>

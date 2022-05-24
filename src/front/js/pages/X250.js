@@ -1,8 +1,9 @@
 import React, { useContext } from "react";
 import { Context } from "../store/appContext";
 import "../../styles/home.css";
-import Cardlateral from "/src/front/js/component/Vista principal/Cardlateral.jsx";
-import CardDerecha from "/src/front/js/component/Vista principal/CardimgDerecha.jsx";
+import Cardlateral from "../component/Vista_principal/Cardlateral.jsx";
+import CardDerecha from "../component/Vista_principal/CardimgDerecha.jsx";
+
 import X250 from "../../img/X250BKfull.png";
 import X2502 from "../../img/X250-2.jpg";
 

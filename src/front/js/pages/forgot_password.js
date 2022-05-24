@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { Context } from "../store/appContext";
 import "../../styles/home.css";
-import Forgot_password from "/src/front/js/component/Login/forgot_password.js";
+import Forgot_password from "../component/Login/forgot_password.js";
 
 
 export const Page_forgot_password = () => {
