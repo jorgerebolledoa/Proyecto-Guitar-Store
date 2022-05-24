@@ -29,8 +29,8 @@ export const Home = () => {
                 img={X250}
                 title="Card title"
                 text="Some quick example text to build on the card"
-                linkbtn="https://picsum.photos/400/300"
-                textbtn="Go somewhere"
+                linkbtn="/product1"
+                textbtn="product1"
               />
             </div>
             <div className=" col-12 p-1">
@@ -38,8 +38,8 @@ export const Home = () => {
                 img={X250}
                 title="Card title"
                 text="Some quick example text to build on the card"
-                linkbtn="https://picsum.photos/400/300"
-                textbtn="Go somewhere"
+                linkbtn="/product2"
+                textbtn="product2"
               />
             </div>
             <div className=" col-12 p-1">
@@ -47,8 +47,8 @@ export const Home = () => {
                 img={X250}
                 title="Card title"
                 text="Some quick example text to build on the card"
-                linkbtn="https://picsum.photos/400/300"
-                textbtn="Go somewhere"
+                linkbtn="/product3"
+                textbtn="product3"
               />
             </div>
           </>

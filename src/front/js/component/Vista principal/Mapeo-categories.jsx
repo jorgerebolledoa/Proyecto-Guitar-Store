@@ -1,12 +1,12 @@
 import React, { useContext, useState, useEffect } from "react";
 
-import Cardlateral from "/src/front/js/component/Vista principal/Producto-descripcion.jsx";
+import Cardlateral from "/src/front/js/component/Vista principal/Cardlateral.jsx";
 
 const Mapeo_cardlateral = () => {
   const [lista, setlista] = useState([]);
 
   const urlApi =
-    "https://3001-jorgereboll-proyectofin-f5wtyul2spl.ws-us45.gitpod.io/api/products";
+    "https://3001-jorgereboll-proyectofin-bx4dnqdsqo4.ws-us45.gitpod.io/api/products";
 
   useEffect(() => {
     getTask(urlApi);
