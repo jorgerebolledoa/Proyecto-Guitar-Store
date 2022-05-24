@@ -29,8 +29,7 @@ import { Page_login } from "./pages/login";
 import { Page_register } from "./pages/register";
 import { Page_forgot_password } from "./pages/forgot_password";
 //create your first component
-{
-  /*const ProductDetail = () => {
+const ProductDetail = () => {
   const { product } = useParams();
 
   useEffect(() => {}, []);
@@ -51,8 +50,7 @@ import { Page_forgot_password } from "./pages/forgot_password";
       </div>
     </div>
   );
-};*/
-}
+};
 
 const Layout = () => {
   //the basename is used when your project is published in a subdirectory and not in the root of the domain
@@ -71,7 +69,7 @@ const Layout = () => {
             <Route exact path="/Producto">
               <Producto />
             </Route>
-            <Route exact path="/product/:product">
+            <Route exact path="/producto/:product">
               <ProductDetail />
             </Route>
             <Route exact path="/X250">

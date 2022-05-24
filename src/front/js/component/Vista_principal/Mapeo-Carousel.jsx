@@ -3,7 +3,7 @@ const Mapeo_Carousel = () => {
   const [lista, setlista] = useState([]);
 
   const urlApi =
-    "https://3001-jorgereboll-proyectofin-bx4dnqdsqo4.ws-us45.gitpod.io/api/products";
+    "http://localhost:3001/api/products";
 
   useEffect(() => {
     getTask(urlApi);
