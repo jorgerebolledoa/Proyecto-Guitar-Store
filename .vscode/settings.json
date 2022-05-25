@@ -6,5 +6,8 @@
   },
   "[sql]": {
     "editor.defaultFormatter": "cweijan.vscode-mysql-client2"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
   }
 }

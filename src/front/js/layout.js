@@ -1,5 +1,4 @@
-import React from "react";
-import { useEffect } from "react";
+import React,{ useEffect, useState } from "react";
 import {
   BrowserRouter,
   Route,
@@ -27,29 +26,10 @@ import { ErrorDePago } from "./component/carroDeCompras/errorDePago.jsx";
 import { Page_login } from "./pages/login";
 import { Page_register } from "./pages/register";
 import { Page_forgot_password } from "./pages/forgot_password";
+import { ProductDetail } from "./pages/ProductDetail";
+
 //create your first component
-const ProductDetail = () => {
-  const { product } = useParams();
 
-  useEffect(() => {}, []);
-
-  return (
-    <div className="card ">
-      <div className="row g-0">
-        <div className="col-md-4">
-          <img
-            src="https://picsum.photos/id/237/200/300"
-            className="card-img-top"
-          />
-        </div>
-        <div className="col-md-8">
-          <h5 className="card-title">{product} </h5>
-          <p className="card-text">{product}</p>
-        </div>
-      </div>
-    </div>
-  );
-};
 
 const Layout = () => {
   //the basename is used when your project is published in a subdirectory and not in the root of the domain

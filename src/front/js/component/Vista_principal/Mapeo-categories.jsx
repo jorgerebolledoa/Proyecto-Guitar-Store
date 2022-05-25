@@ -30,7 +30,7 @@ const Mapeo_cardlateral = () => {
           img={tastk.img}
           title={tastk.name}
           text={tastk.description_1}
-          linkbtn={"/producto/" + tastk.name}
+          linkbtn={"/producto/" + tastk.id}
           textbtn="Comprar"
         />
       );
