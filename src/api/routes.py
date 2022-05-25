@@ -1,12 +1,39 @@
 """
 This module takes care of starting the API Server, Loading the DB and Adding the endpoints
 """
+import os
 from flask import Flask, request, jsonify, url_for, Blueprint
 from api.models import db, User, Role, Product, Category, Order, Order_detail, Messsage
 from api.utils import generate_sitemap, APIException
-from werkzeug.security import generate_password_hash
+from werkzeug.security import generate_password_hash, check_password_hash
+from flask_jwt_extended import JWTManager, create_access_token, jwt_required, get_jwt_identity
 
+
+# Create flask app
 api = Blueprint('api', __name__)
+
+# ------------------
+#  Login y Register
+# ------------------
+
+
+@api.route('/login', methods=['POST'])
+def login():
+    email = request.json.get("email", None)
+    password = request.json.get("password", None)
+
+    if email != "test" or password != "test":
+        return jsonfy({"messsage": "Email/Password incorrect!"}), 401
+    access_token = create_access_token(identity=email)
+    data = {"status": "Success!", "message": "Logged in succesfully!",
+            "access_token": access_token}
+    return jsonify(data), 200
+
+
+# @api.route('/register', methods=['POST'])
+# def register():
+#     pass
+
 
 # ------------------
 #              Roles
@@ -111,7 +138,11 @@ def create_products():
     products = Product()
     products.sku = request.json.get('sku')
     products.name = request.json.get('name')
-    products.img = request.json.get('img')
+    products.imgBanner = request.json.get('imgBanner')
+    products.img1 = request.json.get('img1')
+    products.img2 = request.json.get('img2')
+    products.img3 = request.json.get('img3')
+    products.img4 = request.json.get('img4')
     products.description_1 = request.json.get('description_1')
     products.description_2 = request.json.get('description_2')
     products.description_3 = request.json.get('description_3')
