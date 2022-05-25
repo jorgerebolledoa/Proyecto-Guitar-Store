@@ -22,6 +22,7 @@ const Mapeo_producto = () => {
   };
 
   return (
+    
     lista.length > 0 &&
     lista.map((tastk, index) => {
       return (

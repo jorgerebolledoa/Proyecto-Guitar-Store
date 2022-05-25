@@ -1,5 +1,4 @@
-import React from "react";
-import { useEffect } from "react";
+import React,{ useEffect, useState } from "react";
 import {
   BrowserRouter,
   Route,
@@ -27,29 +26,61 @@ import { ErrorDePago } from "./component/carroDeCompras/errorDePago.jsx";
 import { Page_login } from "./pages/login";
 import { Page_register } from "./pages/register";
 import { Page_forgot_password } from "./pages/forgot_password";
+import Cardlateral from "./component/Vista_principal/Cardlateral.jsx";
+import CardDerecha from "./component/Vista_principal/CardimgDerecha.jsx";
 //create your first component
 const ProductDetail = () => {
   const { product } = useParams();
 
   useEffect(() => {}, []);
+  const [lista, setlista] = useState([]);
+
+  const urlApi =
+    "http://localhost:3001/api/products";
+
+  useEffect(() => {
+    getTask(urlApi);
+  }, []);
+
+  const getTask = (url) => {
+    fetch(url)
+      .then((Response) => Response.json())
+      .then((data) => {
+        console.log(data);
+        setlista(data);
+      })
+      .catch((error) => console.log(error));
+  };
 
   return (
-    <div className="card ">
-      <div className="row g-0">
-        <div className="col-md-4">
-          <img
-            src="https://picsum.photos/id/237/200/300"
-            className="card-img-top"
-          />
-        </div>
-        <div className="col-md-8">
-          <h5 className="card-title">{product} </h5>
-          <p className="card-text">{product}</p>
-        </div>
-      </div>
-    </div>
+    
+    lista.length > 0 &&
+    lista.map((tastk, index) => {
+      return (tastk.name=product? <>
+      <Cardlateral
+        key={tastk.id}
+        img={tastk.img}
+        title={tastk.name}
+        text={tastk.description_1}
+        linkbtn={"/producto/" + tastk.name}
+        textbtn="Comprar"
+      />
+      <CardDerecha
+        key={tastk.id}
+        img={tastk.img}
+        title={tastk.name}
+        text={tastk.description_1}
+        linkbtn={"/producto/" + tastk.name}
+        textbtn="Comprar"
+      />
+      </> :""
+        
+      );
+    })
   );
 };
+
+  
 
 const Layout = () => {
   //the basename is used when your project is published in a subdirectory and not in the root of the domain
