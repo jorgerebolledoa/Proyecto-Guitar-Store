@@ -12,7 +12,6 @@ import { Home } from "./pages/home";
 import { Contacto } from "./pages/Contacto.jsx";
 import { Producto } from "./pages/producto";
 import { Comparar } from "./pages/comparar";
-import { X250page } from "./pages/X250";
 import { EditPostAdm } from "./component/Admin/EditPostAdm.jsx";
 import { UploadAdm } from "./component/Admin/UploadAdm.jsx";
 import { UsersViewAdm } from "./component/Admin/UsersViewAdm.jsx";
@@ -72,9 +71,6 @@ const Layout = () => {
             <Route exact path="/producto/:product">
               <ProductDetail />
             </Route>
-            <Route exact path="/X250">
-              <X250page />
-            </Route>
             <Route exact path="/Comparar">
               <Comparar />
             </Route>
@@ -113,9 +109,6 @@ const Layout = () => {
             </Route>
             <Route path="/contactadmin">
               <ContactViewAdm />
-            </Route>
-            <Route>
-              <h1>Not found!</h1>
             </Route>
             <Route>
               <h1>Not found!</h1>

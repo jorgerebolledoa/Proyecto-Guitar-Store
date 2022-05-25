@@ -32,6 +32,7 @@ const Mapeo_Carousel = () => {
               <div
                 className={"carousel-item " + (index == 0 ? "active" : "")}
                 data-bs-interval="2000"
+                key={tastk.id}
               >
                 <img src={tastk.img} className="d-block w-100" alt="..." />
               </div>

@@ -25,8 +25,8 @@ export const Home = () => {
                 img={X250}
                 title="Card title"
                 text="Some quick example text to build on the card"
-                linkbtn="/product1"
-                textbtn="product1"
+                linkbtn="/producto1"
+                textbtn="producto/1"
               />
             </div>
             <div className=" col-12 p-1">
@@ -34,8 +34,8 @@ export const Home = () => {
                 img={X250}
                 title="Card title"
                 text="Some quick example text to build on the card"
-                linkbtn="/product2"
-                textbtn="product2"
+                linkbtn="/producto2"
+                textbtn="producto/2"
               />
             </div>
             <div className=" col-12 p-1">
@@ -43,8 +43,8 @@ export const Home = () => {
                 img={X250}
                 title="Card title"
                 text="Some quick example text to build on the card"
-                linkbtn="/product3"
-                textbtn="product3"
+                linkbtn="/producto3"
+                textbtn="producto/3"
               />
             </div>
           </>

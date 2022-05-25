@@ -1,7 +1,7 @@
 import React, { useContext, useState, useEffect } from "react";
 import Cardlateral from "./Cardlateral.jsx";
 
-const Mapeo_cardlateral = () => {
+const Mapeo_producto = () => {
   const [lista, setlista] = useState([]);
 
   const urlApi =
@@ -25,6 +25,7 @@ const Mapeo_cardlateral = () => {
     lista.length > 0 &&
     lista.map((tastk, index) => {
       return (
+        <>
         <Cardlateral
           key={tastk.id}
           img={tastk.img}
@@ -33,8 +34,17 @@ const Mapeo_cardlateral = () => {
           linkbtn={"/producto/" + tastk.name}
           textbtn="Comprar"
         />
+        <CardDerecha
+          key={tastk.id}
+          img={tastk.img}
+          title={tastk.name}
+          text={tastk.description_1}
+          linkbtn={"/producto/" + tastk.name}
+          textbtn="Comprar"
+        />
+        </>
       );
     })
   );
 };
-export default Mapeo_cardlateral;
+export default Mapeo_producto;
