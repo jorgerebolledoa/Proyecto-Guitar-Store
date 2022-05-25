@@ -39,7 +39,6 @@ def login():
 #              Roles
 # ------------------
 
-
 @api.route("/roles", methods=['GET'])
 def get_roles():
     roles = Role.query.all()
@@ -137,7 +136,7 @@ def create_products():
     products = Product()
     products.sku = request.json.get('sku')
     products.name = request.json.get('name')
-    products.imgBanner = request.json.get('imgBanner')
+    products.img_banner = request.json.get('img_banner')
     products.img1 = request.json.get('img1')
     products.img2 = request.json.get('img2')
     products.img3 = request.json.get('img3')
@@ -162,7 +161,11 @@ def update_products(products_id):
     products = Product.query.get(products_id)
     products.sku = request.json.get('sku')
     products.name = request.json.get('name')
-    products.img = request.json.get('img')
+    products.img_banner = request.json.get('img_banner')
+    products.img1 = request.json.get('img1')
+    products.img2 = request.json.get('img2')
+    products.img3 = request.json.get('img3')
+    products.img4 = request.json.get('img4')
     products.description_1 = request.json.get('description_1')
     products.description_2 = request.json.get('description_2')
     products.description_3 = request.json.get('description_3')
