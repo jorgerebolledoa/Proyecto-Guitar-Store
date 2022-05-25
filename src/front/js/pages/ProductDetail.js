@@ -9,8 +9,7 @@ export const ProductDetail = () => {
 
   useEffect(() => { }, []);
   const [lista, setlista] = useState([]);
-  const urlApi =
-    "http://localhost:3001/api/products";
+  const urlApi = "http://localhost:3001/api/products/id/" + product
   useEffect(() => {
     getTask(urlApi);
   }, []);
@@ -24,37 +23,46 @@ export const ProductDetail = () => {
       .catch((error) => console.log(error));
   };
   return (
-    lista.length > 0 &&
-    lista.map((tastk, index) => {
-      console.log(product)
-      if (tastk.name == product) {
-        return (
-          <>
-            <Cardlateral
-              key={tastk.id}
-              img={tastk.img}
-              title={tastk.name}
-              text={tastk.description_1}
-              linkbtn={"/producto/" + tastk.name}
-              textbtn="Comprar"
-            />
-            <CardDerecha
-              key={tastk.id + 1}
-              img={tastk.img}
-              title={tastk.name}
-              text={tastk.description_2}
-              linkbtn={"/producto/" + tastk.name}
-              textbtn="Comprar"
-            />
 
-          </>
-
-        )
-
-      }
-      else {
-        console.log("no entro al if")
-      }
-    })
-  );
-};
+    <div className="container " key={lista.id}>
+      <div className="row ">
+        <div className="col-12 col-md-12">
+          <Cardlateral
+            img={lista.img}
+            title={lista.name}
+            text={lista.description_1}
+            linkbtn={"/producto/" + lista.name}
+            textbtn="Comprar"
+          />
+        </div>
+        <div className="col-12 col-md-12">
+          <CardDerecha
+            img={lista.img}
+            title={lista.name}
+            text={lista.description_2}
+            linkbtn={"/producto/" + lista.name}
+            textbtn="Comprar"
+          />
+        </div>
+        <div className="col-12 col-md-12">
+          <Cardlateral
+            img={lista.img}
+            title={lista.name}
+            text={lista.description_1}
+            linkbtn={"/producto/" + lista.name}
+            textbtn="Comprar"
+          />
+        </div>
+        <div className="col-12 col-md-12">
+          <CardDerecha
+            img={lista.img}
+            title={lista.name}
+            text={lista.description_2}
+            linkbtn={"/producto/" + lista.name}
+            textbtn="Comprar"
+          />
+        </div>
+      </div>
+    </div>
+  )
+}
