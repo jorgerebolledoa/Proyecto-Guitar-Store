@@ -10,8 +10,8 @@ export const Page_login = () => {
     <>
       <Login
         logo2="Login"
-        // lg_username="Username"
-        // lg_password=" Password"
+        lg_username="Username"
+        lg_password=" Password"
         lg_remember="Remember me."
         text_preg1="Forgot your password?"
         text_preg2="Dont have account?"

@@ -67,11 +67,11 @@ class Product(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     sku = db.Column(db.String(50), nullable=False)
     name = db.Column(db.String(50), nullable=False)
-    imgBanner = db.Column(db.String(2500), nullable=False)
-    img1 = db.Column(db.String(2500), nullable=False)
-    img2 = db.Column(db.String(2500), nullable=False)
-    img3 = db.Column(db.String(2500), nullable=False)
-    img4 = db.Column(db.String(2500), nullable=False)
+    img_banner = db.Column(db.String(2500), nullable=True)
+    img1 = db.Column(db.String(2500), nullable=True)
+    img2 = db.Column(db.String(2500), nullable=True)
+    img3 = db.Column(db.String(2500), nullable=True)
+    img4 = db.Column(db.String(2500), nullable=True)
     description_1 = db.Column(db.String(5000), nullable=False)
     description_2 = db.Column(db.String(5000), nullable=True)
     description_3 = db.Column(db.String(5000), nullable=True)
@@ -90,7 +90,7 @@ class Product(db.Model):
             "id": self.id,
             "sku": self.sku,
             "name": self.name,
-            "imgBanner": self.imgBanner,
+            "img_banner": self.img_banner,
             "img1": self.img1,
             "img2": self.img2,
             "img3": self.img3,
