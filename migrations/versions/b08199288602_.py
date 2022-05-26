@@ -1,8 +1,8 @@
 """empty message
 
-Revision ID: 404e5319a3d9
+Revision ID: b08199288602
 Revises: 
-Create Date: 2022-05-20 19:56:03.569453
+Create Date: 2022-05-26 10:07:02.535049
 
 """
 from alembic import op
@@ -10,7 +10,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = '404e5319a3d9'
+revision = 'b08199288602'
 down_revision = None
 branch_labels = None
 depends_on = None
@@ -35,17 +35,21 @@ def upgrade():
     sa.Column('id', sa.Integer(), nullable=False),
     sa.Column('sku', sa.String(length=50), nullable=False),
     sa.Column('name', sa.String(length=50), nullable=False),
-    sa.Column('img', sa.String(length=250), nullable=False),
-    sa.Column('description_1', sa.String(length=2500), nullable=False),
-    sa.Column('description_2', sa.String(length=2500), nullable=False),
-    sa.Column('description_3', sa.String(length=2500), nullable=False),
-    sa.Column('description_4', sa.String(length=2500), nullable=False),
+    sa.Column('imgBanner', sa.String(length=2500), nullable=False),
+    sa.Column('img1', sa.String(length=2500), nullable=False),
+    sa.Column('img2', sa.String(length=2500), nullable=False),
+    sa.Column('img3', sa.String(length=2500), nullable=False),
+    sa.Column('img4', sa.String(length=2500), nullable=False),
+    sa.Column('description_1', sa.String(length=5000), nullable=False),
+    sa.Column('description_2', sa.String(length=5000), nullable=True),
+    sa.Column('description_3', sa.String(length=5000), nullable=True),
+    sa.Column('description_4', sa.String(length=5000), nullable=True),
     sa.Column('tittle_description_1', sa.String(length=500), nullable=False),
-    sa.Column('tittle_description_2', sa.String(length=500), nullable=False),
-    sa.Column('tittle_description_3', sa.String(length=500), nullable=False),
-    sa.Column('tittle_description_4', sa.String(length=500), nullable=False),
+    sa.Column('tittle_description_2', sa.String(length=500), nullable=True),
+    sa.Column('tittle_description_3', sa.String(length=500), nullable=True),
+    sa.Column('tittle_description_4', sa.String(length=5000), nullable=True),
     sa.Column('price', sa.String(length=50), nullable=False),
-    sa.Column('thumbnail', sa.String(length=500), nullable=False),
+    sa.Column('thumbnail', sa.String(length=5000), nullable=False),
     sa.Column('category_id', sa.Integer(), nullable=True),
     sa.ForeignKeyConstraint(['category_id'], ['categories.id'], ),
     sa.PrimaryKeyConstraint('id')
@@ -59,7 +63,8 @@ def upgrade():
     sa.Column('default_shipping_address', sa.String(length=200), nullable=False),
     sa.Column('role_id', sa.Integer(), nullable=True),
     sa.ForeignKeyConstraint(['role_id'], ['roles.id'], ),
-    sa.PrimaryKeyConstraint('id')
+    sa.PrimaryKeyConstraint('id'),
+    sa.UniqueConstraint('email')
     )
     op.create_table('messages',
     sa.Column('id', sa.Integer(), nullable=False),

@@ -2,8 +2,8 @@ import React, { useContext, useState, useEffect } from "react";
 const Mapeo_Carousel = () => {
   const [lista, setlista] = useState([]);
 
-  const urlApi =
-    "http://localhost:3001/api/products";
+  const urlApi =  "https://3001-jorgereboll-proyectofin-f5wtyul2spl.ws-us46.gitpod.io/api/products";
+
 
   useEffect(() => {
     getTask(urlApi);
@@ -34,7 +34,7 @@ const Mapeo_Carousel = () => {
                 data-bs-interval="2000"
                 key={tastk.id}
               >
-                <img src={tastk.img} className="d-block w-100" alt="..." />
+                <img src={tastk.img1} className="d-block w-100" alt="..." />
               </div>
             );
           })}

@@ -5,7 +5,7 @@ const Mapeo_producto = () => {
   const [lista, setlista] = useState([]);
 
   const urlApi =
-    "http://localhost:3001/api/products";
+    "https://3001-jorgereboll-proyectofin-f5wtyul2spl.ws-us46.gitpod.io/api/products";
 
   useEffect(() => {
     getTask(urlApi);
@@ -29,7 +29,7 @@ const Mapeo_producto = () => {
         <>
         <Cardlateral
           key={tastk.id}
-          img={tastk.img}
+          img={tastk.img1}
           title={tastk.name}
           text={tastk.description_1}
           linkbtn={"/producto/" + tastk.name}
@@ -37,7 +37,7 @@ const Mapeo_producto = () => {
         />
         <CardDerecha
           key={tastk.id}
-          img={tastk.img}
+          img={tastk.img2}
           title={tastk.name}
           text={tastk.description_1}
           linkbtn={"/producto/" + tastk.name}

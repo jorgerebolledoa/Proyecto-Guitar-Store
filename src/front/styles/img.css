@@ -1,0 +1,9 @@
+body{
+    background: red;
+}
+img{
+    width: 500px;
+    height: 500px;
+    object-fit: contain;
+    
+}   
