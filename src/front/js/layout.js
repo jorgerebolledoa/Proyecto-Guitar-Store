@@ -7,7 +7,6 @@ import {
 import ScrollToTop from "./component/scrollToTop";
 import { Home } from "./pages/home";
 import { Contacto } from "./pages/Contacto.jsx";
-import { Producto } from "./pages/producto";
 import { Comparar } from "./pages/comparar";
 import { EditPostAdm } from "./component/Admin/EditPostAdm.jsx";
 import { UploadAdm } from "./component/Admin/UploadAdm.jsx";
@@ -40,9 +39,6 @@ const Layout = () => {
           <Switch>
             <Route exact path="/">
               <Home />
-            </Route>
-            <Route exact path="/Producto">
-              <Producto />
             </Route>
             <Route exact path="/producto/:product">
               <ProductDetail />
