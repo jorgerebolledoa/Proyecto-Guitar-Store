@@ -27,6 +27,7 @@ import { Page_login } from "./pages/login";
 import { Page_register } from "./pages/register";
 import { Page_forgot_password } from "./pages/forgot_password";
 import { ProductDetail } from "./pages/ProductDetail";
+import { CategoriaDetail } from "./pages/CategoriaDetail";
 
 //create your first component
 
@@ -50,6 +51,9 @@ const Layout = () => {
             </Route>
             <Route exact path="/producto/:product">
               <ProductDetail />
+            </Route>
+            <Route exact path="/categoria/:id_categori">
+              <CategoriaDetail />
             </Route>
             <Route exact path="/Comparar">
               <Comparar />

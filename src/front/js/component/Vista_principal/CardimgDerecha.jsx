@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 const CardDerecha = (props) => {
   return (
-    <div className="card p-5 border-0 ">
+    <div className="card p-5 border-0 rounded-0 ">
       <div className="row g-0">
         <div className="col-md-8">
           <h5 className="card-title text-center">{props.title}</h5>

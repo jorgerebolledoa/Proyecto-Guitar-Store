@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 const CardComparacion = (props) => {
   return (
-    <div className="card border-0">
+    <div className="card border-0 rounded-0">
       <img src={props.img} className="card-img-top" />
       <div className="card-body">
         <select className="form-select" aria-label="Default select example">

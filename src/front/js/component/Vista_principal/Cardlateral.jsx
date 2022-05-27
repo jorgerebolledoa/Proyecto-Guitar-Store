@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 const Cardlateral = (props) => {
   return (
-    <div className="card p-5 border-0">
+    <div className="card p-5 border-0 rounded-0">
       <div className="row g-0">
         <div className="col-md-4 p-2">
           <img src={props.img} className="card-img-top " />

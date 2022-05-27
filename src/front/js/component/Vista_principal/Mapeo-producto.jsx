@@ -32,7 +32,7 @@ const Mapeo_producto = () => {
           img={tastk.img1}
           title={tastk.name}
           text={tastk.description_1}
-          linkbtn={"/producto/" + tastk.name}
+          linkbtn={"/producto/" + tastk.id}
           textbtn="Comprar"
         />
         <CardDerecha
@@ -40,7 +40,7 @@ const Mapeo_producto = () => {
           img={tastk.img2}
           title={tastk.name}
           text={tastk.description_1}
-          linkbtn={"/producto/" + tastk.name}
+          linkbtn={"/producto/" + tastk.id}
           textbtn="Comprar"
         />
         </>
