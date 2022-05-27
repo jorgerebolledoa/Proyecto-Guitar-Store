@@ -142,18 +142,6 @@ def get_products():
 def get_products_by_category_id(category_id):
     products = Product.query.filter_by(category_id)
     return jsonify(products.serialize()), 200
-    
-
-@api.route("/products/id_categori/<int:category_id>", methods=['GET'])
-def get_products_by_category_id(category_id):
-    products = Product.query.get(category_id)
-    return jsonify(products.serialize()), 200
-
-
-@api.route("/products/id_categori/<int:category_id>", methods=['GET'])
-def get_products_by_category_id(category_id):
-    products = Product.query.get(category_id)
-    return jsonify(products.serialize()), 200
 
 
 @api.route('/products', methods=['POST'])
