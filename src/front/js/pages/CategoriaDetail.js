@@ -3,12 +3,13 @@ import "../../styles/img.css";
 import CardDerecha from "../component/Vista_principal/CardimgDerecha.jsx";
 import Cardlateral from "../component/Vista_principal/Cardlateral.jsx";
 import { useParams } from "react-router-dom";
+import Card from "../component/Vista_principal/Card.jsx";
 export const CategoriaDetail = () => {
     const { id_categori } = useParams();
 
     useEffect(() => { }, []);
     const [lista, setlista] = useState([]);
-    const urlApi = "https://3001-jorgereboll-proyectofin-f5wtyul2spl.ws-us46.gitpod.io/api/products/id/" + id_categori
+    const urlApi = "https://3001-jorgereboll-proyectofin-f5wtyul2spl.ws-us46.gitpod.io/api/products/id_categori/" + id_categori
     useEffect(() => {
         getTask(urlApi);
     }, []);
@@ -22,46 +23,19 @@ export const CategoriaDetail = () => {
             .catch((error) => console.log(error));
     };
     return (
-
-        <div className="container  " key={lista.id}>
-            <div className="row ">
-                <div className="col-12 col-md-12">
-                    <Cardlateral
-                        img={lista.img1}
-                        title={lista.name}
-                        text={lista.description_1}
-                        linkbtn={"/producto/" + lista.name}
+        lista.length > 0 &&
+        lista.map((tastk, index) => {
+            return (
+                <div key={tastk.id}>
+                    <Card
+                        img={tastk.img1}
+                        title={tastk.name}
+                        text={tastk.description}
+                        linkbtn={"/categoria/" + tastk.id}
                         textbtn="Comprar"
                     />
                 </div>
-                <div className="col-12 col-md-12">
-                    <CardDerecha
-                        img={lista.img2}
-                        title={lista.name}
-                        text={lista.description_2}
-                        linkbtn={"/producto/" + lista.name}
-                        textbtn="Comprar"
-                    />
-                </div>
-                <div className="col-12 col-md-12">
-                    <Cardlateral
-                        img={lista.img3}
-                        title={lista.name}
-                        text={lista.description_3}
-                        linkbtn={"/producto/" + lista.name}
-                        textbtn="Comprar"
-                    />
-                </div>
-                <div className="col-12 col-md-12">
-                    <CardDerecha
-                        img={lista.img4}
-                        title={lista.name}
-                        text={lista.description_4}
-                        linkbtn={"/producto/" + lista.name}
-                        textbtn="Comprar"
-                    />
-                </div>
-            </div>
-        </div>
-    )
-}
+            );
+        })
+    );
+};
