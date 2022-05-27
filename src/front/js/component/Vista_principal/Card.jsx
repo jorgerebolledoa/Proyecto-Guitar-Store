@@ -11,7 +11,7 @@ const Card = (props) => {
         <div className="col-md-8">
           <h5 className="card-title">{props.title} </h5>
           <p className="card-text">{props.text}</p>
-          <a href={props.linkbtn} className="btn btn-primary">
+          <a href={props.linkbtn} className="btn btn-warning">
             {props.textbtn}
           </a>
         </div>

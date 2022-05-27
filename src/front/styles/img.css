@@ -1,9 +1,8 @@
 body{
-    background: rgb(148, 148, 148);
+    background:white;
 }
 img{
     width: 500px;
     height: 500px;
     object-fit: contain;
-    
 }   

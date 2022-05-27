@@ -3,7 +3,6 @@ import Card from "../component/Vista_principal/Card.jsx";
 import X250 from "../../img/X250BKfull.png";
 import React, { useEffect, useState } from "react";
 export const Home = () => {
-
   useEffect(() => { }, []);
   const [lista, setlista] = useState([]);
   const urlApi = "https://3001-jorgereboll-proyectofin-f5wtyul2spl.ws-us46.gitpod.io/api/categories"
