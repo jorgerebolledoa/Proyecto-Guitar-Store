@@ -3,12 +3,22 @@ import "../../styles/home.css";
 import Card from "../component/Vista_principal/Card.jsx";
 import X250 from "../../img/X250BKfull.png";
 import Carousel from "../component/Vista_principal/Carousel.jsx";
+//import {Context} from "../store/appContext";
+//import { useEffect,useContext } from "react";
 
 export const Home = () => {
+
+//  const {store, actions} = useContext(Context)
+
+//  useEffect(() =>{
+//    if (store.token && store.token != "" && store.token != undefined) actions.getMessage();
+//  },[store.token]);
+  
   return (
     <>
       <Carousel img={X250} img2={X250} img3={X250} />
       <div className="container">
+       {/* <div className="alert alert-info">{store.message}</div>*/}
         <div className="row mb-2">
           <>
             <div className=" col-12 p-1 ">
