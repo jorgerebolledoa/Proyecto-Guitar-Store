@@ -141,7 +141,7 @@ def get_products():
 @api.route("/products/id/<int:products_id>", methods=['GET'])
 def get_products_by_id(products_id):
     products = Product.query.get(products_id)
-    return jsonify(products.serialize()), 20
+    return jsonify(products.serialize()), 200
 
 
 @api.route("/products/id_categori/<int:category_id>", methods=['GET'])
