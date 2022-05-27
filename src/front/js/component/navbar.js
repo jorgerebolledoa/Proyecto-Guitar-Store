@@ -2,8 +2,10 @@ import React, { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import { GiGuitarHead } from "react-icons/gi";
 import { FaShoppingCart } from "react-icons/fa";
+import { Context } from "../store/appContext";
 
 export const Navbar = () => {
+  const { store, actions } = useContext(Context);
   const [state, setState] = useState({
     bg: "transparent",
     variant: "dark",
@@ -73,6 +75,13 @@ export const Navbar = () => {
             <form className="d-flex me-5 " />
 
             <div className="btn-group">
+            <Link
+                  className="nav-link active text-warning"
+                  to="/producto"
+                  href="#"
+                >
+                  
+                </Link>
               <ul className="navbar-nav">
                 <li className="nav-item dropdown">
                   <a
@@ -89,11 +98,20 @@ export const Navbar = () => {
                     className="dropdown-menu dropdown-menu-dark"
                     aria-labelledby="navbarDarkDropdownMenuLink"
                   >
-                    <li>
-                      <a className="dropdown-item text-warning" href="/login">
+                  <li>
+                      {!store.token ?(
+                        <Link to="/login"  className="dropdown-item text-warning" href="/login">
                         Login
-                      </a>
-                    </li>
+                        </Link>
+                      ) : (
+                        <Link to="/" onClick={() => actions.logout()}  className="dropdown-item text-warning" href="">
+                        Logout
+                        </Link>
+                      )}
+                  </li>
+                      
+
+    
                     <li>
                       <a
                         className="dropdown-item text-warning"

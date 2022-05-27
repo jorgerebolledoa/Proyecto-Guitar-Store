@@ -1,6 +1,7 @@
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
+			token: null,
 			message: null,
 			demo: [
 				{
@@ -20,8 +21,60 @@ const getState = ({ getStore, getActions, setStore }) => {
 			exampleFunction: () => {
 				getActions().changeColor(0, "green");
 			},
+			syncTokenFromsessionStore: () => {
+
+				const token =sessionStorage.getItem("token");
+				console.log("aplication just loaded, synching the session storage token");
+				if(token && token != "" && token != undefined ) setStore({token:token});
+			},
+			logout: () => {
+
+				sessionStorage.removeItem("token");
+				console.log("login out ");
+				setStore({token:null});
+			},
+
+			login: async (email, password) => {
+				const opts = {
+					method: "POST",
+					headers: {
+						"Content-Type": "application/json",
+					},
+					body: JSON.stringify({
+						email: email,
+						password: password,
+					}),
+				};
+
+				try {
+
+					const resp = await fetch(
+						"https://3001-jorgereboll-proyectofin-i2smcgrquaf.ws-us46.gitpod.io/api/token",
+						opts
+					)
+					if (resp.status !== 200) {
+						alert("There has been some error"); 
+						return false;
+					}
+
+					const data = await resp.json();
+					console.log("this came from the backend", data);
+					sessionStorage.setItem("token", data.access_token);
+					setStore({token: data.access_token})
+					return true;
+				}
+				catch(error){
+					console.log("there has been an error login in")
+				}
+			},
 
 			getMessage: () => {
+				const store = getStore()
+				const opts = {
+					headers:{
+						"Authorization": "Bearer" + store.token
+					}
+				}
 				// fetching data from the backend
 				fetch(process.env.BACKEND_URL + "/api/hello")
 					.then(resp => resp.json())

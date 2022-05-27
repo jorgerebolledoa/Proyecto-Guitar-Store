@@ -210,6 +210,7 @@ export const Page_register = () => {
 								text: "Your register has been saved",
 								confirmButtonText: "Aceptar",
 								background: " ",
+							
 							})}
 					</ContenedorBoton>
 				</Form>
