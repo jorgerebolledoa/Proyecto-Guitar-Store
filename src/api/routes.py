@@ -7,7 +7,7 @@ from api.models import db, User, Role, Product, Category, Order, Order_detail, M
 from api.utils import generate_sitemap, APIException
 from werkzeug.security import generate_password_hash
 from flask_jwt_extended import create_access_token
-from flask_jwt_extended import get_jwt_identity 
+from flask_jwt_extended import get_jwt_identity
 from flask_jwt_extended import jwt_required
 
 
@@ -17,6 +17,7 @@ api = Blueprint('api', __name__)
 # ------------------
 #  Login y Register
 # ------------------
+
 
 @api.route('/token', methods=['POST'])
 def create_token():
@@ -140,6 +141,12 @@ def get_products():
 @api.route("/products/id/<int:products_id>", methods=['GET'])
 def get_products_by_id(products_id):
     products = Product.query.get(products_id)
+    return jsonify(products.serialize()), 200
+
+
+@api.route("/products/id_categori/<int:category_id>", methods=['GET'])
+def get_products_by_category_id(category_id):
+    products = Product.query.get(category_id)
     return jsonify(products.serialize()), 200
 
 
