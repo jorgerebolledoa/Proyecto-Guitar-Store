@@ -20,6 +20,7 @@ import injectContext from "./store/appContext";
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
 import { CarroDeCompras } from "./pages/carroDeCompras.js";
+import { CartItem } from "./component/carroDeCompras/CartItem.jsx";
 import { CarroDeComprasVacio } from "./component/carroDeCompras/VistaCarroVacio.jsx";
 import { FormularioDePago } from "./component/carroDeCompras/FormularioDePago.jsx";
 import { ErrorDePago } from "./component/carroDeCompras/ErrorDePago.jsx";
@@ -28,9 +29,6 @@ import { Page_register } from "./pages/register";
 import { Page_forgot_password } from "./pages/forgot_password";
 import { ProductDetail } from "./pages/ProductDetail";
 import { CategoriaDetail } from "./pages/CategoriaDetail";
-
-//create your first component
-
 
 const Layout = () => {
   //the basename is used when your project is published in a subdirectory and not in the root of the domain
@@ -75,6 +73,9 @@ const Layout = () => {
             </Route>
             <Route path="/carroDeComprasVacio">
               <CarroDeComprasVacio />
+            </Route>
+            <Route path="/cartItem">
+              <CartItem />
             </Route>
             <Route path="/errorDePago">
               <ErrorDePago />

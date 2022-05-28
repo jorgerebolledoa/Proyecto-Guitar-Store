@@ -9,7 +9,7 @@ from werkzeug.security import generate_password_hash
 from flask_jwt_extended import create_access_token
 from flask_jwt_extended import get_jwt_identity
 from flask_jwt_extended import jwt_required
- 
+
 
 # Create flask app
 api = Blueprint('api', __name__)
@@ -149,8 +149,6 @@ def get_products_by_category_id(category_id):
     products = Product.query.filter_by(category_id=category_id)
     products = list(map(lambda product: product.serialize(), products))
     return jsonify(products), 200
-
-
 
 
 @api.route('/products', methods=['POST'])
