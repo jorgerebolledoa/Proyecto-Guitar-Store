@@ -1,8 +1,8 @@
 import React from "react";
 import { AiFillMinusCircle } from "react-icons/ai";
-import { Link } from "react-router-dom/cjs/react-router-dom.min";
 
-export const CardProductosDelCarro = ({ data, addToCart, key }) => {
+export const CardProductosDelCarro = ({ data, addToCart }) => {
+  let { id, name, price } = data;
   return (
     <>
       <div className="cajaProducto card mx-auto flex-row mb-5  ">
@@ -13,10 +13,10 @@ export const CardProductosDelCarro = ({ data, addToCart, key }) => {
           alt="producto"
         />
         <div className="cajaDescripcionProducto card-body ">
-          <h5 className="text-white">{key}</h5>
-          <p className="card-text text-warning">{data}</p>
-          <h5 className="h5codigo text-white">Código guitarra</h5>
-          <button>{addToCart}</button>
+          <h5 className="text-white">{name}</h5>
+          <p className="card-text text-warning">{price}</p>
+          <h5 className="h5codigo text-white">{id} Codigo</h5>
+          <button onClick={() => addToCart(id)}>ADD</button>
         </div>
       </div>
     </>

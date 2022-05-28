@@ -1,23 +1,31 @@
 import React from "react";
-import { Link } from "react-router-dom/cjs/react-router-dom.min";
-import { useReducer } from "react/cjs/react.production.min";
+import { Link } from "react-router-dom";
+import { useReducer } from "react";
 import { CardProductosDelCarro } from "../component/carroDeCompras/CardProductosDelCarro.jsx";
+import { CartItem } from "../component/carroDeCompras/CartItem.jsx";
 import { carroDeComprasInitialState, carroDeComprasReducer } from "../component/reducersCarroDeCompras/carroDeCompraReducer.js";
+import { TYPES } from "../component/reducersCarroDeCompras/carroDeComprasActions.js";
 
 export const CarroDeCompras = () => {
   const [state, dispatch] = useReducer(carroDeComprasReducer, carroDeComprasInitialState);
 
   const { products, cart } = state;
 
-  const addToCart = () => { };
-  const deleteFromCart = () => { };
-  const cletCart = () => { };
-
+  const addToCart = (id) => {
+    // console.log(id)
+    dispatch({ type: TYPES.ADD_TO_CART, payload: id })
+  };
+  const deleteFromCart = (id) => {
+    dispatch({ type: TYPES.REMOVE_ONE_FROM_CART, payload: id })
+  };
+  const clearCart = () => {
+    dispatch({ type: TYPES.CLEAR_CART })
+  };
   return (
     <>
       <div className="container-fluid mx-0 bg-dark pb-5">
         <h1 className="tituloCarro text-warning mx-auto">
-          Tu carro{" "}
+          Tu carro{" "} <button onClick={() => clearCart()}>Limpiar Carro</button>
           <Link
             className="LinkCarro btn btn-outline"
             to="/carroDeComprasVacio"
@@ -37,7 +45,7 @@ export const CarroDeCompras = () => {
           <hr />
           <span className="col-6">Total:</span>
           <span className="col-6 start-0 ">$2998</span>
-
+          {cart.map((item, index) => (<CartItem key={index} data={item} deleteFromCart={deleteFromCart} />))}
           <button
             type="button"
             className="botonPagar button btn btn-lg col-4  mt-5 rounded-pill text-white"

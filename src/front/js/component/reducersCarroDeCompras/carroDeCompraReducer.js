@@ -1,4 +1,5 @@
 import { TYPES } from "./carroDeComprasActions";
+import react from "react";
 
 export const carroDeComprasInitialState = {
     products: [{
@@ -22,16 +23,44 @@ export const carroDeComprasInitialState = {
 export function carroDeComprasReducer(state, actions) {
     switch (actions.type) {
         case TYPES.ADD_TO_CART: {
+            let newItem = state.products.find(
+                product => product.id === actions.payload);
+            let itemAddedInCart = state.cart.find((item) => item.id === newItem.id)
+
+            return itemAddedInCart ?
+                {
+                    ...state,
+                    cart: state.cart.map((item) => item.id === newItem.id ? { ...item, quantity: item.quantity + 1 }
+                        : item)
+                } :
+                {
+                    ...state,
+                    cart: [...state.cart, { ...newItem, quantity: 1 }]
+                }
+
 
         }
         case TYPES.REMOVE_ONE_FROM_CART: {
+            let newItem = state.products.find(
+                product => product.id === actions.payload);
+            let itemAddedInCart = state.cart.find((item) => item.id === newItem.id)
 
+            return itemAddedInCart ?
+                {
+                    ...state,
+                    cart: state.cart.map((item) => item.id === newItem.id ? { ...item, quantity: item.quantity - 1 }
+                        : item)
+                } :
+                {
+                    ...state,
+                    cart: [...state.cart, { ...newItem, quantity: 1 }]
+                }
         }
         case TYPES.REMOVE_ALL_FROM_CART: {
 
         }
         case TYPES.CLEAR_CART: {
-
+            return carroDeComprasInitialState
         }
         default:
             return state;
