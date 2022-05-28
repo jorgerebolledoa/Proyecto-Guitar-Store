@@ -1,4 +1,5 @@
-import React, { useContext,useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
+import { useHistory } from "react-router-dom";
 import { Context } from "../store/appContext";
 import {
 	Form,
@@ -9,15 +10,15 @@ import {
 	MsjeError,
 } from "../component/Formularios";
 import Input from "../component/input";
-import Swal from "sweetalert2";
+//import Swal from "sweetalert2";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faExclamationTriangle } from "@fortawesome/free-solid-svg-icons";
 
 
 export const Page_register = () => {
-    const { store, actions } = useContext(Context);
-
-    const [name, cambiarName] = useState({ campo: "", valido: null });
+	const { store, actions } = useContext(Context);
+	const history = useHistory();
+	const [name, cambiarName] = useState({ campo: "", valido: null });
 	const [email, cambiarEmail] = useState({ campo: "", valido: null });
 	const [username, cambiarUsername] = useState({ campo: "", valido: null });
 	const [street, cambiarStreet] = useState({ campo: "", valido: null });
@@ -59,8 +60,27 @@ export const Page_register = () => {
 		cambiarTerms(e.target.checked);
 	};
 
+
+	const url = "https://3001-jorgereboll-proyectofin-b4kaxoo2l69.ws-us46.gitpod.io/api/users";
+	const data = {};
+
+	console.log (data)
+
+	fetch (url,{
+		method: "POST",
+		body: JSON.stringify(data),
+		headers:{
+			"Content-Tye": "application/json"
+		}
+		
+	}).then (res => res.json ())
+		.catch (error => console.error("Error:",error))
+		.then (response => console.log ("succes:",response));
+
+
 	const onSubmit = (e) => {
 		e.preventDefault();
+
 
 		if (
 			name.valido === "true" &&
@@ -86,8 +106,33 @@ export const Page_register = () => {
 			cambiarConfirm({ campo: "", valido: "" });
 		} else {
 			cambiarForm_valido(false);
+
 		}
+
+
+
+
+	//	useEffect(() => {
+
+	//	}, []);
+
+	//	fetch("https://3001-jorgereboll-proyectofin-b4kaxoo2l69.ws-us46.gitpod.io/api/users", {
+	//		method: "POST",
+	//		headers: { "Content-Type": "application/json" },
+	//		body: JSON.stringify(useState)
+	//	}).then(() => {
+	//		console.log("Nuevo usuario");
+	//		//	history.go(-1);
+	//	})
 	};
+
+
+
+
+
+
+
+
 
 	return (
 		<div className="container-fluid Container_reg  m-0 p-0">
@@ -98,7 +143,7 @@ export const Page_register = () => {
 						cambiarEstado={cambiarName}
 						tipo="text"
 						id="name"
-						placeholder="Full Name"
+						placeholder="Nombre completo"
 						MsjeError="debe ser full name loco"
 						expresionRegular={expresiones.name}
 					/>
@@ -107,7 +152,7 @@ export const Page_register = () => {
 						cambiarEstado={cambiarEmail}
 						tipo="text"
 						id="email"
-						placeholder="Enter email address"
+						placeholder="Correo electronico"
 						MsjeError="debe ser full name loco"
 						expresionRegular={expresiones.email}
 					/>
@@ -116,7 +161,7 @@ export const Page_register = () => {
 						cambiarEstado={cambiarUsername}
 						tipo="text"
 						id="username"
-						placeholder="Username"
+						placeholder="Nombre de usuario"
 						MsjeError="debe ser full name loco"
 						expresionRegular={expresiones.username}
 					/>
@@ -125,7 +170,7 @@ export const Page_register = () => {
 						cambiarEstado={cambiarStreet}
 						tipo="text"
 						id="street"
-						placeholder="Street Address"
+						placeholder="Direccion"
 						MsjeError="debe ser full name loco"
 						expresionRegular={expresiones.street}
 					/>
@@ -134,7 +179,7 @@ export const Page_register = () => {
 						cambiarEstado={cambiarCity}
 						tipo="text"
 						id="city"
-						placeholder="City"
+						placeholder="Ciudad"
 						MsjeError="debe ser full name loco"
 						expresionRegular={expresiones.city}
 					/>
@@ -143,7 +188,7 @@ export const Page_register = () => {
 						cambiarEstado={cambiarCountry}
 						tipo="text"
 						id="country"
-						placeholder="Country"
+						placeholder="Pais"
 						MsjeError="debe ser full name loco"
 						expresionRegular={expresiones.country}
 					/>
@@ -152,16 +197,16 @@ export const Page_register = () => {
 						cambiarEstado={cambiarPhone}
 						tipo="text"
 						id="phone"
-						placeholder="Phone Number"
+						placeholder="Numero Telefonico"
 						MsjeError="debe ser full name loco"
 						expresionRegular={expresiones.phone}
 					/>
 					<Input
 						estado={password}
 						cambiarEstado={cambiarPassword}
-						tipo="text"
+						tipo="password"
 						id="password"
-						placeholder="Password"
+						placeholder="Contraseña"
 						MsjeError="debe ser full name loco"
 						expresionRegular={expresiones.password}
 					/>
@@ -170,7 +215,7 @@ export const Page_register = () => {
 						cambiarEstado={cambiarConfirm}
 						tipo="password"
 						id="confirm_password"
-						placeholder="Confirm Password"
+						placeholder="Confirmar contraseña"
 						MsjeError="Ambas contraseñas deben ser iguales"
 						funcion={validarPassword}
 					/>
@@ -184,10 +229,10 @@ export const Page_register = () => {
 							onChange={onChangeTerms}
 						/>
 						<label form="reg_agree">
-							I agree with <a href="">terms</a>
+							Acepto los terminos <a href="">terms</a>
 						</label>
 						<p>
-							Already have an account? <a href="/login">Login here</a>
+							Tienes una cuenta? <a href="/login">Ingresa aqui</a>
 						</p>
 					</ContenedorTerminos>
 					{Form_valido === false && (
@@ -205,13 +250,8 @@ export const Page_register = () => {
 							<i className="fa fa-chevron-right">Go</i>
 						</Boton>
 						{Form_valido === true &&
-							Swal.fire({
-								title: "Register",
-								text: "Your register has been saved",
-								confirmButtonText: "Aceptar",
-								background: " ",
-							
-							})}
+							alert("impeque")
+						}
 					</ContenedorBoton>
 				</Form>
 			</main>
