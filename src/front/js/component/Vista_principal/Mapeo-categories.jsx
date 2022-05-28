@@ -1,11 +1,12 @@
 import React, { useContext, useState, useEffect } from "react";
 import Cardlateral from "./Cardlateral.jsx";
+import { useParams } from "react-router-dom";
 
 const Mapeo_cardlateral = () => {
+  const { id_categori } = useParams();
   const [lista, setlista] = useState([]);
 
-  const urlApi =
-    "https://3001-jorgereboll-proyectofin-f5wtyul2spl.ws-us46.gitpod.io/api/products";
+  const urlApi ="https://3001-jorgereboll-proyectofin-f5wtyul2spl.ws-us46.gitpod.io/api/products/id_categori/" + id_categori
 
   useEffect(() => {
     getTask(urlApi);

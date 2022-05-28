@@ -30,7 +30,7 @@ export const ProductDetail = () => {
             img={lista.img1}
             title={lista.name}
             text={lista.description_1}
-            linkbtn={"/producto/" + lista.name}
+            linkbtn={"/producto/" + lista.id}
             textbtn="Comprar"
           />
         </div>
@@ -39,7 +39,7 @@ export const ProductDetail = () => {
             img={lista.img2}
             title={lista.name}
             text={lista.description_2}
-            linkbtn={"/producto/" + lista.name}
+            linkbtn={"/producto/" + lista.id}
             textbtn="Comprar"
           />
         </div>
@@ -48,7 +48,7 @@ export const ProductDetail = () => {
             img={lista.img3}
             title={lista.name}
             text={lista.description_3}
-            linkbtn={"/producto/" + lista.name}
+            linkbtn={"/producto/" + lista.id}
             textbtn="Comprar"
           />
         </div>
@@ -57,7 +57,7 @@ export const ProductDetail = () => {
             img={lista.img4}
             title={lista.name}
             text={lista.description_4}
-            linkbtn={"/producto/" + lista.name}
+            linkbtn={"/producto/" + lista.id}
             textbtn="Comprar"
           />
         </div>
