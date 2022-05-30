@@ -37,8 +37,8 @@ export const Navbar = () => {
               <li className="nav-item">
                 <Link
                   className="nav-link active text-warning"
-                  to="/"
-                  href="#"
+                  to="/categoria/1"
+                  href="/categoria/1"
                 >
                   Cort
                 </Link>
@@ -46,8 +46,8 @@ export const Navbar = () => {
               <li className="nav-item">
                 <Link
                   className="nav-link active text-warning"
-                  to=""
-                  href="#"
+                  to="/categoria/2"
+                  href="/categoria/2"
                 >
                   Strandbergguitars
                 </Link>
@@ -55,8 +55,8 @@ export const Navbar = () => {
               <li className="nav-item dropdown">
                 <Link
                   className="nav-link active text-warning"
-                  to=""
-                  href="#"
+                  to="/categoria/3"
+                  href="/categoria/3"
                 >
                   Fender
                 </Link>
@@ -64,8 +64,8 @@ export const Navbar = () => {
               <li className="nav-item">
                 <Link
                   className="nav-link active text-warning"
-                  to=""
-                  href="#"
+                  to="/categoria/4"
+                  href="/categoria/4"
                 >
                   prsguitars
                 </Link>

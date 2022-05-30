@@ -7,11 +7,17 @@
     transform: scale(85%);
     transition: 2s;
   }
+  .a{
+    color:rgb(104, 104, 104) ;
+    text-decoration: none
+    
+  }
   
   .slider--zoom {
     opacity: 1;
     transform: scale(100%);
     transition: 2s;
+    
   }
   
   .slider__image {
@@ -30,12 +36,13 @@
   
   .slider__title {
     text-align: center;
+    
   }
   
   @media screen and (max-width: 800px) {
     .slider {
       flex-direction: column;
-      background-color: rgb(236, 236, 236);
+      background-color: rgb(255, 254, 254);
     }
   
     .slider__image {

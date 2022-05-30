@@ -16,8 +16,10 @@ const Slider = ({ img, title, text, flipped, link }) => {
                 <>
                     <a href={link} ><img src={img} alt="Img" className="slider__image" /></a>
                     <div className="slider__content">
-                        <h1 className="slider__title">{title}</h1>
-                        <p>{text}</p>
+                        <a href={link} className="a" >
+                            <h1 className="slider__title">{title}</h1>
+                            <p>{text}</p>
+                        </a>
                     </div>
                 </>
             );
@@ -25,8 +27,10 @@ const Slider = ({ img, title, text, flipped, link }) => {
             return (
                 <>
                     <div className="slider__content">
-                        <h1 className="slider__title">{title}</h1>
-                        <p>{text}</p>
+                        <a href={link} className="a" >
+                            <h1 className="slider__title">{title}</h1>
+                            <p>{text}</p>
+                        </a>
                     </div>
                     <a href={link} ><img src={img} alt="Img" className="slider__image" /></a>
                 </>

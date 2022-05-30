@@ -1,8 +1,9 @@
 import React, { useContext, useState, useEffect } from "react";
-import Cardlateral from "./Cardlateral.jsx";
-import { useParams } from "react-router-dom";
 
-const Mapeo_cardlateral = () => {
+import { useParams } from "react-router-dom";
+import Slider from "./Slider.js";
+
+const Mapeo_Categories = () => {
   const { id_categori } = useParams();
   const [lista, setlista] = useState([]);
 
@@ -26,16 +27,15 @@ const Mapeo_cardlateral = () => {
     lista.length > 0 &&
     lista.map((tastk, index) => {
       return (
-        <Cardlateral
+        <Slider
           key={tastk.id}
           img={tastk.img1}
           title={tastk.name}
           text={tastk.description_1}
-          linkbtn={"/producto/" + tastk.id}
-          textbtn="Comprar"
+          link={"/producto/" + tastk.id}
         />
       );
     })
   );
 };
-export default Mapeo_cardlateral;
+export default Mapeo_Categories;

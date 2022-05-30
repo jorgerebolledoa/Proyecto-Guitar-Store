@@ -92,7 +92,7 @@ const Layout = () => {
               <ContactViewAdm />
             </Route>
             <Route>
-              <h1>Not found!</h1>
+              <h1>Lo sentimos esta ruta no existe</h1>
             </Route>
           </Switch>
           <Footer />

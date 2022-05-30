@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "../../styles/img.css";
-import CardDerecha from "../component/Vista_principal/CardimgDerecha.jsx";
-import Cardlateral from "../component/Vista_principal/Cardlateral.jsx";
 import { useParams } from "react-router-dom";
+import Slider from "../component/Vista_principal/Slider";
 export const ProductDetail = () => {
   const { product } = useParams();
 
@@ -22,46 +21,38 @@ export const ProductDetail = () => {
       .catch((error) => console.log(error));
   };
   return (
-
-    <div className="container  " key={lista.id}>
-      <div className="row ">
-        <div className="col-12 col-md-12">
-          <Cardlateral
-            img={lista.img1}
-            title={lista.name}
-            text={lista.description_1}
-            linkbtn={"/producto/" + lista.id}
-            textbtn="Comprar"
-          />
+    <div key={lista.id}>
+      <nav className="navbar bg-light fixed-top">
+        <div className="container-fluid">
+          <a className="navbar-brand" href="#">Comprar</a>
         </div>
-        <div className="col-12 col-md-12">
-          <CardDerecha
-            img={lista.img2}
-            title={lista.name}
-            text={lista.description_2}
-            linkbtn={"/producto/" + lista.id}
-            textbtn="Comprar"
-          />
-        </div>
-        <div className="col-12 col-md-12">
-          <Cardlateral
-            img={lista.img3}
-            title={lista.name}
-            text={lista.description_3}
-            linkbtn={"/producto/" + lista.id}
-            textbtn="Comprar"
-          />
-        </div>
-        <div className="col-12 col-md-12">
-          <CardDerecha
-            img={lista.img4}
-            title={lista.name}
-            text={lista.description_4}
-            linkbtn={"/producto/" + lista.id}
-            textbtn="Comprar"
-          />
-        </div>
-      </div>
+      </nav>
+      <Slider
+        img={lista.img1}
+        title={lista.tittle_description_1}
+        text={lista.description_1}
+        link={"/producto/" + lista.id}
+      />
+      <Slider
+        flipped={true}
+        img={lista.img2}
+        title={lista.tittle_description_2}
+        text={lista.description_2}
+        link={"/producto/" + lista.id}
+      />
+      <Slider
+        img={lista.img3}
+        title={lista.tittle_description_3}
+        text={lista.description_3}
+        link={"/producto/" + lista.id}
+      />
+      <Slider
+        flipped={true}
+        img={lista.img4}
+        title={lista.tittle_description_4}
+        text={lista.description_4}
+        link={"/producto/" + lista.id}
+      />
     </div>
   )
 }

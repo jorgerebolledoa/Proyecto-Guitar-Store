@@ -1,6 +1,6 @@
 import React, { useContext, useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-const Mapeo_Carousel = () => {
+const Mapeo_Carousel = (link) => {
   const { id_categori } = useParams();
   const [lista, setlista] = useState([]);
 

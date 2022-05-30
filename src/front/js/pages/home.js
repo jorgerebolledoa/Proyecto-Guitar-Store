@@ -1,10 +1,12 @@
 import React from "react";
-import Mapeo_Carousel from "../component/Vista_principal/Mapeo-Carousel.jsx";
+import Carousel from "../component/Vista_principal/Carousel.jsx";
 import Mapeo_Slider from "../component/Vista_principal/Mapeo-Silder";
+import X250 from "../../img/X250BKfull.png";
+
 export const Home = () => {
   return (
     <>
-      {/* <Mapeo_Carousel /> */}
+      <Carousel img={X250} />
       <Mapeo_Slider />
     </>
   );
