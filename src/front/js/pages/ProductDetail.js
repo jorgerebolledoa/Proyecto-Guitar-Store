@@ -24,7 +24,7 @@ export const ProductDetail = () => {
     <div key={lista.id}>
       <nav className="navbar bg-light fixed-top m-5">
         <div className="container-fluid">
-          <a className="navbar-brand" href="#">Comprar</a>
+          <a className="navbar-brand" href={"/carroDeCompras/" + lista.id}>Comprar</a>
         </div>
       </nav>
       <Slider

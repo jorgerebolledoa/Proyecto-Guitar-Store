@@ -66,6 +66,9 @@ const Layout = () => {
             <Route path="/carroDeCompras">
               <CarroDeCompras />
             </Route>
+            <Route path="/carroDeCompras/:id">
+              <CarroDeCompras />
+            </Route>
             <Route path="/carroDeComprasVacio">
               <CarroDeComprasVacio />
             </Route>
