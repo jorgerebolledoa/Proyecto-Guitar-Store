@@ -22,7 +22,7 @@ export const ProductDetail = () => {
   };
   return (
     <div key={lista.id}>
-      <nav className="navbar bg-light fixed-top">
+      <nav className="navbar bg-light fixed-top m-5">
         <div className="container-fluid">
           <a className="navbar-brand" href="#">Comprar</a>
         </div>
