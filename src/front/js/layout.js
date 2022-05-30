@@ -19,7 +19,6 @@ import { Footer } from "./component/footer";
 import { CarroDeCompras } from "./pages/carroDeCompras.js";
 import { CartItem } from "./component/carroDeCompras/CartItem.jsx";
 import { CarroDeComprasVacio } from "./component/carroDeCompras/VistaCarroVacio.jsx";
-import { FormularioDePago } from "./component/carroDeCompras/FormularioDePago.jsx";
 import { ErrorDePago } from "./component/carroDeCompras/ErrorDePago.jsx";
 import { Page_login } from "./pages/login";
 import { Page_register } from "./pages/register";

@@ -51,7 +51,10 @@ export function carroDeComprasReducer(state, actions) {
             }
         }
         case TYPES.REMOVE_ALL_FROM_CART: {
-
+            return {
+                ...state,
+                cart: state.cart.filter(item => item.id !== actions.payload)
+            }
         }
         case TYPES.CLEAR_CART: {
             return carroDeComprasInitialState
