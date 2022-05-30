@@ -1,5 +1,5 @@
 import React from "react";
-import { AiFillMinusCircle } from "react-icons/ai";
+import { AiFillMinusCircle, AiTwotoneDelete } from "react-icons/ai";
 
 export const CartItem = ({ data, deleteFromCart }) => {
   let { id, name, price, quantity } = data;
@@ -22,6 +22,10 @@ export const CartItem = ({ data, deleteFromCart }) => {
           </p>
           <h5 className="h5codigo text-white"> Codigo:{id}</h5>
         </div>
+        <AiTwotoneDelete
+          onClick={() => deleteFromCart(id, true)}
+          className="text-danger position-absolute top-100 start-100 translate-middle fs-2"
+        />
       </div>
     </>
   );

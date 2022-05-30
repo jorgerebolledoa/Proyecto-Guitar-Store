@@ -41,20 +41,14 @@ export function carroDeComprasReducer(state, actions) {
 
         }
         case TYPES.REMOVE_ONE_FROM_CART: {
-            let newItem = state.products.find(
-                product => product.id === actions.payload);
-            let itemAddedInCart = state.cart.find((item) => item.id === newItem.id)
-
-            return itemAddedInCart ?
-                {
-                    ...state,
-                    cart: state.cart.map((item) => item.id === newItem.id ? { ...item, quantity: item.quantity - 1 }
-                        : item)
-                } :
-                {
-                    ...state,
-                    cart: [...state.cart, { ...newItem, quantity: 1 }]
-                }
+            let itemToDelete = state.cart.find(item => item.id === actions.payload)
+            return itemToDelete.quantity > 1 ? {
+                ...state,
+                cart: state.cart.map((item) => item.id === actions.payload ? { ...item, quantity: item.quantity - 1 } : item)
+            } : {
+                ...state,
+                cart: state.cart.filter(item => item.id !== actions.payload)
+            }
         }
         case TYPES.REMOVE_ALL_FROM_CART: {
 
