@@ -7,7 +7,7 @@ No Descomentar, podrian haber conflicto con  otras clases con el mismo nombre, s
   background-repeat: no-repeat;
   background-size: cover;
   opacity: 0.9;
-  padding: 50px 0 50px 0;
+  /*padding: 50px 0 50px 0;*/
   height: 100%;
 }
 
@@ -16,7 +16,8 @@ No Descomentar, podrian haber conflicto con  otras clases con el mismo nombre, s
   background-repeat: no-repeat;
   background-size: cover;
   opacity: 0.9;
-  padding: 50px 0 50px 0;
+/*  padding: 50px 0 50px 0;*/
+
 }
 
 .Container1 {
@@ -24,7 +25,7 @@ No Descomentar, podrian haber conflicto con  otras clases con el mismo nombre, s
   background-repeat: no-repeat;
   background-size: cover;
   opacity: 0.9;
-  padding: 50px 0 50px 0;
+/* padding: 50px 0 50px 0;*/
 }
 
 a {
@@ -120,7 +121,7 @@ a:hover {
 }
 
 .logo {
-  font-size: 60px;
+  font-size: 40px;
   
 }
 

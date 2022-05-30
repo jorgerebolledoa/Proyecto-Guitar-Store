@@ -1,6 +1,7 @@
 import React, { useContext, useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import { Context } from "../store/appContext";
+
 import {
 	Form,
 	ContenedorTerminos,
@@ -10,7 +11,8 @@ import {
 	MsjeError,
 } from "../component/Formularios";
 import Input from "../component/input";
-//import Swal from "sweetalert2";
+import { GiGuitarHead } from "react-icons/gi";
+import Swal from "sweetalert2";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faExclamationTriangle } from "@fortawesome/free-solid-svg-icons";
 
@@ -20,7 +22,6 @@ export const Page_register = () => {
 	const history = useHistory();
 	const [name, cambiarName] = useState({ campo: "", valido: null });
 	const [email, cambiarEmail] = useState({ campo: "", valido: null });
-	const [username, cambiarUsername] = useState({ campo: "", valido: null });
 	const [street, cambiarStreet] = useState({ campo: "", valido: null });
 	const [city, cambiarCity] = useState({ campo: "", valido: null });
 	const [country, cambiarCountry] = useState({ campo: "", valido: null });
@@ -30,13 +31,14 @@ export const Page_register = () => {
 	const [terms, cambiarTerms] = useState(false);
 	const [Form_valido, cambiarForm_valido] = useState(null);
 
+
+
 	const expresiones = {
 		name: /^[a-zA-ZÀ-ÿ\s]{4,17}$/, // Letras y espacios, pueden llevar acentos.
 		email: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
-		username: /^[a-zA-Z0-9_-]{1,40}$/, // Letras, numeros, guion y guion_bajo
 		street: /^[a-zA-Z0-9\_\-]{4,20}$/, // Letras, numeros, guion y guion_bajo
 		city: /^[a-zA-Z0-9\_\-]{4,20}$/, // Letras, numeros, guion y guion_bajo
-		country: /^[a-zA-ZÀ-ÿ\s]{1,20}$/, // Letras y espacios, pueden llevar acentos.
+		country: /^[a-zA-ZÀ-ÿ\s]{1,15}$/, // Letras y espacios, pueden llevar acentos.
 		phone: /^\d{7,16}$/, // 7 a 16 numeros.
 		password: /^.{4,12}$/, // 4 a 12 digitos.
 		confirm: /^.{4,12}$/, // 4 a 12 digitos.
@@ -58,34 +60,19 @@ export const Page_register = () => {
 
 	const onChangeTerms = (e) => {
 		cambiarTerms(e.target.checked);
+
 	};
+	const handleClick = () => {
+		actions.register(name, email, street, city, country, phone, password);
 
-
-	const url = "https://3001-jorgereboll-proyectofin-b4kaxoo2l69.ws-us46.gitpod.io/api/users";
-	const data = {};
-
-	console.log (data)
-
-	fetch (url,{
-		method: "POST",
-		body: JSON.stringify(data),
-		headers:{
-			"Content-Tye": "application/json"
-		}
-		
-	}).then (res => res.json ())
-		.catch (error => console.error("Error:",error))
-		.then (response => console.log ("succes:",response));
-
+	}
 
 	const onSubmit = (e) => {
 		e.preventDefault();
 
-
 		if (
 			name.valido === "true" &&
 			email.valido === "true" &&
-			username.valido === "true" &&
 			street.valido === "true" &&
 			city.valido === "true" &&
 			country.valido === "true" &&
@@ -97,7 +84,6 @@ export const Page_register = () => {
 			cambiarForm_valido(true);
 			cambiarName({ campo: "", valido: "" });
 			cambiarEmail({ campo: "", valido: "" });
-			cambiarUsername({ campo: "", valido: "" });
 			cambiarStreet({ campo: "", valido: "" });
 			cambiarCity({ campo: "", valido: "" });
 			cambiarCountry({ campo: "", valido: "" });
@@ -109,42 +95,38 @@ export const Page_register = () => {
 
 		}
 
+		//	useEffect(() => {
 
+		//	}, []);
 
+		//	fetch("https://3001-jorgereboll-proyectofin-b4kaxoo2l69.ws-us46.gitpod.io/api/users", {
+		//		method: "POST",
+		//		headers: { "Content-Type": "application/json" },
+		//		body: JSON.stringify(useState)
+		//	}).then(() => {
+		//		console.log("Nuevo usuario");
+		//		//	history.go(-1);
+		//	})
 
-	//	useEffect(() => {
-
-	//	}, []);
-
-	//	fetch("https://3001-jorgereboll-proyectofin-b4kaxoo2l69.ws-us46.gitpod.io/api/users", {
-	//		method: "POST",
-	//		headers: { "Content-Type": "application/json" },
-	//		body: JSON.stringify(useState)
-	//	}).then(() => {
-	//		console.log("Nuevo usuario");
-	//		//	history.go(-1);
-	//	})
 	};
-
-
-
-
-
-
-
-
 
 	return (
 		<div className="container-fluid Container_reg  m-0 p-0">
+			<div className="login text-center mb-0">
+				<div className="logo text-warning m-1">
+					<GiGuitarHead />
+				</div>
+				<div className="logo2 text-warning m-1">Registro</div>
+			</div>
 			<main>
-				<Form action="" onSubmit={onSubmit}>
+				<Form action="" onSubmit={(onSubmit)}>
 					<Input
 						estado={name}
 						cambiarEstado={cambiarName}
 						tipo="text"
 						id="name"
 						placeholder="Nombre completo"
-						MsjeError="debe ser full name loco"
+						MsjeError="ingresa nombre y apellido"
 						expresionRegular={expresiones.name}
 					/>
 					<Input
@@ -153,25 +135,17 @@ export const Page_register = () => {
 						tipo="text"
 						id="email"
 						placeholder="Correo electronico"
-						MsjeError="debe ser full name loco"
+						MsjeError="ingresa tu correo electronico"
 						expresionRegular={expresiones.email}
 					/>
-					<Input
-						estado={username}
-						cambiarEstado={cambiarUsername}
-						tipo="text"
-						id="username"
-						placeholder="Nombre de usuario"
-						MsjeError="debe ser full name loco"
-						expresionRegular={expresiones.username}
-					/>
+
 					<Input
 						estado={street}
 						cambiarEstado={cambiarStreet}
 						tipo="text"
 						id="street"
 						placeholder="Direccion"
-						MsjeError="debe ser full name loco"
+						MsjeError="Por favor ingresa tu direccion"
 						expresionRegular={expresiones.street}
 					/>
 					<Input
@@ -180,7 +154,7 @@ export const Page_register = () => {
 						tipo="text"
 						id="city"
 						placeholder="Ciudad"
-						MsjeError="debe ser full name loco"
+						MsjeError="Por favor ingresa tu ciudad"
 						expresionRegular={expresiones.city}
 					/>
 					<Input
@@ -189,7 +163,7 @@ export const Page_register = () => {
 						tipo="text"
 						id="country"
 						placeholder="Pais"
-						MsjeError="debe ser full name loco"
+						MsjeError="Por favor ingresa tu pais"
 						expresionRegular={expresiones.country}
 					/>
 					<Input
@@ -198,7 +172,7 @@ export const Page_register = () => {
 						tipo="text"
 						id="phone"
 						placeholder="Numero Telefonico"
-						MsjeError="debe ser full name loco"
+						MsjeError="ingresa un numero correcto 7 a 16 digitos."
 						expresionRegular={expresiones.phone}
 					/>
 					<Input
@@ -246,7 +220,7 @@ export const Page_register = () => {
 					)}
 
 					<ContenedorBoton>
-						<Boton type="submit" className="login-button">
+						<Boton onClick={handleClick} type="submit" className="login-button">
 							<i className="fa fa-chevron-right">Go</i>
 						</Boton>
 						{Form_valido === true &&
@@ -255,6 +229,7 @@ export const Page_register = () => {
 					</ContenedorBoton>
 				</Form>
 			</main>
+
 		</div>
 	);
 };

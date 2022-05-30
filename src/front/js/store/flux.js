@@ -67,6 +67,39 @@ const getState = ({ getStore, getActions, setStore }) => {
 					console.log("there has been an error login in")
 				}
 			},
+			register: async (name, email, street, city, country, phone, password) => {
+				const opts = {
+					method: "POST",
+				//	mode: "no-cors",
+					headers: {
+						"Content-Type": "application/json",
+					},
+					body: JSON.stringify({
+						name:name, email:email, street:street, city:city, country:country, phone:phone, pasword:password
+					}),
+				};
+
+				try {
+
+					const resp = await fetch(
+						"https://3001-jorgereboll-proyectofin-b4kaxoo2l69.ws-us46.gitpod.io/api/users",
+						opts
+					)
+					if (resp.status !== 200) {
+						alert("There has been some error"); 
+						return false;
+					}
+
+					const data = await resp.json();
+					console.log("esto viene del backend",data);
+				//	sessionStorage.setItem("token", data.access_token);
+				//	setStore({token: data.access_token})
+					return true;
+				}
+				catch(error){
+					console.log("there has been an error register in")
+				}
+			},
 
 			getMessage: () => {
 				const store = getStore()

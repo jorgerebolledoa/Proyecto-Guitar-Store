@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { GiGuitarHead } from "react-icons/gi";
 import PropTypes from "prop-types";
+import { useForm } from "react-hook-form";
 import { Context } from "../../store/appContext";
 import { useContext, useState } from "react";
 import { useHistory } from "react-router-dom";
@@ -21,14 +22,15 @@ const Login = (props) => {
     actions.login (email,password);
 
   };
-  if(store.token && store.token != "" && store.token != undefined )history.push("")
+  
+  if(store.token && store.token != "" && store.token != undefined )history.push("/")
 
 	return (
     <div className="container-fluid Container1 m-0 p-0">
       {store.token && store.token != "" && store.token != undefined ? (
         "you are logged in with this token" + store.token
       ) : (
-        <div className="login text-center mb-3">
+        <div className="login text-center mb-0">
           <div className="logo text-warning m-1">
             <GiGuitarHead />
           </div>

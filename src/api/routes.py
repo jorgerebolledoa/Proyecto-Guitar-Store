@@ -24,7 +24,7 @@ def create_token():
     email = request.json.get("email", None)
     password = request.json.get("password", None)
     if email != "test" or password != "test":
-        return jsonify({"msg": "Bad username or password"}), 401
+        return jsonify({"msg": "Bad email or password"}), 401
 
     access_token = create_access_token(identity=email)
     return jsonify(access_token=access_token)
@@ -32,12 +32,15 @@ def create_token():
 
 @api.route('/login', methods=['POST'])
 def login():
-    email = request.json.get("email", None)
-    password = request.json.get("password", None)
+    email = request.json.get("email")
+    password = request.json.get("password")
 
-    if email != "test" or password != "test":
+    if email != "email" or password != "password":
         return jsonfy({"messsage": "Email/Password incorrect!"}), 401
-    access_token = create_access_token(identity=email)
+
+    expires = datetime.timedelta(minutes=60)
+    access_token = create_access_token(identity=email,expires_delta=expires)
+    
     data = {"status": "Success!", "message": "Logged in succesfully!",
             "access_token": access_token}
     return jsonify(data), 200
