@@ -1,7 +1,25 @@
 import React from "react";
+import { useState } from "react";
 import "../../../styles/admin.css";
 
 export const UploadAdm = () => {
+
+  const [datos, setDatos] = useState({
+    imagenes: "",
+    titulo: "",
+    marca: "",
+    descripcion: "",
+  })
+
+  const handleInputChange = (event) => {
+    setDatos ({
+      ...datos, [event.target.name] : event.target.value
+    })
+  }
+    const enviarDatos  = (event) => {
+        event.preventDefault();
+    }
+  
     return (
       <>
       <br id="pageTop"></br>
@@ -9,6 +27,7 @@ export const UploadAdm = () => {
       <br></br>
       <br></br>
       <div className="container col-md-6 p-4 rounded bg-dark">
+      <form onSubmit={enviarDatos}>
       <a href="/admin" className="text-warning float-end">volver</a>
         <h1 className="text-white opacity-70 text-center m-4">Crea tu publicación</h1>
       <div id="FileUpload">
@@ -16,7 +35,7 @@ export const UploadAdm = () => {
     <div className="upload">
       <p className="text-center">
         Arrastra las imagenes acá o...{" "}
-        <span className="upload__button">Buscar</span>
+        <span className="upload__button" name="imagenes" type="file" onChange={handleInputChange}>Buscar</span>
       </p>
     </div>
     <div className="uploaded uploaded--one">
@@ -63,7 +82,7 @@ export const UploadAdm = () => {
     </div>
   </div>
 </div>
-      <form>
+     
   <div className="mb-3">
     <label htmlFor="exampleInputEmail1" className="form-label text-warning opacity-75">
       Titulo
@@ -71,6 +90,8 @@ export const UploadAdm = () => {
     <input
       type="text"
       className="form-control bg-white opacity-50"
+      name="titulo"
+      onChange={handleInputChange}
     />
   </div>
   <div className="mb-3">
@@ -80,11 +101,13 @@ export const UploadAdm = () => {
     <input
       type="text"
       className="form-control bg-white opacity-50"
+      name="marca"
+      onChange={handleInputChange}
     />
   </div>
   <div class="mb-3">
   <label for="exampleFormControlTextarea1" class="form-label text-warning opacity-75">Descripción</label>
-  <textarea className="form-control bg-white opacity-50" id="exampleFormControlTextarea1" rows="6"></textarea>
+  <textarea className="form-control bg-white opacity-50" name="descripcion" onChange={handleInputChange} rows="6"></textarea>
 </div>
   <button type="submit" className="btn btn-warning">
     Submit
