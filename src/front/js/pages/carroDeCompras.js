@@ -1,6 +1,6 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { useReducer } from "react";
+import { Link, useParams } from "react-router-dom";
+import { useReducer, useState, useEffect } from "react";
 import { CardProductosDelCarro } from "../component/carroDeCompras/CardProductosDelCarro.jsx";
 import { CartItem } from "../component/carroDeCompras/CartItem.jsx";
 import { carroDeComprasInitialState, carroDeComprasReducer } from "../component/reducersCarroDeCompras/carroDeCompraReducer.js";
@@ -25,6 +25,26 @@ export const CarroDeCompras = () => {
   const clearCart = () => {
     dispatch({ type: TYPES.CLEAR_CART })
   };
+  // CODIGO PARA TOMAR PRODUCTOS POR ID
+  // const { product } = useParams();
+
+  useEffect(() => { }, []);
+  const [lista, setlista] = useState([]);
+
+  const urlApi = "https://3001-jorgereboll-proyectofin-f5wtyul2spl.ws-us46.gitpod.io/api/products/id/5"
+  useEffect(() => {
+    getTask(urlApi);
+  }, []);
+  const getTask = (url) => {
+    fetch(url)
+      .then((Response) => Response.json())
+      .then((data) => {
+        console.log(data);
+        setlista(data);
+      })
+      .catch((error) => console.log(error));
+  };
+
   return (
     <>
       <div className="container-fluid mx-0 bg-dark pb-5">
@@ -38,7 +58,7 @@ export const CarroDeCompras = () => {
             vistaCarroVacio
           </Link>
         </h1>
-        {products.map((product) => (<CardProductosDelCarro key={product.id} data={product} addToCart={addToCart} />))}
+        {products.map((product) => (<CardProductosDelCarro key={product.id} name={lista.name} id={lista.id} price={lista.price} addToCart={addToCart} />))}
 
         <div className="cajaResumenPedido text-white mx-auto row">
           <h5 className="col-12">Resumen de pedido</h5>

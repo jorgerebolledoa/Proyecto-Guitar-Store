@@ -1,8 +1,7 @@
 import React from "react";
 import { AiFillMinusCircle } from "react-icons/ai";
 
-export const CardProductosDelCarro = ({ data, addToCart }) => {
-  let { id, name, price } = data;
+export const CardProductosDelCarro = ({ id, name, price, addToCart }) => {
   return (
     <>
       <div className="cajaProducto card mx-auto flex-row mb-5  ">
