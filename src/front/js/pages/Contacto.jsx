@@ -1,22 +1,14 @@
 import React from "react";
 export const Contacto = () => {
+
   return (
     <>
       <br id="pageTop"></br>
       <br></br>
       <br></br>
-
-      <div className="container col-md-10 p-4 rounded bg-dark">
-        <div className=" text-center">
-          <h1 className="text-warning">¡Comunícate con nosotros!</h1>
-        </div>
-        <div className="row ">
-          <div className="col-lg-7 mx-auto">
-            <div className="card mt-2 mx-auto p-4 bg-dark bg-opacity-75">
-              <div className="card-body bg-dark  bg-opacity-25 text-white">
-                <div className="container">
-                  <form id="contact-form" role="form">
-                    <div className="controls">
+      <div className="container col-md-10 p-5 rounded bg-dark">
+                  <form role="form">
+                  <h1 className="text-warning text-center">¡Comunícate con nosotros!</h1>
                       <div className="row">
                         <div className="col-md-6">
                           <div className="form-group mb-4 opacity-75">
@@ -110,14 +102,8 @@ export const Contacto = () => {
                           />
                         </div>
                       </div>
-                    </div>
                   </form>
                 </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
     </>
   );
 };
