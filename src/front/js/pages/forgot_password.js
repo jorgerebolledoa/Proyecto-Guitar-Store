@@ -1,6 +1,5 @@
 import React, { useContext } from "react";
 import { Context } from "../store/appContext";
-import "../../styles/home.css";
 import Forgot_password from "../component/Login/forgot_password.js";
 
 

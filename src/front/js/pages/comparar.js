@@ -1,6 +1,5 @@
 import React, { useContext } from "react";
 import { Context } from "../store/appContext";
-import "../../styles/home.css";
 import CardComparacion from "../component/Vista_principal/Card-comparacion.jsx";
 import X250 from "../../img/X250BKfull.png";
 export const Comparar = () => {
