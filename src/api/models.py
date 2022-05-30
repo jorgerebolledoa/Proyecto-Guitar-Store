@@ -71,7 +71,6 @@ class Product(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     sku = db.Column(db.String(50), nullable=False)
     name = db.Column(db.String(50), nullable=False)
-    img_banner = db.Column(db.String(2500), nullable=True)
     img1 = db.Column(db.String(2500), nullable=True)
     img2 = db.Column(db.String(2500), nullable=True)
     img3 = db.Column(db.String(2500), nullable=True)
@@ -94,7 +93,6 @@ class Product(db.Model):
             "id": self.id,
             "sku": self.sku,
             "name": self.name,
-            "img_banner": self.img_banner,
             "img1": self.img1,
             "img2": self.img2,
             "img3": self.img3,
@@ -130,6 +128,7 @@ class Category(db.Model):
     name = db.Column(db.String(50), nullable=False)
     description = db.Column(db.String(250), nullable=False)
     thumbnail = db.Column(db.String(250), nullable=False)
+    image = db.Column(db.String(255), default="")
     products = db.relationship('Product', backref="category")
 
     def serialize(self):
@@ -137,7 +136,8 @@ class Category(db.Model):
             "id": self.id,
             "name": self.name,
             "description": self.description,
-            "thumbnail": self.thumbnail
+            "thumbnail": self.thumbnail,
+            "image": self.image
         }
 
     def save(self):

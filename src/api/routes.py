@@ -161,7 +161,6 @@ def create_products():
     products = Product()
     products.sku = request.json.get('sku')
     products.name = request.json.get('name')
-    products.img_banner = request.json.get('img_banner')
     products.img1 = request.json.get('img1')
     products.img2 = request.json.get('img2')
     products.img3 = request.json.get('img3')
@@ -186,7 +185,6 @@ def update_products(products_id):
     products = Product.query.get(products_id)
     products.sku = request.json.get('sku')
     products.name = request.json.get('name')
-    products.img_banner = request.json.get('img_banner')
     products.img1 = request.json.get('img1')
     products.img2 = request.json.get('img2')
     products.img3 = request.json.get('img3')
@@ -229,6 +227,7 @@ def create_categories():
     categories.name = request.json.get('name')
     categories.description = request.json.get('description')
     categories.thumbnail = request.json.get('thumbnail')
+    categories.image = request.json.get('image')
     categories.save()
     return jsonify(categories.serialize()), 201
 
@@ -239,6 +238,7 @@ def update_categories(categories_id):
     categories.name = request.json.get('name')
     categories.description = request.json.get('description')
     categories.thumbnail = request.json.get('thumbnail')
+    categories.image = request.json.get('image')
     categories.update()
     return jsonify(categories.serialize()), 201
 
