@@ -2,17 +2,19 @@ import React from "react";
 import "../../../styles/Slider.css"
 import { useInView } from "react-intersection-observer";
 
-const Slider = ({ img, title, text, flipped }) => {
+const Slider = ({ img, title, text, flipped, link }) => {
     const { ref, inView } = useInView({
 
         threshold: 0.4,
     })
 
+
     const renderContent = () => {
+
         if (!flipped) {
             return (
                 <>
-                    <img src={img} alt="Travel" className="slider__image" />
+                    <a href={link} ><img src={img} alt="Img" className="slider__image" /></a>
                     <div className="slider__content">
                         <h1 className="slider__title">{title}</h1>
                         <p>{text}</p>
@@ -24,9 +26,9 @@ const Slider = ({ img, title, text, flipped }) => {
                 <>
                     <div className="slider__content">
                         <h1 className="slider__title">{title}</h1>
-                        <p>{subtitle}</p>
+                        <p>{text}</p>
                     </div>
-                    <img src={img} alt="Travel" className="slider__image" />
+                    <a href={link} ><img src={img} alt="Img" className="slider__image" /></a>
                 </>
             );
         }

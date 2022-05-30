@@ -28,8 +28,7 @@ const Mapeo_Slider = () => {
                         img={X250}
                         title={tastk.name}
                         text={tastk.description}
-                        linkbtn={"/categoria/" + tastk.id}
-                        textbtn="Comprar"
+                        link={"/categoria/" + tastk.id}
                     />
                 </div>
             );
