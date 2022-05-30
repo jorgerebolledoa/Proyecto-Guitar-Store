@@ -39,8 +39,8 @@ def login():
         return jsonfy({"messsage": "Email/Password incorrect!"}), 401
 
     expires = datetime.timedelta(minutes=60)
-    access_token = create_access_token(identity=email,expires_delta=expires)
-    
+    access_token = create_access_token(identity=email, expires_delta=expires)
+
     data = {"status": "Success!", "message": "Logged in succesfully!",
             "access_token": access_token}
     return jsonify(data), 200
@@ -103,8 +103,9 @@ def create_user():
     user.password = request.json.get('password')
     user.email = request.json.get('email')
     user.phone = request.json.get('phone')
-    user.default_shipping_address = request.json.get(
-        'default_shipping_address')
+    user.country = request.json.get('country')
+    user.city = request.json.get('city')
+    user.address = request.json.get('address')
     user.role_id = request.json.get('role_id')
     user.save()
     return jsonify(user.serialize()), 201
@@ -117,8 +118,9 @@ def update_user(id):
     user.password = request.json.get('password')
     user.email = request.json.get('email')
     user.phone = request.json.get('phone')
-    user.default_shipping_address = request.json.get(
-        'default_shipping_address')
+    user.country = request.json.get('country')
+    user.city = request.json.get('city')
+    user.address = request.json.get('address')
     user.update()
     return jsonify(user.serialize()), 201
 

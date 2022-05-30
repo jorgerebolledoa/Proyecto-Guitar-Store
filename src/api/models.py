@@ -33,18 +33,22 @@ class User(db.Model):
     password = db.Column(db.String(200), nullable=False)
     email = db.Column(db.String(200), nullable=False, unique=True)
     phone = db.Column(db.String(200), nullable=False)
-    default_shipping_address = db.Column(db.String(200), nullable=False)
     role_id = db.Column(db.Integer, db.ForeignKey("roles.id"))
+    country = db.Column(db.String(250), default="")
+    city = db.Column(db.String(250), default="")
+    address = db.Column(db.String(250), default="")
 
     def serialize(self):
         return {
             "id": self.id,
             "name": self.name,
             "password": self.password,
-            "role_id": self.role_id,
             "email": self.email,
             "phone": self.phone,
-            "default_shipping_address": self.default_shipping_address
+            "role_id": self.role_id,
+            "country": self.country,
+            "city": self.city,
+            "address": self.address
         }
     # get role solo la uso para muchos a muchos, no para 1 a 1
     # def get_roles(self):
