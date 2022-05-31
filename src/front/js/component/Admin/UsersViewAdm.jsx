@@ -7,7 +7,7 @@ export const UsersViewAdm = () => {
       <br></br>
       <br></br>
       <div className="container p-4 col-md-10 p-4 rounded bg-dark">
-      <a href="/admin" className="text-warning float-end">volver</a>
+      <a href="/adminprueba" className="text-warning float-end">volver</a>
   <div className="row flex-lg-nowrap">
   <div className="col">
     <div className="row flex-lg-nowrap">
