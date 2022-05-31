@@ -36,8 +36,8 @@ export const Page_register = () => {
 	const expresiones = {
 		name: /^[a-zA-ZÀ-ÿ\s]{4,17}$/, // Letras y espacios, pueden llevar acentos.
 		email: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
-		street: /^[a-zA-Z0-9\_\-]{4,20}$/, // Letras, numeros, guion y guion_bajo
-		city: /^[a-zA-Z0-9\_\-]{4,20}$/, // Letras, numeros, guion y guion_bajo
+		street: /^[a-zA-ZÀ-ÿ\s-Z0-9\_\-]{4,30}$/, // Letras, numeros, guion y guion_bajo
+		city: /^[a-zA-ZÀ-ÿ\s-Z0-9\_\-]{4,20}$/, // Letras, numeros, guion y guion_bajo
 		country: /^[a-zA-ZÀ-ÿ\s]{1,15}$/, // Letras y espacios, pueden llevar acentos.
 		phone: /^\d{7,16}$/, // 7 a 16 numeros.
 		password: /^.{4,12}$/, // 4 a 12 digitos.
@@ -135,7 +135,7 @@ export const Page_register = () => {
 						tipo="text"
 						id="email"
 						placeholder="Correo electronico"
-						MsjeError="ingresa tu correo electronico"
+						MsjeError="ingresa formato valido"
 						expresionRegular={expresiones.email}
 					/>
 
@@ -172,7 +172,7 @@ export const Page_register = () => {
 						tipo="text"
 						id="phone"
 						placeholder="Numero Telefonico"
-						MsjeError="ingresa un numero correcto 7 a 16 digitos."
+						MsjeError="ingresa un numero correcto 7 a 16 digitos"
 						expresionRegular={expresiones.phone}
 					/>
 					<Input
@@ -181,7 +181,7 @@ export const Page_register = () => {
 						tipo="password"
 						id="password"
 						placeholder="Contraseña"
-						MsjeError="debe ser full name loco"
+						MsjeError="min 4 maximo 12 digitos"
 						expresionRegular={expresiones.password}
 					/>
 					<Input
@@ -224,8 +224,20 @@ export const Page_register = () => {
 							<i className="fa fa-chevron-right">Go</i>
 						</Boton>
 						{Form_valido === true &&
-							alert("impeque")
-						}
+						//Swal.fire({
+						//	title: 'Sus datos se han guardado correctamente',
+						//	showClass: {
+						//	  popup: 'animate__animated animate__fadeInDown'
+						//	},
+						//	hideClass: {
+						//	  popup: 'animate__animated animate__fadeOutUp'
+						//	}
+						//  })
+							//history.push("/")
+							alert("Registro Exitoso")
+					}
+							
+
 					</ContenedorBoton>
 				</Form>
 			</main>

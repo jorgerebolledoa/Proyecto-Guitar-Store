@@ -52,7 +52,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 						"https://3001-jorgereboll-proyectofin-b4kaxoo2l69.ws-us46.gitpod.io/api/token",
 						opts
 					)
-					if (resp.status !== 200) {
+					if (resp.status !== 200 && resp.status !== 201) {
 						alert("There has been some error"); 
 						return false;
 					}
@@ -75,17 +75,17 @@ const getState = ({ getStore, getActions, setStore }) => {
 						"Content-Type": "application/json",
 					},
 					body: JSON.stringify({
-						name:name, email:email, street:street, city:city, country:country, phone:phone, pasword:password
+						name:name.campo, email:email.campo, address:street.campo, city:city.campo, country:country.campo, phone:phone.campo, password:password.campo,role_id:1
 					}),
 				};
 
 				try {
 
 					const resp = await fetch(
-						"https://3001-jorgereboll-proyectofin-b4kaxoo2l69.ws-us46.gitpod.io/api/users",
+						"https://3001-jorgereboll-proyectofin-f5wtyul2spl.ws-us46.gitpod.io/api/users",
 						opts
 					)
-					if (resp.status !== 200) {
+					if (resp.status !== 200 && resp.status !== 201) {
 						alert("There has been some error"); 
 						return false;
 					}

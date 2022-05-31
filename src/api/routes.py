@@ -5,10 +5,12 @@ import os
 from flask import Flask, request, jsonify, url_for, Blueprint
 from api.models import db, User, Role, Product, Category, Order, Order_detail, Messsage
 from api.utils import generate_sitemap, APIException
-from werkzeug.security import generate_password_hash
+from werkzeug.security import generate_password_hash, check_password_hash
 from flask_jwt_extended import create_access_token
 from flask_jwt_extended import get_jwt_identity
 from flask_jwt_extended import jwt_required
+from flask_jwt_extended import JWTManager
+from datetime import datetime
 
 
 # Create flask app
@@ -24,7 +26,7 @@ def create_token():
     email = request.json.get("email", None)
     password = request.json.get("password", None)
     if email != "test" or password != "test":
-        return jsonify({"msg": "Bad email or password"}), 401
+     return jsonify({"msg": "Bad email or password"}), 401
 
     access_token = create_access_token(identity=email)
     return jsonify(access_token=access_token)
@@ -33,17 +35,63 @@ def create_token():
 @api.route('/login', methods=['POST'])
 def login():
     email = request.json.get("email")
-    password = request.json.get("password")
+    password = request.json.get("password") 
 
-    if email != "email" or password != "password":
-        return jsonfy({"messsage": "Email/Password incorrect!"}), 401
+    users = Users.query.filter_by (email=email).first()  
 
-    expires = datetime.timedelta(minutes=60)
+    if not users:return jsonify({"messsage": "Email/Password incorrect!"}), 401
+    if not check_password_hash(users.password, password):return jsonify({"messsage": "Email/Password incorrect!"}), 401
+
+    expires = datetime.timedelta(minutes=30)
     access_token = create_access_token(identity=email, expires_delta=expires)
 
-    data = {"status": "Success!", "message": "Logged in succesfully!",
-            "access_token": access_token}
+    data = {"status": "Success!", 
+              "message": "Logged in succesfully!",
+              "access_token": access_token,
+              "users":users.serialize()
+    }
+
     return jsonify(data), 200
+
+@api.route('/register', methods=['POST'])
+def register():
+
+    name = request.json.get("name")
+    email = request.json.get("email") 
+    address = request.json.get("address")
+    city = request.json.get("city") 
+    country = request.json.get("country")
+    phone = request.json.get("phone")
+    password = request.json.get("password") 
+
+    users = Users ()
+    users.name = name
+    users.email = email
+    users.address = address
+    users.city = city 
+    users.country = country
+    users.phone = phone
+    password = generate_password_hash(password)
+    users.save()
+
+    return jsonify({"status": "Success!", "message": "Logged in succesfully!"}), 200
+              
+
+
+#@api.route('/login', methods=['POST']) 
+#def login():
+#    email = request.json.get("email")
+#    password = request.json.get("password")
+
+#    if email != "email" or password != "password":
+#        return jsonify({"messsage": "Email/Password incorrect!"}), 401
+#
+#    expires = datetime.timedelta(minutes=60)
+#    access_token = create_access_token(identity=email, expires_delta=expires)
+
+#    data = {"status": "Success!", "message": "Logged in succesfully!",
+#            "access_token": access_token}
+#    return jsonify(data), 200
 
 
 # @api.route('/register', methods=['POST'])

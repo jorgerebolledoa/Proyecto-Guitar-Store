@@ -9,16 +9,16 @@ export const Page_forgot_password = () => {
     return (
         <>
             <Forgot_password
-                logo2="Forgot your password?"
-                parrafo="Oops! It happens to the best of us. Input your email address to
-                        fix the issue."
+                logo2="Olvidaste tu contraseña?"
+                parrafo="Oops! Esto le pasa a los mejores, ingresa tu email para solucionarlo."
+                    
                 fp_email=" Email address"
                 boton_login="/login "
                 boton_newAccount="/register "
-                text_preg1="Already have an account?"
-                text_preg2="New user?"
-                text_botonLogin="login here"
-                text_botonNew="create new account" />
+                text_preg1="Ya tienes una cuenta?"
+                text_preg2="Nuevo usuario?"
+                text_botonLogin="Ingresa aqui"
+                text_botonNew="Crear nueva cuenta." />
         </>
     );
 };

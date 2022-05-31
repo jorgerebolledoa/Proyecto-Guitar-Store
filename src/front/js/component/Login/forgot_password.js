@@ -31,7 +31,7 @@ const Forgot_password = (props) => {
                     className="form-control"
                     id="fp_email"
                     name="fp_email"
-                    placeholder="Email address"
+                    placeholder="Ingresa tu email"
                   />
                 </div>
               </div>
