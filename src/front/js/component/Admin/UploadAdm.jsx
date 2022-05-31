@@ -28,7 +28,7 @@ export const UploadAdm = () => {
       <br></br>
       <div className="container col-md-6 p-4 rounded bg-dark">
       <form onSubmit={enviarDatos}>
-      <a href="/admin" className="text-warning float-end">volver</a>
+      <a href="/adminprueba" className="text-warning float-end">volver</a>
         <h1 className="text-white opacity-70 text-center m-4">Crea tu publicación</h1>
       <div id="FileUpload">
   <div className="wrapper">
