@@ -26,7 +26,7 @@ def create_token():
     email = request.json.get("email", None)
     password = request.json.get("password", None)
     if email != "test" or password != "test":
-     return jsonify({"msg": "Bad email or password"}), 401
+        return jsonify({"msg": "Bad email or password"}), 401
 
     access_token = create_access_token(identity=email)
     return jsonify(access_token=access_token)
@@ -35,51 +35,53 @@ def create_token():
 @api.route('/login', methods=['POST'])
 def login():
     email = request.json.get("email")
-    password = request.json.get("password") 
+    password = request.json.get("password")
 
-    users = Users.query.filter_by (email=email).first()  
+    users = Users.query.filter_by(email=email).first()
 
-    if not users:return jsonify({"messsage": "Email/Password incorrect!"}), 401
-    if not check_password_hash(users.password, password):return jsonify({"messsage": "Email/Password incorrect!"}), 401
+    if not users:
+        return jsonify({"messsage": "Email/Password incorrect!"}), 401
+    if not check_password_hash(users.password, password):
+        return jsonify({"messsage": "Email/Password incorrect!"}), 401
 
     expires = datetime.timedelta(minutes=30)
     access_token = create_access_token(identity=email, expires_delta=expires)
 
-    data = {"status": "Success!", 
-              "message": "Logged in succesfully!",
-              "access_token": access_token,
-              "users":users.serialize()
-    }
+    data = {"status": "Success!",
+            "message": "Logged in succesfully!",
+            "access_token": access_token,
+            "users": users.serialize()
+            }
 
     return jsonify(data), 200
+
 
 @api.route('/register', methods=['POST'])
 def register():
 
     name = request.json.get("name")
-    email = request.json.get("email") 
+    email = request.json.get("email")
     address = request.json.get("address")
-    city = request.json.get("city") 
+    city = request.json.get("city")
     country = request.json.get("country")
     phone = request.json.get("phone")
-    password = request.json.get("password") 
+    password = request.json.get("password")
 
-    users = Users ()
+    users = Users()
     users.name = name
     users.email = email
     users.address = address
-    users.city = city 
+    users.city = city
     users.country = country
     users.phone = phone
     password = generate_password_hash(password)
     users.save()
 
     return jsonify({"status": "Success!", "message": "Logged in succesfully!"}), 200
-              
 
 
-#@api.route('/login', methods=['POST']) 
-#def login():
+# @api.route('/login', methods=['POST'])
+# def login():
 #    email = request.json.get("email")
 #    password = request.json.get("password")
 
@@ -169,6 +171,7 @@ def update_user(id):
     user.country = request.json.get('country')
     user.city = request.json.get('city')
     user.address = request.json.get('address')
+    user.role_id = request.json.get('role_id')
     user.update()
     return jsonify(user.serialize()), 201
 

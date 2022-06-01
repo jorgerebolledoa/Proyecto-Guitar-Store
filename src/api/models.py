@@ -52,7 +52,7 @@ class User(db.Model):
         }
     # get role solo la uso para muchos a muchos, no para 1 a 1
     # def get_roles(self):
-    #     return list(map(lambda role: role.serialize(), self.roles))
+    # return list(map(lambda role: role.serialize(), self.roles))
 
     def save(self):
         db.session.add(self)
