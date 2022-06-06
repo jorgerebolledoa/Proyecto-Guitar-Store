@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import { GiGuitarHead } from "react-icons/gi";
-import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";;
 
 export const Footer = () => {
 
   return (
-    <div className="container-fluid  p-0 m-0 bg-dark ">
+    <div className="container-fluid bg-dark" >
       <footer className=" text-center text-warning">
         <section >
           <div className="row text-center d-flex justify-content-center pt-2">
@@ -29,7 +29,7 @@ export const Footer = () => {
             </div>
           </div>
         </section>
-        <div className="container ">
+        <div className="container-fluid ">
           <h6 className="font-weight-bold">
             <Link to="/adminprueba" href="/adminprueba" className="text-warning">Admin Test</Link>
           </h6>
