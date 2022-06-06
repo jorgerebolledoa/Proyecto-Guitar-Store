@@ -5,9 +5,10 @@ import { CardProductosDelCarro } from "../component/carroDeCompras/CardProductos
 import { CartItem } from "../component/carroDeCompras/CartItem.jsx";
 import { carroDeComprasInitialState, carroDeComprasReducer } from "../component/reducersCarroDeCompras/carroDeCompraReducer.js";
 import { TYPES } from "../component/reducersCarroDeCompras/carroDeComprasActions.js";
-
+/* let miNombre = localStorage.getItem('name'); */
 export const CarroDeCompras = () => {
   const [state, dispatch] = useReducer(carroDeComprasReducer, carroDeComprasInitialState);
+  console.log(localStorage)
 
   const { products, cart } = state;
 

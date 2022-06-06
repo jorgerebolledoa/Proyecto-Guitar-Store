@@ -20,11 +20,18 @@ export const ProductDetail = () => {
       })
       .catch((error) => console.log(error));
   };
+  const addTolocalStorage = () => {
+    localStorage.setItem("name", lista.name);
+    localStorage.setItem("id", lista.id);
+    localStorage.setItem("price", lista.price);
+    localStorage.setItem("sku", lista.sku);
+    return (console.log(localStorage))
+  }
   return (
     <div key={lista.id}>
       <nav className="navbar bg-light fixed-top m-5">
         <div className="container-fluid">
-          <a className="navbar-brand" href={"/carroDeCompras/" + lista.id}>Comprar</a>
+          <a className="navbar-brand" href={"/carroDeCompras/" + lista.id} onClick={addTolocalStorage} >Comprar</a>
         </div>
       </nav>
       <Slider
