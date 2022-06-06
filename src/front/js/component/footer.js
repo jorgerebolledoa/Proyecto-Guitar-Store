@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { GiGuitarHead } from "react-icons/gi";
 import { Link } from "react-router-dom";;
-
+import "../../styles/footer.css"
 export const Footer = () => {
 
   return (
@@ -11,27 +11,27 @@ export const Footer = () => {
           <div className="row text-center d-flex justify-content-center pt-2">
 
             <div className="col-md-2 text-warning ">
-              <Link to="" href="" className="text-warning">< GiGuitarHead /></Link>
+              <Link to="" href="" className="text-warning text-decoration-none">< GiGuitarHead /></Link>
             </div>
             <div className="col-md-2 ">
-              <Link to="" href="" className="text-warning ">Costumer Services</Link>
+              <Link to="" href="" className="text-warning text-decoration-none">Costumer Services</Link>
             </div>
             <div className="col-md-2">
-              <Link to="" href="" className="text-warning">Community FAQ</Link>
-            </div>
-
-            <div className="col-md-2">
-              <Link to="/contacto" href="/contacto" className="text-warning">Contact</Link>
+              <Link to="" href="" className="text-warning text-decoration-none">Community FAQ</Link>
             </div>
 
             <div className="col-md-2">
-              <Link to="" href="" className="text-warning">Term of Use</Link>
+              <Link to="/contacto" href="/contacto" className="text-warning text-decoration-none">Contact</Link>
+            </div>
+
+            <div className="col-md-2">
+              <Link to="" href="" className="text-warning text-decoration-none">Term of Use</Link>
             </div>
           </div>
         </section>
         <div className="container-fluid ">
           <h6 className="font-weight-bold">
-            <Link to="/adminprueba" href="/adminprueba" className="text-warning">Admin Test</Link>
+            <Link to="/adminprueba" href="/adminprueba" className="text-warning text-decoration-none ">Admin Test</Link>
           </h6>
           <section className="mb-2">
             <Link className="btn btn-outline-warning btn-floating m-3" id="btnFooter" to="" href="" role="button">
