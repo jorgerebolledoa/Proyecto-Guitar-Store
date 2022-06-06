@@ -46,7 +46,7 @@ export const Footer = () => {
           </section>
         </div>
         <div className="d-inline-flex text-warning">
-          <p> Copyright © 2022</p>
+          <p> Copyright © 2022 </p>
         </div>
       </footer>
     </div>

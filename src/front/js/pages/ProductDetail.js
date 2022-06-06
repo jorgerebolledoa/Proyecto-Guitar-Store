@@ -34,32 +34,34 @@ export const ProductDetail = () => {
           <a className="navbar-brand" href={"/carroDeCompras/" + lista.id} onClick={addTolocalStorage} >Comprar</a>
         </div>
       </nav>
-      <Slider
-        img={lista.img1}
-        title={lista.tittle_description_1}
-        text={lista.description_1}
-        link={"/producto/" + lista.id}
-      />
-      <Slider
-        flipped={true}
-        img={lista.img2}
-        title={lista.tittle_description_2}
-        text={lista.description_2}
-        link={"/producto/" + lista.id}
-      />
-      <Slider
-        img={lista.img3}
-        title={lista.tittle_description_3}
-        text={lista.description_3}
-        link={"/producto/" + lista.id}
-      />
-      <Slider
-        flipped={true}
-        img={lista.img4}
-        title={lista.tittle_description_4}
-        text={lista.description_4}
-        link={"/producto/" + lista.id}
-      />
+      <div className="container-fluid">
+        <Slider
+          img={lista.img1}
+          title={lista.tittle_description_1}
+          text={lista.description_1}
+
+        />
+        <Slider
+          flipped={true}
+          img={lista.img2}
+          title={lista.tittle_description_2}
+          text={lista.description_2}
+
+        />
+        <Slider
+          img={lista.img3}
+          title={lista.tittle_description_3}
+          text={lista.description_3}
+
+        />
+        <Slider
+          flipped={true}
+          img={lista.img4}
+          title={lista.tittle_description_4}
+          text={lista.description_4}
+
+        />
+      </div>
     </div>
   )
 }

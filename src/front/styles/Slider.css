@@ -1,16 +1,16 @@
 .slider {
     display: flex;
     align-items: center;
-    margin: 20px;
-  
+    margin: 10px;  
+    padding: 10px 50px 10px 50px;
     opacity: 0;
     transform: scale(85%);
     transition: 2s;
-  }
+  } 
   .a{
     color:rgb(104, 104, 104) ;
     text-decoration: none
-    
+
   }
   
   .slider--zoom {
@@ -30,7 +30,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 20px;
+    padding: 50px;
     text-align: center;
   }
   
@@ -43,6 +43,7 @@
     .slider {
       flex-direction: column;
       background-color: rgb(255, 254, 254);
+      padding: 10px;
     }
   
     .slider__image {

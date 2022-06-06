@@ -1,3 +1,4 @@
+from unicodedata import name
 from flask_sqlalchemy import SQLAlchemy
 db = SQLAlchemy()
 
@@ -222,14 +223,14 @@ class Order_detail(db.Model):
 class Messsage(db.Model):
     __tablename__ = "messages"
     id = db.Column(db.Integer, primary_key=True)
-    user_id = db.Column(db.Integer, db.ForeignKey("users.id"))
+    email = db.Column(db.String(50), nullable=False)
     message = db.Column(db.String(250), nullable=False)
     user = db.relationship('User')
 
     def serialize(self):
         return {
             "id": self.id,
-            "user_id": self.user_id,
+            "email": self.email,
             "message": self.message
         }
 

@@ -5,8 +5,9 @@ body{
     
 }
 img{
-    width: 500px;
-    height: 500px;
+    width: 550px;
+    height: 550px;
     object-fit: contain;
     object-position: center;
 } 
+    
