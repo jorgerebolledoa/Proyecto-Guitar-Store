@@ -1,6 +1,7 @@
 import React, { useContext, useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import { Context } from "../store/appContext";
+import "../../styles/estilos.css"
 
 import {
 	Form,
@@ -119,7 +120,7 @@ export const Page_register = () => {
 				<div className="logo2 text-warning m-1">Registro</div>
 			</div>
 			<main>
-				<Form action="" onSubmit={(onSubmit)}>
+				<Form className="Form" action="" onSubmit={(onSubmit)}>
 					<Input
 						estado={name}
 						cambiarEstado={cambiarName}
@@ -224,19 +225,19 @@ export const Page_register = () => {
 							<i className="fa fa-chevron-right">Go</i>
 						</Boton>
 						{Form_valido === true &&
-						//Swal.fire({
-						//	title: 'Sus datos se han guardado correctamente',
-						//	showClass: {
-						//	  popup: 'animate__animated animate__fadeInDown'
-						//	},
-						//	hideClass: {
-						//	  popup: 'animate__animated animate__fadeOutUp'
-						//	}
-						//  })
+							//Swal.fire({
+							//	title: 'Sus datos se han guardado correctamente',
+							//	showClass: {
+							//	  popup: 'animate__animated animate__fadeInDown'
+							//	},
+							//	hideClass: {
+							//	  popup: 'animate__animated animate__fadeOutUp'
+							//	}
+							//  })
 							//history.push("/")
 							alert("Registro Exitoso")
-					}
-							
+						}
+
 
 					</ContenedorBoton>
 				</Form>

@@ -9,6 +9,9 @@ body {
     height: 100%;
     font-family: 'Roboto', sans-serif;
 }
+/* .Form{
+    background-color: rgba(255, 255, 255, 0.33);
+} */
 .Container_reg {
     background-image: url("https://strandbergguitars.com/cdn-cgi/image/onerror=redirect,quality=85,format=auto,metadata=copyright,width=2124,height=1150,fit=cover/wp-content/uploads/2020/03/strandberg-boden-metal-guitar-gallery_04.jpg");
     background-repeat: no-repeat;

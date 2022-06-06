@@ -13,10 +13,13 @@ const Carousel = (props) => {
           <img src={props.img} className="d-block w-100" alt="..." />
         </div>
         <div className="carousel-item" data-bs-interval="2000">
-          <img src={props.img} className="d-block w-100" alt="..." />
+          <img src={props.img2} className="d-block w-100" alt="..." />
         </div>
         <div className="carousel-item">
-          <img src={props.img} className="d-block w-100" alt="..." />
+          <img src={props.img3} className="d-block w-100" alt="..." />
+        </div>
+        <div className="carousel-item">
+          <img src={props.img4} className="d-block w-100" alt="..." />
         </div>
       </div>
       <button
@@ -42,5 +45,8 @@ const Carousel = (props) => {
 };
 Carousel.propTypes = {
   img: PropTypes.string,
+  img2: PropTypes.string,
+  img3: PropTypes.string,
+  img4: PropTypes.string,
 };
 export default Carousel;

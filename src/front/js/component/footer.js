@@ -5,12 +5,10 @@ import { Link } from "react-router-dom";
 export const Footer = () => {
 
   return (
-    <div className="container-fluid my-2 p-0">
-
-      <footer className="bg-dark text-center text-warning">
-        <section className="mt-5">
-
-          <div className="row text-center d-flex justify-content-center pt-4">
+    <div className="container-fluid  p-0 m-0 bg-dark ">
+      <footer className=" text-center text-warning">
+        <section >
+          <div className="row text-center d-flex justify-content-center pt-2">
 
             <div className="col-md-2 text-warning ">
               <Link to="" href="" className="text-warning">< GiGuitarHead /></Link>
@@ -29,25 +27,13 @@ export const Footer = () => {
             <div className="col-md-2">
               <Link to="" href="" className="text-warning">Term of Use</Link>
             </div>
-
           </div>
-
         </section>
-
-        <hr className="my-3" />
-
-
-              <div className="col-md-2">
-                <h6 className="font-weight-bold">
-                  <Link to= "/adminprueba" href="/adminprueba" className="text-warning">Admin Test</Link>
-                </h6>
-              </div>
-
-        <div className="container p-1 pb-0">
-
-
+        <div className="container ">
+          <h6 className="font-weight-bold">
+            <Link to="/adminprueba" href="/adminprueba" className="text-warning">Admin Test</Link>
+          </h6>
           <section className="mb-2">
-
             <Link className="btn btn-outline-warning btn-floating m-3" id="btnFooter" to="" href="" role="button">
               <i className="fab fa-facebook-f"></i>
             </Link>
@@ -59,17 +45,10 @@ export const Footer = () => {
             </Link>
           </section>
         </div>
-        <div className="d-inline-flex p-2 m-1 text-warning">
+        <div className="d-inline-flex text-warning">
           <p> Copyright © 2022</p>
-
         </div>
-
       </footer>
-
     </div>
   )
-
-
-
-
 };

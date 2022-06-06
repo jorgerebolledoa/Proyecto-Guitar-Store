@@ -25,7 +25,7 @@ const Mapeo_Slider = () => {
             return (
                 <div key={tastk.id}>
                     <Slider
-                        img={X250}
+                        img={tastk.image}
                         title={tastk.name}
                         text={tastk.description}
                         link={"/categoria/" + tastk.id}
