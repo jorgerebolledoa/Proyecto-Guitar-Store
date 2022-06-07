@@ -405,11 +405,6 @@ def get_messages():
 @api.route('/messages', methods=['POST'])
 def create_messages():
     messages = Messsage()
-    messages.message = request.json.get('message')
-    messages.email = request.json.get('email')
-    messages.save()
-    return jsonify(messages.serialize()), 201
-
 @api.route('/messages/<int:messages_id>', methods=['DELETE'])
 def delete_messages(messages_id):
     messages = Messsage.query.get(messages_id)
