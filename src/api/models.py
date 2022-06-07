@@ -224,7 +224,6 @@ class Messsage(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     email = db.Column(db.String(100), nullable=False)
     message = db.Column(db.String(5000), nullable=False)
-    user = db.relationship('User')
 
     def serialize(self):
         return {
