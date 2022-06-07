@@ -23,50 +23,61 @@ export const Navbar = () => {
   }, []);
 
   return (
-    <nav className={`navbar d-flex justify-content-center    mb-5 navbar-expand-lg   bg-${state.bg} fixed-top ${!!state.shadow ? state.shadow : ""
-      }`}>
-      <div className="container-fluid">
-        <a className="navbar-brand text-warning ml-5" href="/">
-          <GiGuitarHead />
-        </a>
-        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-          <span className="navbar-toggler-icon"></span>
-        </button>
-        <div className="collapse navbar-collapse" id="navbarNavDropdown">
-          <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-            <li className="nav-item">
-              <a
+    <div className="container-fluid m-0 p-0 ">
+      <nav
+        className={`navbar mb-5 navbar-expand-lg  bg-${state.bg} fixed-top ${!!state.shadow ? state.shadow : ""
+          }`}
+      >
+        <div className="container d-flex">
+          <Link className="navbar-brand text-warning ml-5" to="/">
+            <GiGuitarHead />
+          </Link>
+          <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span className="navbar-toggler-icon"></span>
+          </button>
+          <div className="collapse navbar-collapse  " id="navbarNavDropdown">
+            <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+              <li className="nav-item">
+                <a
+                  className="nav-link active text-warning"
+                  href="/categoria/1"
+                >
+                  Cort
+                </a>
+              </li>
+              <li className="nav-item">
+                <a
+                  className="nav-link active text-warning"
+                  href="/categoria/2"
+                >
+                  Strandbergguitars
+                </a>
+              </li>
+              <li className="nav-item dropdown">
+                <a
+                  className="nav-link active text-warning"
+                  href="/categoria/3">
+                  Fender
+                </a>
+              </li>
+              <li className="nav-item">
+                <a
+                  className="nav-link active text-warning"
+                  href="/categoria/4">
+                  prsguitars
+                </a>
+              </li>
+            </ul>
+            <form className="d-flex me-5 " />
+
+            <div className="btn-group">
+              <Link
                 className="nav-link active text-warning"
-                href="/categoria/1"
+                to="/producto"
+                href="#"
               >
-                Cort
-              </a>
-            </li>
-            <li className="nav-item">
-              <a
-                className="nav-link active text-warning"
-                href="/categoria/2"
-              >
-                Strandbergguitars
-              </a>
-            </li>
-            <li className="nav-item dropdown">
-              <a
-                className="nav-link active text-warning"
-                href="/categoria/3"
-              >
-                Fender
-              </a>
-            </li>
-            <li className="nav-item">
-              <a
-                className="nav-link active text-warning"
-                href="/categoria/4"
-              >
-                prsguitars
-              </a>
-            </li>
-            <div className="d-flex justify-content-end">
+
+              </Link>
               <ul className="navbar-nav">
                 <li className="nav-item dropdown">
                   <a
@@ -94,6 +105,9 @@ export const Navbar = () => {
                         </Link>
                       )}
                     </li>
+
+
+
                     <li>
                       <a
                         className="dropdown-item text-warning"
@@ -102,19 +116,30 @@ export const Navbar = () => {
                         Register
                       </a>
                     </li>
+                    <li>
+                      <a
+                        className="dropdown-item text-warning"
+                        href="/forgot_password"
+                      >
+                        Forgot password
+                      </a>
+                    </li>
                   </ul>
                 </li>
               </ul>
-              <a
-                className="btn btn-outline text-warning"
-                href="/carroDeCompras"
-              >
-                <FaShoppingCart />
-              </a>
             </div>
-          </ul>
+
+            <Link
+              className="btn btn-outline text-warning"
+              to="/carroDeCompras"
+              href="/carroDeCompras"
+            >
+              <FaShoppingCart />
+            </Link>
+            <form />
+          </div>
         </div>
-      </div>
-    </nav >
-  )
+      </nav>
+    </div>
+  );
 };
