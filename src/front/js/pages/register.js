@@ -112,7 +112,7 @@ export const Page_register = () => {
 	};
 
 	return (
-		<div className="container-fluid Container_reg  m-0 p-0">
+		<div className="container-fluid Container_reg ">
 			<div className="login text-center mb-0">
 				<div className="logo text-warning m-1">
 					<GiGuitarHead />

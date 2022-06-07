@@ -50,10 +50,9 @@ const GrupoInput = styled.div`
 const Input = styled.input`
 	background-color: rgba(0, 0, 0, 0.06);
 	border: 0;
-	width: 600px;
+	width: 100%;
 	box-shadow: 0 0 0;
 	border-radius: 4px;
-	background: transparent;
 	color: #efc804de;
 	padding: 7px 0;
 	font-weight: light;

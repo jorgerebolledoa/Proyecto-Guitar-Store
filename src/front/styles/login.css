@@ -8,7 +8,7 @@ No Descomentar, podrian haber conflicto con  otras clases con el mismo nombre, s
   background-size: cover;
   opacity: 0.9;
   /*padding: 50px 0 50px 0;*/
-  height: 100%;
+  height: 1000px;
 }
 
 .Container2 {
@@ -16,6 +16,7 @@ No Descomentar, podrian haber conflicto con  otras clases con el mismo nombre, s
   background-repeat: no-repeat;
   background-size: cover;
   opacity: 0.9;
+  
 /*  padding: 50px 0 50px 0;*/
 
 }

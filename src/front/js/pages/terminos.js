@@ -1,10 +1,10 @@
 import React from "react";
-
+import "../../styles/terminos.css"
 export const Terminos = () => {
     return (
         <>
-            <div >
-                <div className="container-fluid bg-dark text-warning p-5  ">
+            <div className="container_padre">
+                <div className="container text-warning p-5  ">
                     <p>
                         <strong >Términos y condiciones de uso de sitio web</strong>
                         <br></br>
