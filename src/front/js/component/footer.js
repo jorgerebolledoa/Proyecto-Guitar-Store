@@ -25,7 +25,7 @@ export const Footer = () => {
             </div>
 
             <div className="col-md-2">
-              <Link to="" href="" className="text-warning text-decoration-none">Term of Use</Link>
+              <Link to="/Terminos" href="" className="text-warning text-decoration-none">Term of Use</Link>
             </div>
           </div>
         </section>

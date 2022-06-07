@@ -1,13 +1,25 @@
-.contacto_container{
-    align-items: center;
-    padding: 10px 10px 50px 10px;
+.contacto_container_primary{
+    height: 1000px;
+    padding: 10% 20% 20% 20%;
     background-image: url("https://strandbergguitars.com/cdn-cgi/image/onerror=redirect,quality=85,format=auto,metadata=copyright,width=2124,height=1150,fit=cover/wp-content/uploads/2020/03/strandberg-boden-metal-guitar-gallery_04.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     opacity: 0.9;
 }
- 
-.background_input{
-    background-color: rgba(255, 255, 255, 0.33);
+
+.contacto_container{
+    background-color: rgba(255, 255, 255, 0.08);
+    align-items: center;
+    padding: 10px 10px 30px 10px;  
+    border-radius: 8px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6),
+    inset 2px 2px 4px rgba(255, 255, 255, 0.5); 
+}
+    
+@media screen and (max-width: 800px) {
+    .contacto_container_primary{
+        height: 700px;
+        background-color: black;
+        padding: 50px 10px 0px 10px;
+    }
   }
-  
