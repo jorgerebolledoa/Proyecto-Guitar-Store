@@ -10,7 +10,6 @@ const colores = {
 
 const Form = styled.form`
 	position: relative;
-
 	box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6),
 		inset 2px 2px 4px rgba(255, 255, 255, 0.5);
 	border: none;
