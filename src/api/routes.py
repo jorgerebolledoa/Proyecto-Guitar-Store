@@ -405,27 +405,10 @@ def get_messages():
 @api.route('/messages', methods=['POST'])
 def create_messages():
     messages = Messsage()
-    messages.amount = request.json.get('amount')
-    messages.shipping_address = request.json.get('shipping_address')
-    messages.order_address = request.json.get('order_address')
-    messages.order_date = request.json.get('order_date')
-    messages.order_email = request.json.get('order_email')
-    messages.order_status = request.json.get('order_status')
+    messages.email = request.json.get('email')
+    messages.message = request.json.get('message')
 
     messages.save()
-    return jsonify(messages.serialize()), 201
-
-
-@api.route('/messages/<int:messages_id>', methods=['PUT'])
-def update_messages(messages_id):
-    messages = Messsage.query.get(messages_id)
-    messages.amount = request.json.get('amount')
-    messages.shipping_address = request.json.get('shipping_address')
-    messages.order_address = request.json.get('order_address')
-    messages.order_date = request.json.get('order_date')
-    messages.order_email = request.json.get('order_email')
-    messages.order_status = request.json.get('order_status')
-    messages.update()
     return jsonify(messages.serialize()), 201
 
 
