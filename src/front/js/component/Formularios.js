@@ -15,7 +15,7 @@ const Form = styled.form`
 		inset 2px 2px 4px rgba(255, 255, 255, 0.5);
 	border: none;
 	outline: none;
-	background-color: rgba(255, 255, 255, 0.08);
+	background-color: rgba(0, 0, 0, 0.8);
 	color: #efc804de;
 	border-radius: 8px;
 	padding: 10px 20px;
