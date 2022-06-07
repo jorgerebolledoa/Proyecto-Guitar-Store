@@ -204,7 +204,7 @@ export const Page_register = () => {
 							onChange={onChangeTerms}
 						/>
 						<label form="reg_agree">
-							Acepto los terminos <a href="">terms</a>
+							Acepto los <a href="/Terminos">terminos</a>
 						</label>
 						<p>
 							Tienes una cuenta? <a href="/login">Ingresa aqui</a>
