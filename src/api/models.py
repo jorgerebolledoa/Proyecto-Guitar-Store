@@ -222,8 +222,8 @@ class Order_detail(db.Model):
 class Messsage(db.Model):
     __tablename__ = "messages"
     id = db.Column(db.Integer, primary_key=True)
-    email = db.Column(db.String(50), nullable=False)
-    message = db.Column(db.String(250), nullable=False)
+    email = db.Column(db.String(100), nullable=False)
+    message = db.Column(db.String(5000), nullable=False)
     def serialize(self):
         return {
             "id": self.id,

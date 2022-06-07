@@ -353,7 +353,7 @@ def delete_orders(orders_id):
 @api.route("/order_details", methods=['GET'])
 def get_order_details():
     order_details = Order_detail.query.all()
-    order_details = list(map(lambda role: order.serialize(), order_details))
+    order_details = list(map(lambda role: order_details.serialize(), order_details))
     return jsonify(order_details), 200
 
 
@@ -398,7 +398,7 @@ def delete_order_details(order_details_id):
 @api.route("/messages", methods=['GET'])
 def get_messages():
     messages = Messsage.query.all()
-    messages = list(map(lambda role: order.serialize(), messages))
+    messages = list(map(lambda role: messages.serialize(), messages))
     return jsonify(messages), 200
 
 
