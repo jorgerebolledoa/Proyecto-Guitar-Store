@@ -158,8 +158,8 @@ class Order(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     user_id = db.Column(db.Integer, db.ForeignKey("users.id"))
     amount = db.Column(db.Integer)
-    shipping_address = db.Column(db.Integer, primary_key=True)
-    order_address = db.Column(db.Integer, nullable=False)
+    shipping_address = db.Column(db.Integer)
+    order_address = db.Column(db.Integer, nullable=False, unique=True)
     order_date = db.Column(db.DateTime, nullable=False)
     order_email = db.Column(db.String(250), nullable=False)
     order_status = db.Column(db.String(250), nullable=False)
@@ -224,6 +224,7 @@ class Messsage(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     email = db.Column(db.String(100), nullable=False)
     message = db.Column(db.String(5000), nullable=False)
+
     def serialize(self):
         return {
             "id": self.id,
