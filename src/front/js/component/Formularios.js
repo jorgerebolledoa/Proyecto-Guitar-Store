@@ -15,8 +15,7 @@ const Form = styled.form`
 		inset 2px 2px 4px rgba(255, 255, 255, 0.5);
 	border: none;
 	outline: none;
-	background-color: rgba(0, 0, 0, 0.06);
-	
+	background-color: rgba(0, 0, 0, 0.8);
 	color: #efc804de;
 	border-radius: 8px;
 	padding: 10px 20px;
@@ -51,10 +50,9 @@ const GrupoInput = styled.div`
 const Input = styled.input`
 	background-color: rgba(0, 0, 0, 0.06);
 	border: 0;
-	width: 600px;
+	width: 100%;
 	box-shadow: 0 0 0;
 	border-radius: 4px;
-	background: transparent;
 	color: #efc804de;
 	padding: 7px 0;
 	font-weight: light;
@@ -138,7 +136,7 @@ const Boton = styled.button`
 	top: 50%;
 	background: #413f3f64;
 	color: #efc804de;
-	padding: 11px 0;
+	padding: 0 20px 0 0;
 	width: 50px;
 	height: 50px;
 	margin-top: -25px;

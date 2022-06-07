@@ -11,22 +11,22 @@ import { useHistory } from "react-router-dom";
 
 const Login = (props) => {
   const { store, actions } = useContext(Context);
-	const [email, setEmail] = useState("");
-	const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const history = useHistory();
 
 
-  console.log ("this is your token",store.token)
+  console.log("this is your token", store.token)
 
-	const handleClick = () => {
-    actions.login (email,password);
+  const handleClick = () => {
+    actions.login(email, password);
 
   };
-  
-  if(store.token && store.token != "" && store.token != undefined )history.push("/")
 
-	return (
-    <div className="container-fluid Container1 m-0 p-0">
+  if (store.token && store.token != "" && store.token != undefined) history.push("/")
+
+  return (
+    <div className="container-fluid Container1  ">
       {store.token && store.token != "" && store.token != undefined ? (
         "you are logged in with this token" + store.token
       ) : (
@@ -114,4 +114,3 @@ Login.propTypes = {
   text_linkNew: PropTypes.string,
 };
 export default Login;
- 

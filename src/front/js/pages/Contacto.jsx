@@ -27,15 +27,15 @@ export const Contacto = () => {
   };
 
   return (
-    <div>
-      <div className="container-fluid bg-dark text-warning justify-content-center  contacto_container border  rounded  border-light">
+    <div className="container-fluid justify-content-center contacto_container_primary">
+      <div className="container-fluid  text-warning  contacto_container ">
         <div className=" m-3 p-3 ">
           <label for="exampleFormControlInput1" className="form-label">Email</label>
-          <input type="email" className="form-control background_input  border-0" id="exampleFormControlInput1" />
+          <input type="email" className="form-control text-warning border-0 bg-secondary bg-opacity-25" id="exampleFormControlInput1" />
         </div>
         <div className=" m-3 p-3">
           <label for="exampleFormControlTextarea1" className="form-label text-warning ">Menssege</label>
-          <textarea className="form-control background_input border-0 text-warning" id="exampleFormControlTextarea1" rows="10" onClick={crear} />
+          <textarea className="form-control bg-secondary bg-opacity-25 border-0 text-warning" id="exampleFormControlTextarea1" rows="10" onClick={crear} />
           <div className="float-end p-2">
             <button type="button" class="btn btn-dark text-warning" onClick={crear}>enviar</button>
           </div>

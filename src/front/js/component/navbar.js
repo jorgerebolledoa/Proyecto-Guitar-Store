@@ -23,7 +23,7 @@ export const Navbar = () => {
   }, []);
 
   return (
-    <div className="container-fluid m-0 p-0">
+    <div className="container-fluid m-0 p-0 ">
       <nav
         className={`navbar mb-5 navbar-expand-lg  bg-${state.bg} fixed-top ${!!state.shadow ? state.shadow : ""
           }`}

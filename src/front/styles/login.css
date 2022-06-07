@@ -8,7 +8,7 @@ No Descomentar, podrian haber conflicto con  otras clases con el mismo nombre, s
   background-size: cover;
   opacity: 0.9;
   /*padding: 50px 0 50px 0;*/
-  height: 100%;
+  height: 1000px;
 }
 
 .Container2 {
@@ -16,6 +16,7 @@ No Descomentar, podrian haber conflicto con  otras clases con el mismo nombre, s
   background-repeat: no-repeat;
   background-size: cover;
   opacity: 0.9;
+  
 /*  padding: 50px 0 50px 0;*/
 
 }
@@ -25,7 +26,8 @@ No Descomentar, podrian haber conflicto con  otras clases con el mismo nombre, s
   background-repeat: no-repeat;
   background-size: cover;
   opacity: 0.9;
-/* padding: 50px 0 50px 0;*/
+  height: 1000px;
+  padding: 15% 0 50px 0;
 }
 
 a {
@@ -77,13 +79,11 @@ a:hover {
 }
 
 .login-group {
-  border-radius: 50px;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6),
     inset 2px 2px 4px rgba(255, 255, 255, 0.5);
   border: none;
   outline: none;
-  background-color: rgba(0, 0, 0, 0.06);
-  background: #ffffff09;
+  background-color: rgba(0, 0, 0, 0.8); 
   color: #efc804de;
   border-radius: 8px;
   padding: 10px 20px;
@@ -106,7 +106,7 @@ a:hover {
   top: 50%;
   background: #413f3f64;
   color: #efc804de;
-  padding: 11px 0;
+  	padding: 0 20px 0 0;
   width: 50px;
   height: 50px;
   margin-top: -25px;
