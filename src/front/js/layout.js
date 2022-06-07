@@ -53,7 +53,7 @@ const Layout = () => {
               <Comparar />
             </Route>
             <Route exact path="/contacto">
-              <Contacto />
+              <contacto />
             </Route>
             <Route exact path="/Terminos">
               <Terminos />
