@@ -34,13 +34,13 @@ export const Footer = () => {
             <Link to="/adminprueba" href="/adminprueba" className="text-warning text-decoration-none ">Admin Test</Link>
           </h6>
           <section className="mb-2">
-            <Link className="btn btn-outline-warning btn-floating m-3" id="btnFooter" to="" href="" role="button">
+            <Link className="btn btn-outline-warning btn-floating m-3" id="btnFooter" to="" href="/https://www.facebook.com/" role="button">
               <i className="fab fa-facebook-f"></i>
             </Link>
-            <Link className="btn form btn-outline-warning btn-floating m-3" id="btnFooter" to="" href="" role="button">
+            <Link className="btn form btn-outline-warning btn-floating m-3" id="btnFooter" to="" href="/https://twitter.com/" role="button">
               <i className="fab fa-twitter"></i>
             </Link>
-            <Link className="btn form btn-outline-warning btn-floating m-3" id="btnFooter" to="" href="" role="button">
+            <Link className="btn form btn-outline-warning btn-floating m-3" id="btnFooter" to="" href="/https://www.instagram.com/" role="button">
               <i className="fab fa-instagram"></i>
             </Link>
           </section>
