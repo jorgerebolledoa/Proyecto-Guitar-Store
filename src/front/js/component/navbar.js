@@ -53,7 +53,7 @@ export const Navbar = () => {
                   Strandbergguitars
                 </a>
               </li>
-              <li className="nav-item dropdown">
+              <li className="nav-item ">
                 <a
                   className="nav-link active text-warning"
                   href="/categoria/3">
@@ -67,68 +67,36 @@ export const Navbar = () => {
                   prsguitars
                 </a>
               </li>
+              <li className="nav-item">
+
+              </li>
+              <li className="nav-item">
+                <a
+                  className="nav-link active text-warning"
+                  href="/categoria/4">
+                  prsguitars
+                </a>
+              </li>
+            </ul>
+            <ul className="navbar-nav">
+              <li className="nav-item">
+                <Link className="nav-link active text-warning" to="/register">Registrate</Link>
+              </li>
+
+              <li>
+                {store.currentUser === null ? (
+                  <Link to="/login" className="nav-link active text-warning" href="/login">
+                    Ingresa
+                  </Link>
+                ) : (
+                  <Link className="nav-link active text-warning" to="/" onClick={() => actions.getlogout()}>
+                    Cerrar sesion
+                  </Link>
+                )}
+              </li>
+
             </ul>
             <form className="d-flex me-5 " />
-
-            <div className="btn-group">
-              <Link
-                className="nav-link active text-warning"
-                to="/producto"
-                href="#"
-              >
-
-              </Link>
-              <ul className="navbar-nav">
-                <li className="nav-item dropdown">
-                  <a
-                    className="nav-link dropdown-toggle text-warning"
-                    href="#"
-                    id="navbarDarkDropdownMenuLink"
-                    role="button"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false"
-                  >
-                    Login
-                  </a>
-                  <ul
-                    className="dropdown-menu dropdown-menu-dark"
-                    aria-labelledby="navbarDarkDropdownMenuLink"
-                  >
-                    <li>
-                      {!store.token ? (
-                        <Link to="/login" className="dropdown-item text-warning" href="/login">
-                          Login
-                        </Link>
-                      ) : (
-                        <Link to="/" onClick={() => actions.logout()} className="dropdown-item text-warning" href="">
-                          Logout
-                        </Link>
-                      )}
-                    </li>
-
-
-
-                    <li>
-                      <a
-                        className="dropdown-item text-warning"
-                        href="/register"
-                      >
-                        Register
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        className="dropdown-item text-warning"
-                        href="/forgot_password"
-                      >
-                        Forgot password
-                      </a>
-                    </li>
-                  </ul>
-                </li>
-              </ul>
-            </div>
-
             <Link
               className="btn btn-outline text-warning"
               to="/carroDeCompras"
