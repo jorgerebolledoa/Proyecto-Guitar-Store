@@ -9,15 +9,13 @@ export const Page_login = () => {
     <>
       <Login
         logo2="Login"
-        lg_username="Username"
-        lg_password=" Password"
-        lg_remember="Remember me."
-        text_preg1="Forgot your password?"
-        text_preg2="Dont have account?"
+        lg_remember="Recuerdame."
+        text_preg1="Olvido la contraseña?"
+        text_preg2="No tienes cuenta?"
         boton_forgotPass="/forgot_password "
         boton_newAccount="/register "
-        text_linkForg="click here"
-        text_linkNew="create new"
+        text_linkForg="click aqui"
+        text_linkNew="crear cuenta"
       />
     </>
   );
