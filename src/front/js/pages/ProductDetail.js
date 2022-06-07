@@ -25,6 +25,7 @@ export const ProductDetail = () => {
     localStorage.setItem("id", lista.id);
     localStorage.setItem("price", lista.price);
     localStorage.setItem("sku", lista.sku);
+    localStorage.setItem("img", lista.img1);
     return (console.log(localStorage))
   }
   return (
