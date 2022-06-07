@@ -1,7 +1,8 @@
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
-			token: null,
+			apiUrl: "",
+            currentUser: null,
 			message: null,
 			demo: [
 				{
@@ -21,53 +22,48 @@ const getState = ({ getStore, getActions, setStore }) => {
 			exampleFunction: () => {
 				getActions().changeColor(0, "green");
 			},
-			syncTokenFromsessionStore: () => {
+			
 
-				const token =sessionStorage.getItem("token");
-				console.log("aplication just loaded, synching the session storage token");
-				if(token && token != "" && token != undefined ) setStore({token:token});
+			getLogin: async (info = { email: '', password: '' }) => {
+                try {
+                    const { apiUrl } = getStore();
+                    const response = await fetch(`${apiUrl}/api/login`, {
+                        method: 'POST',
+                        body: JSON.stringify(info),
+                        headers: {
+                            'Content-Type': 'application/json'
+                        }
+                    })
+
+                    const data = await response.json()
+
+                    if (data.access_token) {
+                        setStore({ currentUser: data })
+                        sessionStorage.setItem('currentUser', JSON.stringify(data));
+                    }
+
+                    return data;
+
+                } catch (error) {
+                    console.log(error);
+                }
+            },
+
+			getlogout: () => {
+
+				if (sessionStorage.getItem('currentUser')) {
+                    sessionStorage.removeItem('currentUser');
+                    setStore({ currentUser: null });
+                }
 			},
-			logout: () => {
 
-				sessionStorage.removeItem("token");
-				console.log("login out ");
-				setStore({token:null});
-			},
+			checkSession: () => {
+                if (sessionStorage.getItem('currentUser')) {
+                    setStore({ currentUser: JSON.parse(sessionStorage.getItem('currentUser')) })
+                }
+            },
 
-			login: async (email, password) => {
-				const opts = {
-					method: "POST",
-					headers: {
-						"Content-Type": "application/json",
-					},
-					body: JSON.stringify({
-						email: email,
-						password: password,
-					}),
-				};
-
-				try {
-
-					const resp = await fetch(
-						"https://3001-jorgereboll-proyectofin-b4kaxoo2l69.ws-us46.gitpod.io/api/token",
-						opts
-					)
-					if (resp.status !== 200 && resp.status !== 201) {
-						alert("There has been some error"); 
-						return false;
-					}
-
-					const data = await resp.json();
-					console.log("esto viene del backend", data);
-					sessionStorage.setItem("token", data.access_token);
-					setStore({token: data.access_token})
-					return true;
-				}
-				catch(error){
-					console.log("there has been an error login in")
-				}
-			},
-			register: async (name, email, street, city, country, phone, password) => {
+			register: async (name, email, street, city, country, phone, password,) => {
 				const opts = {
 					method: "POST",
 				//	mode: "no-cors",
@@ -85,7 +81,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 						"https://3001-jorgereboll-proyectofin-f5wtyul2spl.ws-us46.gitpod.io/api/users",
 						opts
 					)
-					if (resp.status !== 200 && resp.status !== 201) {
+					if (resp.status !== 200 && resp.status !==201) {
 						alert("There has been some error"); 
 						return false;
 					}
