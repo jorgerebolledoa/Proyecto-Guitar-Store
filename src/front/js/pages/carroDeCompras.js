@@ -1,14 +1,12 @@
 import React from "react";
-import { Link, useParams } from "react-router-dom";
-import { useReducer, useState, useEffect } from "react";
-import { CardProductosDelCarro } from "../component/carroDeCompras/CardProductosDelCarro.jsx";
+import { Link } from "react-router-dom";
+import { useReducer, useEffect } from "react";
 import { CartItem } from "../component/carroDeCompras/CartItem.jsx";
 import { carroDeComprasInitialState, carroDeComprasReducer } from "../component/reducersCarroDeCompras/carroDeCompraReducer.js";
 import { TYPES } from "../component/reducersCarroDeCompras/carroDeComprasActions.js";
-/* let miNombre = localStorage.getItem('name'); */
+
 export const CarroDeCompras = () => {
   const [state, dispatch] = useReducer(carroDeComprasReducer, carroDeComprasInitialState);
-  console.log(localStorage)
 
   const { products, cart } = state;
 
@@ -27,24 +25,11 @@ export const CarroDeCompras = () => {
     dispatch({ type: TYPES.CLEAR_CART })
   };
   // CODIGO PARA TOMAR PRODUCTOS POR ID
-  // const { product } = useParams();
+  // EL boton comprar tiene que realizar 2 acciones, 
+  // la accion de añadir el elemento al arreglo carro que hay en el reducer
+  // y añadir la información al local storage
+  // 
 
-  useEffect(() => { }, []);
-  const [lista, setlista] = useState([]);
-
-  const urlApi = "https://3001-jorgereboll-proyectofin-f5wtyul2spl.ws-us46.gitpod.io/api/products/id/5"
-  useEffect(() => {
-    getTask(urlApi);
-  }, []);
-  const getTask = (url) => {
-    fetch(url)
-      .then((Response) => Response.json())
-      .then((data) => {
-        console.log(data);
-        setlista(data);
-      })
-      .catch((error) => console.log(error));
-  };
 
   return (
     <>
@@ -59,7 +44,7 @@ export const CarroDeCompras = () => {
             vistaCarroVacio
           </Link>
         </h1>
-        {products.map((product) => (<CardProductosDelCarro key={product.id} name={lista.name} id={lista.id} price={lista.price} addToCart={addToCart} />))}
+
 
         <div className="cajaResumenPedido text-white mx-auto row">
           <h5 className="col-12">Resumen de pedido</h5>
