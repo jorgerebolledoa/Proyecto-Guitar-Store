@@ -8,11 +8,12 @@ import { TYPES } from "../component/reducersCarroDeCompras/carroDeComprasActions
 export const CarroDeCompras = () => {
   const [state, dispatch] = useReducer(carroDeComprasReducer, carroDeComprasInitialState);
 
-  const { products, cart } = state;
+  const { cart } = state;
 
-  const addToCart = (id) => {
+  const addToCart = (product) => {
     // console.log(id)
-    dispatch({ type: TYPES.ADD_TO_CART, payload: id })
+    dispatch({ type: TYPES.ADD_TO_CART, payload: product })
+
   };
   const deleteFromCart = (id, all = false) => {
     if (all) {
