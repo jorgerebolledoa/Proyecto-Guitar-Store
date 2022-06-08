@@ -28,9 +28,10 @@ export const ProductDetail = () => {
 
   return (
     <div key={lista.id}>
-      <nav className="navbar bg-light fixed-top m-5">
-        <div className="container-fluid">
+      <nav className="navbar bg-secondary fixed-top m-5 ">
+        <div className="container-fluid d-flex justify-content-end">
           <button className="navbar-brand border-none" href={"/carroDeCompras/" + lista.id} onClick={addTolocalStorage} >Añadir al carrito</button>
+
         </div>
       </nav>
       <div className="container-fluid">
