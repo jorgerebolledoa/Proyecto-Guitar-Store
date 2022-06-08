@@ -1,6 +1,9 @@
 import React from "react";
 import "../../../styles/admin.css";
+
+
 export const PanelDeControlAdm = () => {
+
   return (
     <>
       <br id="pageTop"></br>
@@ -9,45 +12,26 @@ export const PanelDeControlAdm = () => {
       <br></br>
       <div className="container p-4 rounded bg-dark">
         <div className="row p-4">
-          <div className="col-xl-3 col-md-6 mb-4">
+          <div className=" col-xl-4 col-md-6 mb-4">
             <div className="card border-left-primary shadow h-100 py-2 bg-dark text-white">
               <div className="card-body ">
                 <div className="row align-items-center ">
                   <div className="col mr-2 ">
                     <div className="text-xs font-weight-bold text-white text-uppercase mb-1 ">
-                      Ganancias (Mensuales)
+                      Fecha
                     </div>
-                    <div className="h5 mb-0 font-weight-bold text-gray-800 opacity-75">
-                      $44.067.000
+                    <div className="h5 mb-0 font-weight-bold text-gray-800 opacity-75" id="current_date">
+                    {`${new Date().toDateString()}`}
                     </div>
                   </div>
-                  <div className="col-auto">
+                  <div className="col-2">
                     <i className="fas fa-calendar fa-2x text-gray-300" />
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <div className="col-xl-3 col-md-6 mb-4">
-            <div className="card border-left-success  shadow h-100 py-2 bg-dark text-white">
-              <div className="card-body">
-                <div className="row no-gutters align-items-center">
-                  <div className="col mr-2">
-                    <div className="text-xs font-weight-bold text-white text-uppercase mb-1">
-                      Ganancias (Anuales)
-                    </div>
-                    <div className="h5 mb-0 font-weight-bold text-gray-800 opacity-75">
-                      $234.415.000
-                    </div>
-                  </div>
-                  <div className="col-auto">
-                    <i className="fas fa-dollar-sign fa-2x text-gray-300" />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="col-xl-3 col-md-6 mb-4">
+          <div className="col-xl-4 col-md-6 mb-4">
             <div className="card border-left-info shadow h-100 py-2 bg-dark text-white">
               <div className="card-body">
                 <div className="row no-gutters align-items-center">
@@ -75,7 +59,7 @@ export const PanelDeControlAdm = () => {
                       </div>
                     </div>
                   </div>
-                  <div className="col-auto">
+                  <div className="col-2">
                     <i className="fas fa-clipboard-list fa-2x text-gray-300" />
                   </div>
                 </div>
@@ -85,7 +69,7 @@ export const PanelDeControlAdm = () => {
 
           <a
             href="/contactadmin"
-            className="bg-dark text-white col-xl-3 col-md-6 mb-4"
+            className="bg-dark text-white col-xl-4 col-md-6 mb-4 text-decoration-none"
           >
             <div className="card border-left-white shadow h-100 py-2 bg-dark text-white">
               <div className="card-body">
@@ -99,7 +83,7 @@ export const PanelDeControlAdm = () => {
                     </div>
                   </div>
 
-                  <div className="col-auto">
+                  <div className="col-2">
                     <i className="fas fa-comments fa-2x text-gray-300" />
                   </div>
                 </div>
@@ -116,7 +100,7 @@ export const PanelDeControlAdm = () => {
             <a href="/upload" className="btn btn-outline-warning col-md-4">
               Crear publicaciónes
             </a>
-            <a href="/editpost"
+            <a href="/productsview"
               className="btn btn-outline-warning col-md-4"
               htmlFor="btncheck2"
             >

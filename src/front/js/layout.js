@@ -12,6 +12,7 @@ import { EditPostAdm } from "./component/Admin/EditPostAdm.jsx";
 import { UploadAdm } from "./component/Admin/UploadAdm.jsx";
 import { UsersViewAdm } from "./component/Admin/UsersViewAdm.jsx";
 import { PanelDeControlAdm } from "./component/Admin/PanelDeControlAdm.jsx";
+import { ProductsViewAdmin } from "./component/Admin/ProductsViewAdmin.jsx";
 import { ContactViewAdm } from "./component/Admin/ContactViewAdm.jsx";
 import injectContext from "./store/appContext";
 import { Navbar } from "./component/navbar";
@@ -90,6 +91,9 @@ const Layout = () => {
             </Route>
             <Route path="/editpost">
               <EditPostAdm />
+            </Route>
+            <Route path="/productsview">
+              <ProductsViewAdmin/>
             </Route>
             <Route path="/usersview">
               <UsersViewAdm />

@@ -12,16 +12,16 @@ export const UsersViewAdm = () => {
   <div className="col">
     <div className="row flex-lg-nowrap">
       <div className="col mb-3">
-        <div className="e-panel card">
+        <div className="e-panel card bg-dark border-white">
           <div className="card-body">
             <div className="card-title">
               <h6 className="mr-2">
-                <small className="px-1">Dashboard de Usuarios</small>
+                <small className="px-1 text-white">Dashboard de Usuarios</small>
               </h6>
             </div>
             <div className="e-table">
               <div className="table-responsive table-lg mt-3">
-                <table className="table table-bordered">
+                <table className="table table-bordered text-white">
                   <thead>
                     <tr>
                       <th className="align-top">
@@ -73,7 +73,7 @@ export const UsersViewAdm = () => {
                       <td className="text-center align-middle">
                         <div className="btn-group align-top">
                           <button
-                            className="btn btn-sm btn-outline-dark badge"
+                            className="btn btn-sm btn-outline-secondary badge"
                             type="button"
                             data-toggle="modal"
                             data-target="#user-form-modal"
@@ -123,7 +123,7 @@ export const UsersViewAdm = () => {
                       <td className="text-center align-middle">
                       <div className="btn-group align-top">
                           <button
-                            className="btn btn-sm btn-outline-dark badge"
+                            className="btn btn-sm btn-outline-secondary badge"
                             type="button"
                             data-toggle="modal"
                             data-target="#user-form-modal"
@@ -173,7 +173,7 @@ export const UsersViewAdm = () => {
                       <td className="text-center align-middle">
                       <div className="btn-group align-top">
                           <button
-                            className="btn btn-sm btn-outline-dark badge"
+                            className="btn btn-sm btn-outline-secondary badge"
                             type="button"
                             data-toggle="modal"
                             data-target="#user-form-modal"
@@ -223,7 +223,7 @@ export const UsersViewAdm = () => {
                       <td className="text-center align-middle">
                       <div className="btn-group align-top">
                           <button
-                            className="btn btn-sm btn-outline-dark badge"
+                            className="btn btn-sm btn-outline-secondary badge"
                             type="button"
                             data-toggle="modal"
                             data-target="#user-form-modal"
@@ -271,7 +271,7 @@ export const UsersViewAdm = () => {
                       <td className="text-center align-middle">
                       <div className="btn-group align-top">
                           <button
-                            className="btn btn-sm btn-outline-dark badge"
+                            className="btn btn-sm btn-outline-secondary badge"
                             type="button"
                             data-toggle="modal"
                             data-target="#user-form-modal"
@@ -321,7 +321,7 @@ export const UsersViewAdm = () => {
                       <td className="text-center align-middle">
                       <div className="btn-group align-top">
                           <button
-                            className="btn btn-sm btn-outline-dark badge"
+                            className="btn btn-sm btn-outline-secondary badge"
                             type="button"
                             data-toggle="modal"
                             data-target="#user-form-modal"
@@ -371,7 +371,7 @@ export const UsersViewAdm = () => {
                       <td className="text-center align-middle">
                       <div className="btn-group align-top">
                           <button
-                            className="btn btn-sm btn-outline-dark badge"
+                            className="btn btn-sm btn-outline-secondary badge"
                             type="button"
                             data-toggle="modal"
                             data-target="#user-form-modal"
@@ -421,7 +421,7 @@ export const UsersViewAdm = () => {
                       <td className="text-center align-middle">
                       <div className="btn-group align-top">
                           <button
-                            className="btn btn-sm btn-outline-dark badge"
+                            className="btn btn-sm btn-outline-secondary badge"
                             type="button"
                             data-toggle="modal"
                             data-target="#user-form-modal"
@@ -471,7 +471,7 @@ export const UsersViewAdm = () => {
                       <td className="text-center align-middle">
                       <div className="btn-group align-top">
                           <button
-                            className="btn btn-sm btn-outline-dark badge"
+                            className="btn btn-sm btn-outline-secondary badge"
                             type="button"
                             data-toggle="modal"
                             data-target="#user-form-modal"
@@ -521,7 +521,7 @@ export const UsersViewAdm = () => {
                       <td className="text-center align-middle">
                       <div className="btn-group align-top">
                           <button
-                            className="btn btn-sm btn-outline-dark badge"
+                            className="btn btn-sm btn-outline-secondary badge"
                             type="button"
                             data-toggle="modal"
                             data-target="#user-form-modal"
@@ -571,7 +571,7 @@ export const UsersViewAdm = () => {
                       <td className="text-center align-middle">
                       <div className="btn-group align-top">
                           <button
-                            className="btn btn-sm btn-outline-dark badge"
+                            className="btn btn-sm btn-outline-secondary badge"
                             type="button"
                             data-toggle="modal"
                             data-target="#user-form-modal"
@@ -621,7 +621,7 @@ export const UsersViewAdm = () => {
                       <td className="text-center align-middle">
                       <div className="btn-group align-top">
                           <button
-                            className="btn btn-sm btn-outline-dark badge"
+                            className="btn btn-sm btn-outline-secondary badge"
                             type="button"
                             data-toggle="modal"
                             data-target="#user-form-modal"
@@ -643,12 +643,12 @@ export const UsersViewAdm = () => {
               <div className="d-flex justify-content-center ">
                 <ul className="pagination mt-3 mb-0 ">
                   <li className="disabled page-item">
-                    <a href="#" className="page-link">
+                    <a href="#" className="page-link ">
                       ‹
                     </a>
                   </li>
-                  <li className="active page-item">
-                    <a href="#" className="page-link">
+                  <li className="active page-item ">
+                    <a href="#" className="page-link ">
                       1
                     </a>
                   </li>
@@ -689,28 +689,8 @@ export const UsersViewAdm = () => {
         </div>
       </div>
       <div className="col-12 col-lg-3 mb-3">
-        <div className="card">
+        <div className="card card bg-dark text-white border-white">
           <div className="card-body">
-            <hr className="my-3" />
-            <div className="e-navlist e-navlist--active-bold">
-              <ul className="nav">
-                <li className="nav-item active">
-                  <a href="" className="nav-link">
-                    <span>Todo</span>&nbsp;<small>/&nbsp;32</small>
-                  </a>
-                </li>
-                <li className="nav-item">
-                  <a href="" className="nav-link">
-                    <span>Activo</span>&nbsp;<small>/&nbsp;16</small>
-                  </a>
-                </li>
-                <li className="nav-item">
-                  <a href="" className="nav-link">
-                    <span>Seleccionado</span>&nbsp;<small>/&nbsp;0</small>
-                  </a>
-                </li>
-              </ul>
-            </div>
             <hr className="my-3" />
             <div>
               <div className="form-group">
@@ -737,59 +717,7 @@ export const UsersViewAdm = () => {
               </div>
             </div>
             <hr className="my-3" />
-            <div className="">
-              <label>Status:</label>
-              <div className="px-2">
-                <div className="custom-control custom-radio">
-                  <input
-                    type="radio"
-                    className="custom-control-input"
-                    name="user-status"
-                    id="users-status-disabled"
-                  />
-                  <label
-                    className="custom-control-label"
-                    htmlFor="users-status-disabled"
-                  >
-                    Desactivado
-                  </label>
-                </div>
-              </div>
-              <div className="px-2">
-                <div className="custom-control custom-radio">
-                  <input
-                    type="radio"
-                    className="custom-control-input"
-                    name="user-status"
-                    id="users-status-active"
-                  />
-                  <label
-                    className="custom-control-label"
-                    htmlFor="users-status-active"
-                  >
-                    Activo
-                  </label>
-                </div>
-              </div>
-              <div className="px-2">
-                <div className="custom-control custom-radio">
-                  <input
-                    type="radio"
-                    className="custom-control-input"
-                    name="user-status"
-                    id="users-status-any"
-                    defaultChecked=""
-                  />
-                  <label
-                    className="custom-control-label"
-                    htmlFor="users-status-any"
-                  >
-                    Cualquiera
-                  </label>
-                </div>
-                <button type="button" class="btn btn-warning">Buscar</button>
-              </div>
-            </div>
+            <button type="button" class="btn btn-outline-warning">Buscar</button>
           </div>
         </div>
       </div>
