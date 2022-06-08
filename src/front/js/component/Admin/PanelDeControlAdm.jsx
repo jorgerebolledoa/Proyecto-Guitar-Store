@@ -1,5 +1,6 @@
 import React from "react";
 import "../../../styles/admin.css";
+import { TodoListAdmin } from "./TodoListAdmin.jsx";
 
 
 export const PanelDeControlAdm = () => {
@@ -116,83 +117,7 @@ export const PanelDeControlAdm = () => {
         </div>
         <div className="row">
           <div className="col-lg-12 mb-4">
-            <div className="card shadow mb-4 bg-dark text-white">
-              <div className="card-header py-3">
-                <h6 className="m-0 font-weight-bold text-white">
-                  Tareas Pendientes
-                </h6>
-              </div>
-              <div className="card-body">
-                <h4 className="small font-weight-bold opacity-75">
-                  Actualización de stock{" "}
-                  <span className="float-right">20%</span>
-                </h4>
-                <div className="progress mb-4">
-                  <div
-                    className="progress-bar bg-warning"
-                    role="progressbar"
-                    style={{ width: "20%" }}
-                    aria-valuenow={20}
-                    aria-valuemin={0}
-                    aria-valuemax={100}
-                  />
-                </div>
-                <h4 className="small font-weight-bold opacity-75">
-                  Rastreo de envíos <span className="float-right">40%</span>
-                </h4>
-                <div className="progress mb-4">
-                  <div
-                    className="progress-bar bg-warning"
-                    role="progressbar"
-                    style={{ width: "40%" }}
-                    aria-valuenow={40}
-                    aria-valuemin={0}
-                    aria-valuemax={100}
-                  />
-                </div>
-                <h4 className="small font-weight-bold opacity-75">
-                  Revisar base de datos de usuarios{" "}
-                  <span className="float-right">60%</span>
-                </h4>
-                <div className="progress mb-4">
-                  <div
-                    className="progress-bar bg-warning"
-                    role="progressbar"
-                    style={{ width: "60%" }}
-                    aria-valuenow={60}
-                    aria-valuemin={0}
-                    aria-valuemax={100}
-                  />
-                </div>
-                <h4 className="small font-weight-bold opacity-75">
-                  Tranferir sueldos <span className="float-right">80%</span>
-                </h4>
-                <div className="progress mb-4">
-                  <div
-                    className="progress-bar  bg-warning"
-                    role="progressbar"
-                    style={{ width: "80%" }}
-                    aria-valuenow={80}
-                    aria-valuemin={0}
-                    aria-valuemax={100}
-                  />
-                </div>
-                <h4 className="small font-weight-bold opacity-75">
-                  Capacitación empleados{" "}
-                  <span className="float-right">Complete!</span>
-                </h4>
-                <div className="progress">
-                  <div
-                    className="progress-bar bg-warning bg-opacity-50"
-                    role="progressbar"
-                    style={{ width: "100%" }}
-                    aria-valuenow={100}
-                    aria-valuemin={0}
-                    aria-valuemax={100}
-                  />
-                </div>
-              </div>
-            </div>
+            <TodoListAdmin />
           </div>
         </div>
       </div>

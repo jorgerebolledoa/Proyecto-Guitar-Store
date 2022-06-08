@@ -49,7 +49,7 @@ export const Navbar = () => {
                   to="/categoria/2"
                   href="/categoria/2"
                 >
-                  Strandbergguitars
+                  Strandberg
                 </Link>
               </li>
               <li className="nav-item dropdown">
@@ -67,7 +67,7 @@ export const Navbar = () => {
                   to="/categoria/4"
                   href="/categoria/4"
                 >
-                  prsguitars
+                  PRS
                 </Link>
               </li>
             </ul>
