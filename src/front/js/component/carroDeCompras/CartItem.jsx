@@ -4,7 +4,6 @@ import { AiFillMinusCircle, AiTwotoneDelete } from "react-icons/ai";
 export const CartItem = ({ data, deleteFromCart }) => {
   let { id, name, price, quantity, img } = data;
 
-
   return (
     <>
       <div className="cajaProducto card mx-auto flex-row mb-5  ">

@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import "../../styles/img.css";
 import { useParams } from "react-router-dom";
 import Slider from "../component/Vista_principal/Slider";
+
+
 export const ProductDetail = () => {
   const { product } = useParams();
 
@@ -23,14 +25,17 @@ export const ProductDetail = () => {
 
   const addTolocalStorage = (cart) => {
     localStorage.setItem("cart", JSON.stringify(cart))
-    return (console.log(localStorage))
+    console.log("producto añadido al localStorage")
   }
 
+  const addButtonFunctions = () => {
+
+  }
   return (
     <div key={lista.id}>
       <nav className="navbar bg-secondary fixed-top m-5 ">
         <div className="container-fluid d-flex justify-content-end">
-          <button className="navbar-brand border-none" href={"/carroDeCompras/" + lista.id} onClick={addTolocalStorage} >Añadir al carrito</button>
+          <button className="navbar-brand border-none" href={"/carroDeCompras/" + lista.id} onClick={() => addTolocalStorage(lista)} >Añadir al carrito</button>
 
         </div>
       </nav>
