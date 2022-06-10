@@ -1,9 +1,10 @@
 import { TYPES } from "./carroDeComprasActions";
 
-export const carroDeComprasInitialState = {
 
+export const carroDeComprasInitialState = {
     cart: JSON.parse(localStorage.getItem("cart")) || []
 }
+console.log(carroDeComprasInitialState)
 
 export function carroDeComprasReducer(state, actions) {
     switch (actions.type) {

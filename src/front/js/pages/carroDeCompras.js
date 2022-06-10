@@ -1,9 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { useReducer, useEffect } from "react";
+import { useReducer } from "react";
 import { CartItem } from "../component/carroDeCompras/CartItem.jsx";
 import { carroDeComprasInitialState, carroDeComprasReducer } from "../component/reducersCarroDeCompras/carroDeCompraReducer.js";
 import { TYPES } from "../component/reducersCarroDeCompras/carroDeComprasActions.js";
+
 
 export const CarroDeCompras = () => {
   const [state, dispatch] = useReducer(carroDeComprasReducer, carroDeComprasInitialState);
@@ -30,8 +31,6 @@ export const CarroDeCompras = () => {
   // la accion de añadir el elemento al arreglo carro que hay en el reducer
   // y añadir la información al local storage
   // 
-
-
   return (
     <>
       <div className="container-fluid mx-0 bg-dark pb-5">
