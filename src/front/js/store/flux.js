@@ -1,7 +1,7 @@
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
-			apiUrl: "",
+			apiUrl: "https://3001-jorgereboll-proyectofin-5qyk02tzkub.ws-us47.gitpod.io",
             currentUser: null,
 			message: null,
 			demo: [
@@ -78,7 +78,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 				try {
 
 					const resp = await fetch(
-						"https://3001-jorgereboll-proyectofin-f5wtyul2spl.ws-us46.gitpod.io/api/users",
+						"https://3001-jorgereboll-proyectofin-5qyk02tzkub.ws-us47.gitpod.io/api/users",
+						//"https://3001-jorgereboll-proyectofin-f5wtyul2spl.ws-us46.gitpod.io/api/users",
 						opts
 					)
 					if (resp.status !== 200 && resp.status !==201) {

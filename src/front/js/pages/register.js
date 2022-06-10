@@ -236,6 +236,7 @@ export const Page_register = () => {
 							//  })
 							//history.push("/")
 							alert("Registro Exitoso")
+						//history.push("/")
 						}
 
 

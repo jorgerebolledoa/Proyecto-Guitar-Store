@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import { Context } from "../../store/appContext";
 import { useContext, useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
-
+import Swal from "sweetalert2";
 
 
 
@@ -40,7 +40,7 @@ const Login = (props) => {
       Swal.fire({
         icon: "error",
         title: "Oops...",
-        text: resp.msg,
+        text: "Email/Password incorrecto!",
         footer: "Por favor intente nuevamente!",
       });
     }

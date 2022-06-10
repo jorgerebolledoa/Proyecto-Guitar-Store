@@ -21,7 +21,7 @@ app = Flask(__name__)
 app.url_map.strict_slashes = False
 
 # Setup the Flask-JWT-Extended extension
-app.config["JWT_SECRET_KEY"] = os.environ.get('JWT_SECRET')  # secret-key a7656fafe94dae72b1e1487670148412
+app.config["JWT_SECRET_KEY"] = "a7656fafe94dae72b1e1487670148412" #secret-key
 jwt = JWTManager(app)
 
 
@@ -49,6 +49,7 @@ setup_commands(app)
 
 # Add all endpoints form the API with a "api" prefix
 app.register_blueprint(api, url_prefix='/api')
+
 # Handle/serialize errors like a JSON object
 
 
