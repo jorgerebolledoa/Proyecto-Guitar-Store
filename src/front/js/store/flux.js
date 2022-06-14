@@ -27,15 +27,15 @@ const getState = ({ getStore, getActions, setStore }) => {
 			getLogin: async (info = { email: '', password: '' }) => {
                 try {
                     const { apiUrl } = getStore();
-                    const response = await fetch(`${apiUrl}/api/login`, {
+                    const resp = await fetch(`${apiUrl}/api/login`, {
                         method: 'POST',
                         body: JSON.stringify(info),
                         headers: {
-                            'Content-Type': 'application/json'
+                            "Content-Type": "application/json",
                         }
                     })
 
-                    const data = await response.json()
+                    const data = await resp.json()
 
                     if (data.access_token) {
                         setStore({ currentUser: data })

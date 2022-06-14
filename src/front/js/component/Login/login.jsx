@@ -25,9 +25,9 @@ const Login = (props) => {
   };
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const resp = await actions.getLogin(data);
-    console.log(resp);
-    if (resp.access_token) {
+    const response = await actions.getLogin(data);
+    console.log(response);
+    if (response.access_token) {
       Swal.fire({
         title: "Inicio de Session Exitosa",
         confirmButtonText: "Ok",
@@ -69,7 +69,7 @@ const Login = (props) => {
                 <input
                   type="text"
                   name="email"
-                //  value={data.email}
+                  value={data.email}
                   className="form-control"
                   placeholder="Correo electronico"
                   onChange={handleChange}
@@ -79,7 +79,7 @@ const Login = (props) => {
                 <input
                   type="password"
                   name="password"
-              //    value={data.password}
+                  value={data.password}
                   className="form-control"
                   placeholder="Contraseña"
                   onChange={handleChange}

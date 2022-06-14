@@ -10,7 +10,7 @@ from flask_jwt_extended import create_access_token
 from flask_jwt_extended import get_jwt_identity
 from flask_jwt_extended import jwt_required
 from flask_jwt_extended import JWTManager
-from datetime import datetime
+import datetime
 
 
 # Create flask app
@@ -45,49 +45,42 @@ def login():
     return jsonify(data), 200
 
 
-@api.route('/register', methods=['POST'])
-def register():
+#@api.route('/register', methods=['POST'])
+#def register():
 
-    name = request.json.get("name")
-    email = request.json.get("email")
-    address = request.json.get("address")
-    city = request.json.get("city")
-    country = request.json.get("country")
-    phone = request.json.get("phone")
-    password = request.json.get("password")
-
-    user = User()
-    user.name = name
-    user.email = email 
-    user.address = address
-    user.city = city
-    user.country = country
-    user.phone = phone
-    password = generate_password_hash(password)
-    user.save()
-
-    return jsonify({"status": "Success!", "message": "Logged in succesfully!"}), 200
-
-
-# @api.route('/login', methods=['POST'])
-# def login():
+#    name = request.json.get("name")
 #    email = request.json.get("email")
+#    address = request.json.get("address")
+#    city = request.json.get("city")
+#    country = request.json.get("country")
+#    phone = request.json.get("phone") 
 #    password = request.json.get("password")
 
-#    if email != "email" or password != "password":
-#        return jsonify({"messsage": "Email/Password incorrect!"}), 401
-#
-#    expires = datetime.timedelta(minutes=60)
-#    access_token = create_access_token(identity=email, expires_delta=expires)
+#    user = User.query.filter_by(email=email).first()
 
-#    data = {"status": "Success!", "message": "Logged in succesfully!",
-#            "access_token": access_token}
-#    return jsonify(data), 200
+#    user = User()
+#    user.name = name
+#    user.email = email 
+#    user.address = address
+#    user.city = city
+#    user.country = country
+#    user.phone = phone
+#    user.password = generate_password_hash(password)
+#    user.save()
 
+#    return jsonify({"status": "Success!", "message": "Register succesfully!"}), 200
 
-# @api.route('/register', methods=['POST'])
-# def register():
-#     pass
+#    if not check_password_hash(user.password, password): return jsonify({"msg": "email/password son incorrectos"}), 400
+
+#    access_token = create_access_token(identity=user.id)
+
+#    data = {
+#            "access_token": access_token,
+#            "user": user.serialize()
+ #       }
+
+  #  if user: return jsonify(data), 201
+
 
 
 # ------------------
@@ -143,17 +136,43 @@ def get_users():
 
 @api.route('/users', methods=['POST'])
 def create_user():
+    
+    name = request.json.get('name')
+    password = request.json.get("password")
+    email = request.json.get('email')
+    phone = request.json.get('phone')
+    country = request.json.get('country')
+    city = request.json.get('city')
+    address = request.json.get('address')
+    role_id = request.json.get('role_id')
+
+    user = User.query.filter_by(email=email).first()
+
     user = User()
-    user.name = request.json.get('name')
-    user.password = request.json.get('password')
-    user.email = request.json.get('email')
-    user.phone = request.json.get('phone')
-    user.country = request.json.get('country')
-    user.city = request.json.get('city')
-    user.address = request.json.get('address')
-    user.role_id = request.json.get('role_id')
+    user.name = name
+    user.email = email 
+    user.address = address
+    user.city = city
+    user.country = country
+    user.phone = phone
+    user.password = generate_password_hash(password)
     user.save()
-    return jsonify(user.serialize()), 201
+
+
+    return jsonify({"status": "Success!", "message": "Register succesfully!"}), 200
+
+    if not check_password_hash(user.password, password): return jsonify({"msg": "email/password son incorrectos"}), 400
+
+    access_token = create_access_token(identity=user.id)
+
+    data = {
+            "access_token": access_token,
+            "user": user.serialize()
+        }
+
+    if user: return jsonify(data), 201
+    
+    
 
 
 @api.route('/users/<int:id>', methods=['PUT'])
