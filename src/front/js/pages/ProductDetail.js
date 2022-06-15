@@ -23,19 +23,20 @@ export const ProductDetail = () => {
       .catch((error) => console.log(error));
   };
 
-  const addTolocalStorage = (cart) => {
-    localStorage.setItem("cart", JSON.stringify(cart))
+  const addTolocalStorage = (infoProducto) => {
+    localStorage.setItem("cart", JSON.stringify(infoProducto))
     console.log("producto añadido al localStorage")
   }
 
   const addButtonFunctions = () => {
-
+    addTolocalStorage(lista)
+    // addToCart(localStorage.getItem("cart"))
   }
   return (
     <div key={lista.id}>
       <nav className="navbar bg-secondary fixed-top m-5 ">
         <div className="container-fluid d-flex justify-content-end">
-          <button className="navbar-brand border-none" href={"/carroDeCompras/" + lista.id} onClick={() => addTolocalStorage(lista)} >Añadir al carrito</button>
+          <button className="navbar-brand border-none" href={"/carroDeCompras/" + lista.id} onClick={() => addButtonFunctions()} >Añadir al carrito</button>
 
         </div>
       </nav>

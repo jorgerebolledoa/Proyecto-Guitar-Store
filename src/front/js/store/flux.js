@@ -2,76 +2,76 @@ const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
 			apiUrl: "https://3001-jorgereboll-proyectofin-5qyk02tzkub.ws-us47.gitpod.io",
-            currentUser: null,
+			currentUser: null,
 			message: null,
-			demo: [
-				{
-					title: "FIRST",
-					background: "white",
-					initial: "white"
-				},
-				{
-					title: "SECOND",
-					background: "white",
-					initial: "white"
-				}
-			]
+
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
 			exampleFunction: () => {
 				getActions().changeColor(0, "green");
 			},
-			
+
+			// 
+			//  FUNCIONES ACTIONS DEL REDUCER PARA CARRO DE COMPRAS  //
+			// 
+
+			addToCart: () => {
+				const addToCart = (product) => {
+					// console.log(id)
+					dispatch({ type: TYPES.ADD_TO_CART, payload: product })
+
+				};
+			},
 
 			getLogin: async (info = { email: '', password: '' }) => {
-                try {
-                    const { apiUrl } = getStore();
-                    const response = await fetch(`${apiUrl}/api/login`, {
-                        method: 'POST',
-                        body: JSON.stringify(info),
-                        headers: {
-                            'Content-Type': 'application/json'
-                        }
-                    })
+				try {
+					const { apiUrl } = getStore();
+					const response = await fetch(`${apiUrl}/api/login`, {
+						method: 'POST',
+						body: JSON.stringify(info),
+						headers: {
+							'Content-Type': 'application/json'
+						}
+					})
 
-                    const data = await response.json()
+					const data = await response.json()
 
-                    if (data.access_token) {
-                        setStore({ currentUser: data })
-                        sessionStorage.setItem('currentUser', JSON.stringify(data));
-                    }
+					if (data.access_token) {
+						setStore({ currentUser: data })
+						sessionStorage.setItem('currentUser', JSON.stringify(data));
+					}
 
-                    return data;
+					return data;
 
-                } catch (error) {
-                    console.log(error);
-                }
-            },
+				} catch (error) {
+					console.log(error);
+				}
+			},
 
 			getlogout: () => {
 
 				if (sessionStorage.getItem('currentUser')) {
-                    sessionStorage.removeItem('currentUser');
-                    setStore({ currentUser: null });
-                }
+					sessionStorage.removeItem('currentUser');
+					setStore({ currentUser: null });
+				}
 			},
 
 			checkSession: () => {
-                if (sessionStorage.getItem('currentUser')) {
-                    setStore({ currentUser: JSON.parse(sessionStorage.getItem('currentUser')) })
-                }
-            },
+				if (sessionStorage.getItem('currentUser')) {
+					setStore({ currentUser: JSON.parse(sessionStorage.getItem('currentUser')) })
+				}
+			},
 
 			register: async (name, email, street, city, country, phone, password,) => {
 				const opts = {
 					method: "POST",
-				//	mode: "no-cors",
+					//	mode: "no-cors",
 					headers: {
 						"Content-Type": "application/json",
 					},
 					body: JSON.stringify({
-						name:name.campo, email:email.campo, address:street.campo, city:city.campo, country:country.campo, phone:phone.campo, password:password.campo,role_id:1
+						name: name.campo, email: email.campo, address: street.campo, city: city.campo, country: country.campo, phone: phone.campo, password: password.campo, role_id: 1
 					}),
 				};
 
@@ -82,18 +82,18 @@ const getState = ({ getStore, getActions, setStore }) => {
 						//"https://3001-jorgereboll-proyectofin-f5wtyul2spl.ws-us46.gitpod.io/api/users",
 						opts
 					)
-					if (resp.status !== 200 && resp.status !==201) {
-						alert("There has been some error"); 
+					if (resp.status !== 200 && resp.status !== 201) {
+						alert("There has been some error");
 						return false;
 					}
 
 					const data = await resp.json();
-					console.log("esto viene del backend",data);
-				//	sessionStorage.setItem("token", data.access_token);
-				//	setStore({token: data.access_token})
+					console.log("esto viene del backend", data);
+					//	sessionStorage.setItem("token", data.access_token);
+					//	setStore({token: data.access_token})
 					return true;
 				}
-				catch(error){
+				catch (error) {
 					console.log("there has been an error register in")
 				}
 			},
@@ -101,12 +101,12 @@ const getState = ({ getStore, getActions, setStore }) => {
 			getMessage: () => {
 				const store = getStore()
 				const opts = {
-					headers:{
+					headers: {
 						"Authorization": "Bearer" + store.token
 					}
 				}
 				// fetching data from the backend
-				fetch(process.env.BACKEND_URL + "/api/hello",opts)
+				fetch(process.env.BACKEND_URL + "/api/hello", opts)
 					.then(resp => resp.json())
 					.then(data => setStore({ message: data.message }))
 					.catch(error => console.log("Error loading message from backend", error));
