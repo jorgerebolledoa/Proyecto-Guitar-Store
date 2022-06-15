@@ -4,6 +4,7 @@ import { GiGuitarHead } from "react-icons/gi";
 import { FaShoppingCart } from "react-icons/fa";
 import { Context } from "../store/appContext";
 
+
 export const Navbar = () => {
   const { store, actions } = useContext(Context);
   const [state, setState] = useState({
@@ -115,3 +116,4 @@ export const Navbar = () => {
     </div>
   );
 };
+

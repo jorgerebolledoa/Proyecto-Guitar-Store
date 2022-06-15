@@ -5,7 +5,7 @@ import ProductSection from "./ProductSection";
 const MapProducts = () => {
     useEffect(() => { }, []);
     const [lista, setlista] = useState([]);
-    const urlApi = "https://3001-jorgereboll-proyectofin-f5wtyul2spl.ws-us47.gitpod.io/api/products" 
+    const urlApi = "https://3001-davidgcorso-proyectofin-zlegvip7c6l.ws-us47.gitpod.io/api/products" 
     useEffect(() => {
         getTask(urlApi);
     }, []);
@@ -24,7 +24,7 @@ const MapProducts = () => {
             return (
                 <div key={product.id}>
                     <ProductSection
-                        img={product.image}
+                        img={product.img1}
                         title={product.name}
                 
                     />

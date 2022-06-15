@@ -55,7 +55,7 @@ export const CarroDeCompras = () => {
           <hr />
           <span className="col-6">Total:</span>
           <span className="col-6 start-0 ">$2998</span>
-          {state.map((item, index) => (<CartItem key={index} data={item} deleteFromCart={deleteFromCart} />))}
+          {cart.map((item, index) => (<CartItem key={index} data={item} deleteFromCart={deleteFromCart} />))}
           <button
             type="button"
             className="botonPagar button btn btn-lg col-4  mt-5 rounded-pill text-white"

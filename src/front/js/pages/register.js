@@ -96,19 +96,6 @@ export const Page_register = () => {
 
 		}
 
-		//	useEffect(() => {
-
-		//	}, []);
-
-		//	fetch("https://3001-jorgereboll-proyectofin-b4kaxoo2l69.ws-us46.gitpod.io/api/users", {
-		//		method: "POST",
-		//		headers: { "Content-Type": "application/json" },
-		//		body: JSON.stringify(useState)
-		//	}).then(() => {
-		//		console.log("Nuevo usuario");
-		//		//	history.go(-1);
-		//	})
-
 	};
 
 	return (
@@ -224,22 +211,24 @@ export const Page_register = () => {
 						<Boton onClick={handleClick} type="submit" className="login-button">
 							<i className="fa fa-chevron-right">Go</i>
 						</Boton>
-						{Form_valido === true &&
-							//Swal.fire({
-							//	title: 'Sus datos se han guardado correctamente',
-							//	showClass: {
-							//	  popup: 'animate__animated animate__fadeInDown'
-							//	},
+
+						{Form_valido === true && 
+						//	(
+						//	Swal.fire({
+						//		title: 'Sus datos se han guardado correctamente',
+						//		showClass: {
+						//			popup: 'animate__animated animate__fadeInDown'
+						////		},
 							//	hideClass: {
-							//	  popup: 'animate__animated animate__fadeOutUp'
+							//		popup: 'animate__animated animate__fadeOutUp'
 							//	}
-							//  })
-							//history.push("/")
+						//	}))
+							
+							//history.push("/")}
 							alert("Registro Exitoso")
-						//history.push("/")
+
 						}
-
-
+						
 					</ContenedorBoton>
 				</Form>
 			</main>
