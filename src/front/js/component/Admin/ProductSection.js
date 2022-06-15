@@ -17,7 +17,7 @@ const ProductSection = ({ img, title }) => {
                     <tbody>
                       <tr>
                    
-                        <td className="align-middle text-center"><img src={img} alt="Img"/>
+                        <td className="align-middle text-center"><img className= "img_admin" src={img} alt="Img"/>
                         </td>
                         <td className="text-nowrap align-middle">{title}</td>
                         <td className="text-center align-middle"> 

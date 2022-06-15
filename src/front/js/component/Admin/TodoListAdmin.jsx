@@ -18,7 +18,7 @@ export const TodoListAdmin = () => {
 
   const createNewTask = taskName => {
     if (!taskItems.find(t => t.name === taskName)) {
-      setTaskItems([...taskItems, { name: taskName, done: false }]);
+      setTaskItems([...taskItems, { name: taskName, done: false}]);
     }
   };
 
