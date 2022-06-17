@@ -4,32 +4,53 @@ import "../../../styles/admin.css";
 
 export const UploadAdm = () => {
 
-  const [datos, setDatos] = useState({
-    sku: "",
-    imag1: "",
-    imag2: "",
-    imag3: "",
-    imag4: "",
-    name: "",
-    title_description_1: "",
-    description_1: "",
-    title_description_2: "",
-    description_2: "",
-    title_description_3: "",
-    description_3: "",
-    title_description_4: "",
-    description_4: "",
-    price: "",
-    thumbnail: "",
-  })
+  const [img1, setImg1] = useState("");
+  const [img2, setImg2] = useState("");
+  const [img3, setImg3] = useState("");
+  const [img4, setImg4] = useState("");
+  const [name, setName] = useState("");
+  const [sku, setSku] = useState("");
+  const [price, setPrice] = useState("");
+  const [thumbNail, setThumbNail] = useState("");
+  const [tittleD1, setTitleD1] = useState("");
+  const [descr1, setDescr1] = useState("");
+  const [tittleD2, setTitleD2] = useState("");
+  const [descr2, setDescr2] = useState("");
+  const [tittleD3, setTitleD3] = useState("");
+  const [descr3, setDescr3] = useState("");
+  const [tittleD4, setTitleD4] = useState("");
+  const [descr4, setDescr4] = useState("");
 
-  const handleInputChange = (event) => {
-    setDatos({
-      ...datos, [event.target.name]: event.target.value
-    })
+  const enviarDatos = async e =>  {
+    e.preventDefault();
+
+    const formData = new FormData();
+    formData.append("img1", img1);
+    formData.append("img2", img2);
+    formData.append("img3", img3);
+    formData.append("img4", img4);
+    formData.append("sku", sku);
+    formData.append("price", price);
+    formData.append("name", name);
+    formData.append("thumbNail", thumbNail);
+    formData.append("tittleD1", tittleD1);
+    formData.append("descr1", descr1);
+    formData.append("tittleD2", tittleD2);
+    formData.append("descr2", descr2);
+    formData.append("tittleD3", tittleD3);
+    formData.append("descr3", descr3);
+    formData.append("tittleD4", tittleD4);
+    formData.append("descr4", descr4);
+    
+    const info = await registerFetch(formData);
+    console.log(info);
+
   }
-  const enviarDatos = (event) => {
-    event.preventDefault();
+
+   const registerFetch =  async data => {
+    const resp = await fetch("https://3001-jorgereboll-proyectofin-f5wtyul2spl.ws-us47.gitpod.io/api/products/", {method: "POST", body:data});
+    const info = await resp.json();
+    return info;
   }
 
   return (
@@ -37,94 +58,102 @@ export const UploadAdm = () => {
       <br id="pageTop"></br>
       <br></br>
       <br></br>
-      <div className="container col-md-6 p-4 rounded bg-dark">
+      <div className="container col-md-6 p-5 rounded bg-dark">
         <form onSubmit={enviarDatos}>
           <a href="/adminprueba" className="text-warning float-end">volver</a>
           <h1 className="text-white opacity-70 text-center m-4">Crea tu publicación</h1>
           <div id="FileUpload">
-            <div className="wrapper">
-              <div className="uploaded uploaded--one">
-                <input class="form-control btn btn-outline-warning" type="file" id="formFileMultiple" multiple name="" />
-              </div>
+            <div className="wrapper text-center">
+              
+                <label htmlFor="img1" className="form-label text-warning opacity-75">Foto 1</label>
+                <input className="form-control btn btn-outline-warning col-md-4" type="file" id="formFile" name="img1"  files={img1}  onChange={e => setImg1(e.target.files[0])} multiple={false} accept="image/png,image/jpeg"/>
+                <label htmlFor="img2" className="form-label text-warning opacity-75">Foto 2</label>
+                <input className="form-control btn btn-outline-warning col-md-4" type="file" id="formFile" name="img2" /* value={img2} */ onChange={e => setImg2(e.target.files[0])} multiple={false} accept="image/png,image/jpeg"/>
+                <label htmlFor="img3" className="form-label text-warning opacity-75">Foto 3</label>
+                <input className="form-control btn btn-outline-warning col-md-4" type="file" id="formFile" name="img3" /* value={img3} */ onChange={e => setImg3(e.target.files[0])} multiple={false} accept="image/png,image/jpeg"/>
+                <label htmlFor="img4" className="form-label text-warning opacity-75">Foto 4</label>
+                <input className="form-control btn btn-outline-warning col-md-4" type="file" id="formFile" name="img4" /* value={img4} */ onChange={e => setImg4(e.target.files[0])} multiple={false} accept="image/png,image/jpeg"/>
+
             </div>
           </div>
 
           <div className="mb-3">
-            <label className="form-label text-warning opacity-75">
+            <label htmlFor="name" className="form-label text-warning opacity-75" >
               Titulo
             </label>
             <input
               type="text"
               className="form-control bg-white opacity-50"
               name="name"
-              onChange={handleInputChange}
-            />
+              value={name} onChange={e => setName(e.target.value)}/>
+            
           </div>
           <div className="row mb-3">
             <div className="form-group col-md-6">
-              <label className="text-warning opacity-75">sku</label>
-              <input type="number" className="form-control bg-white opacity-50" name="sku" onChange={handleInputChange} />
+              <label htmlFor="sku" className="text-warning opacity-75">sku</label>
+              <input type="number" className="form-control bg-white opacity-50" name="sku"
+                value={sku} onChange={e => setSku(e.target.value)} />
             </div>
-            <div class="form-group col-md-6">
-              <label className="text-warning opacity-75">Precio</label>
-              <input type="number" className="form-control bg-white opacity-50" name="precio" onChange={handleInputChange} />
+            <div className="form-group col-md-6">
+              <label htmlFor="price" className="text-warning opacity-75">Precio</label>
+              <input type="number" className="form-control bg-white opacity-50" name="price" value={price} onChange={e => setPrice(e.target.value)} />
             </div>
           </div>
           <div className="mb-3">
-            <label for="exampleFormControlTextarea1" class="form-label text-warning opacity-75">Descripción corta del producto (Thumbnail)</label>
-            <textarea className="form-control bg-white opacity-50" name="thumbnail" onChange={handleInputChange} rows="2"></textarea>
+            <label htmlFor="thumbNail" className="form-label text-warning opacity-75">Descripción corta del producto (Thumbnail)</label>
+            <textarea className="form-control bg-white opacity-50" name="thumbnail" value={thumbNail} onChange={e => setThumbNail(e.target.value)} rows="2"></textarea>
           </div>
           <div className="mb-3">
-          <label className="form-label text-warning opacity-75">
+            <label htmlFor="tittleD1" className="form-label text-warning opacity-75">
               Titulo Descripción 1
             </label>
             <input
               type="text"
               className="form-control bg-white opacity-50"
-              name="desc_titulo1"
-              onChange={handleInputChange}
+              name="tittleD1"
+              value={tittleD1} onChange={e => setTitleD1(e.target.value)}
             />
-            <label for="exampleFormControlTextarea1" class="form-label text-warning opacity-75">Descripción</label>
-            <textarea className="form-control bg-white opacity-50" name="descripcion1" onChange={handleInputChange} rows="4"></textarea>
+            <label htmlFor="descr1" className="form-label text-warning opacity-75">Descripción</label>
+            <textarea className="form-control bg-white opacity-50" name="descripcion1" value={descr1} onChange={e => setDescr1(e.target.value)} rows="4"></textarea>
           </div>
           <div className="mb-3">
-          <label className="form-label text-warning opacity-75">
+            <label htmlFor="tittleD2" className="form-label text-warning opacity-75">
               Titulo Descripción 2
             </label>
             <input
               type="text"
               className="form-control bg-white opacity-50"
-              name="desc_titulo2"
-              onChange={handleInputChange}
+              name="tittleD1"
+              value={tittleD2} onChange={e => setTitleD2(e.target.value)}
             />
-            <label for="exampleFormControlTextarea1" class="form-label text-warning opacity-75">Descripción</label>
-            <textarea className="form-control bg-white opacity-50" name="descripcion2" onChange={handleInputChange} rows="4"></textarea>
+            <label htmlFor="descr2" className="form-label text-warning opacity-75">Descripción</label>
+            <textarea className="form-control bg-white opacity-50" name="descripcion1" value={descr2} onChange={e => setDescr2(e.target.value)} rows="4"></textarea>
           </div>
           <div className="mb-3">
-          <label className="form-label text-warning opacity-75">
+            <label htmlFor="tittleD3" className="form-label text-warning opacity-75">
               Titulo Descripción 3
             </label>
             <input
               type="text"
               className="form-control bg-white opacity-50"
-              name="desc_titulo3"
-              onChange={handleInputChange}
+              name="tittleD1"
+              value={tittleD3} onChange={e => setTitleD3(e.target.value)}
             />
-            <label for="exampleFormControlTextarea1" class="form-label text-warning opacity-75">Descripción</label>
-            <textarea className="form-control bg-white opacity-50" name="descripcion3" onChange={handleInputChange} rows="4"></textarea>
+            <label htmlFor="descr3" className="form-label text-warning opacity-75">Descripción</label>
+            <textarea className="form-control bg-white opacity-50" name="descripcion3" value={descr3} onChange={e => setDescr3(e.target.value)} rows="4"></textarea>
           </div>
           <div className="mb-3">
-          <label className="form-label text-warning opacity-75">
+            <label htmlFor="tittleD4" className="form-label text-warning opacity-75">
               Titulo Descripción 4
             </label>
             <input
               type="text"
               className="form-control bg-white opacity-50"
-              name="desc_titulo4"
-              onChange={handleInputChange}
+              name="tittleD1"
+              value={tittleD4} onChange={e => setTitleD4(e.target.value)}
             />
-            <label for="exampleFormControlTextarea1" class="form-label text-warning opacity-75">Descripción</label>
-            <textarea className="form-control bg-white opacity-50" name="descripcion4" onChange={handleInputChange} rows="4"></textarea>
+            <label htmlFor="descr4" className="form-label text-warning opacity-75">Descripción</label>
+            <textarea className="form-control bg-white opacity-50" name="descripcion4" value={descr4} onChange={e => setDescr4(e.target.value)} rows="4"></textarea>
           </div>
           <button type="submit" className="btn btn-warning">
             Submit
