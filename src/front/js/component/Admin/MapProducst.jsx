@@ -1,11 +1,11 @@
 import "../../../styles/admin.css";
 import React, { useEffect, useState } from "react";
-import ProductSection from "./ProductSection";
+import ProductSection from "./ProductSection.jsx";
 
 const MapProducts = () => {
     useEffect(() => { }, []);
     const [lista, setlista] = useState([]);
-    const urlApi = "https://3001-davidgcorso-proyectofin-zlegvip7c6l.ws-us47.gitpod.io/api/products" 
+    const urlApi = "https://3001-jorgereboll-proyectofin-f5wtyul2spl.ws-us47.gitpod.io/api/products/" 
     useEffect(() => {
         getTask(urlApi);
     }, []);

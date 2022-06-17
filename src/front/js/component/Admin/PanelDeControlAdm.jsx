@@ -1,6 +1,7 @@
 import React from "react";
 import "../../../styles/admin.css";
-import { TodoListAdmin } from "./TodoListAdmin.jsx";
+import TodoListAdmin from "./TodolistAdmin.jsx";
+
 
 
 export const PanelDeControlAdm = () => {

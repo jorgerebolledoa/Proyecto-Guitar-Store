@@ -73,43 +73,11 @@
 }
 
 /* To Do List */
-.title {
-  text-align: center;
-  color: aliceblue;
-  height: 30px;
-  padding:5px;
-}
 
-.field {
-  display:flex;
-  justify-content: center;
-  padding: 10px;
-  
-}
-.fieldButton {
-  color: #db962e;
-  background-color: #212225;
-  border-width: 1PX ;
-  border-color: #dcac00;
-  border-radius: 10px;
-  margin-left: 10px;
-  
-  
-}
-.fieldButton:hover {
-  color:#212225;
-  background-color:#db962e;
-  
-} 
-.taskBox {
-  display:flex;
-  justify-content: center;
-  margin: 8px;
-}
-.square {
-  border:1px solid white;
-  color: aliceblue;
-  background-color: #212225;
+.listWrap {
+  height: calc(100vh - 300px);
+  min-height: 250px;
+  overflow: auto;
 }
 
 /* imagen admin */
