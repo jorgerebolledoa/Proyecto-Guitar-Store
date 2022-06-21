@@ -1,11 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import "../../styles/img.css";
 import { useParams } from "react-router-dom";
 import Slider from "../component/Vista_principal/Slider";
-
+import { Context } from "../store/appContext";
 
 export const ProductDetail = () => {
   const { product } = useParams();
+  const { store, actions } = useContext(Context);
 
   useEffect(() => { }, []);
   const [lista, setlista] = useState([]);
@@ -17,20 +18,21 @@ export const ProductDetail = () => {
     fetch(url)
       .then((Response) => Response.json())
       .then((data) => {
-        console.log(data);
+        // console.log(data);
         setlista(data);
       })
       .catch((error) => console.log(error));
   };
 
   const addTolocalStorage = (infoProducto) => {
-    localStorage.setItem("cart", JSON.stringify(infoProducto))
+    localStorage.setItem("product", JSON.stringify(infoProducto))
     console.log("producto añadido al localStorage")
   }
 
   const addButtonFunctions = () => {
     addTolocalStorage(lista)
-    // addToCart(localStorage.getItem("cart"))
+    // actions.addToCart(lista)
+
   }
   return (
     <div key={lista.id}>

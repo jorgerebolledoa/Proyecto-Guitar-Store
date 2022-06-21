@@ -1,15 +1,21 @@
 import { TYPES } from "./carroDeComprasActions";
+// import { React, useContext } from "react";
+// import { Context } from "../store/appContext";
 
 
 export const carroDeComprasInitialState = {
-    cart: JSON.parse(localStorage.getItem("cart")) || []
+    products: JSON.parse(localStorage.getItem("cart")) || [],
+    cart: []
 }
 console.log(carroDeComprasInitialState)
 
 export function carroDeComprasReducer(state, actions) {
     switch (actions.type) {
         case TYPES.ADD_TO_CART: {
-
+            // newItem captura la información del los productos y los busca 1 por 1
+            let newItem = state.products.find((item) => item.id === newItem.id);
+            // console.log(newItem)
+            let itemAddedInCart = state.cart.find((item) => item.id === newItem.id)
             return itemAddedInCart ?
                 {
                     ...state,
