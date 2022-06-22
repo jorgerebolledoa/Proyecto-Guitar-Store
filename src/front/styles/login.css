@@ -12,13 +12,17 @@ No Descomentar, podrian haber conflicto con  otras clases con el mismo nombre, s
 }
 
 .Container2 {
-  background-image: url("https://strandbergguitars.com/cdn-cgi/image/onerror=redirect,quality=85,format=auto,metadata=copyright,width=1920,height=1459,fit=cover/wp-content/uploads/2018/04/bild2.jpg");
+  background-image: url("https://strandbergguitars.com/cdn-cgi/image/onerror=redirect,quality=85,format=auto,metadata=copyright,width=2124,height=1150,fit=cover/wp-content/uploads/2020/03/strandberg-boden-metal-guitar-gallery_04.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   opacity: 0.9;
+  height: 1000px;
   
 /*  padding: 50px 0 50px 0;*/
 
+}
+.forgot_password{
+  padding: 15% 0 50px 0;
 }
 
 .Container1 {

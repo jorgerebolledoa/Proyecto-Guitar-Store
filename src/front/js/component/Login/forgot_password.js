@@ -5,7 +5,6 @@ import PropTypes from "prop-types";
 
 const Forgot_password = (props) => {
   return (
-    ///////////Faltan detalles//////////
     <div className="container-fluid Container2 m-0 p-0">
       <div className="forgot_password text-center mb-3">
         <div className="logo text-warning m-1">
@@ -15,8 +14,8 @@ const Forgot_password = (props) => {
         <div className="login-form-1">
           <form id="forgot-password-form" className="text-left">
             <div className="etc-login-form text-warning m-3">
-              <p>            
-              {props.parrafo}
+              <p>
+                {props.parrafo}
               </p>
             </div>
             <div className="login-form-main-message"></div>
@@ -24,7 +23,7 @@ const Forgot_password = (props) => {
               <div className="login-group">
                 <div className="form-group">
                   <label form="fp_email" className="sr-only">
-                  {props.fp_email}
+                    {props.fp_email}
                   </label>
                   <input
                     type="text"
@@ -41,11 +40,11 @@ const Forgot_password = (props) => {
             </div>
             <div className="etc-login-form text-warning m-3">
               <p>
-              {props.text_preg1} <a href={props.boton_login}>{props. text_botonLogin}</a>
+                {props.text_preg1} <a href={props.boton_login}>{props.text_botonLogin}</a>
               </p>
-             
+
               <p>
-              {props.text_preg2} <a href={props.boton_newAccount}>{props.text_botonNew}</a> 
+                {props.text_preg2} <a href={props.boton_newAccount}>{props.text_botonNew}</a>
               </p>
             </div>
           </form>
@@ -56,7 +55,7 @@ const Forgot_password = (props) => {
 };
 
 Forgot_password.propTypes = {
-  
+
   logo2: PropTypes.string,
   parrafo: PropTypes.string,
   fp_email: PropTypes.string,
