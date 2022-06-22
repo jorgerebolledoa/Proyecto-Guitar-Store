@@ -12,17 +12,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 				getActions().changeColor(0, "green");
 			},
 
-			// 
-			//  FUNCIONES ACTIONS DEL REDUCER PARA CARRO DE COMPRAS  //
-			// 
-
-			addToCart: () => {
-				const addToCart = (product) => {
-					// console.log(id)
-					dispatch({ type: TYPES.ADD_TO_CART, payload: product })
-
-				};
-			},
 
 			getLogin: async (info = { email: '', password: '' }) => {
 				try {

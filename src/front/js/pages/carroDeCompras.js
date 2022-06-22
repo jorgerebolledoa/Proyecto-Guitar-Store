@@ -1,4 +1,5 @@
 import React from "react";
+// import { Context } from "../store/appContext";
 import { Link } from "react-router-dom";
 import { useReducer } from "react";
 import { CartItem } from "../component/carroDeCompras/CartItem.jsx";
@@ -8,14 +9,12 @@ import { TYPES } from "../component/reducersCarroDeCompras/carroDeComprasActions
 
 export const CarroDeCompras = () => {
   const [state, dispatch] = useReducer(carroDeComprasReducer, carroDeComprasInitialState);
-
+  // const { store, actions } = useContext(Context);
   const { cart } = state;
 
   const addToCart = (product) => {
-    // console.log(id)
     dispatch({ type: TYPES.ADD_TO_CART, payload: product })
-
-  };
+  }
   const deleteFromCart = (id, all = false) => {
     if (all) {
       dispatch({ type: TYPES.REMOVE_ALL_FROM_CART, payload: id });
