@@ -1,14 +1,14 @@
 import React from "react";
 import { AiFillMinusCircle, AiTwotoneDelete } from "react-icons/ai";
 
-export const CartItem = ({ data, deleteFromCart }) => {
+export const CartItem = ({ data, deleteFromCart, product }) => {
   let { id, name, price, img1, sku } = data;
 
   return (
     <>
       <div className="cajaProducto card mx-auto flex-row mb-5  ">
         <AiFillMinusCircle
-          onClick={() => deleteFromCart(id)}
+          onClick={() => deleteFromCart(product)}
           className="text-danger position-absolute top-0 start-100 translate-middle fs-2"
         />
         <img
@@ -25,10 +25,11 @@ export const CartItem = ({ data, deleteFromCart }) => {
           <h5 className="h5codigo text-white"> Codigo:{sku}</h5>
         </div>
         <AiTwotoneDelete
-          onClick={() => deleteFromCart(id, true)}
+          onClick={() => deleteFromCart(id)}
           className="text-danger position-absolute top-100 start-100 translate-middle fs-2"
         />
       </div>
+
     </>
   );
 };

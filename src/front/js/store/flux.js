@@ -16,15 +16,22 @@ const getState = ({ getStore, getActions, setStore }) => {
 				localStorage.setItem("products_list", JSON.stringify(getStore().cart))
 				console.log("producto añadido al localStorage")
 			},
-			addToCart: (Producto) => {
-				if (getStore().cart.includes(Producto)) {
-					alert("Ya se encuentra en el carro")
+			addToCart: (producto) => {
+				if (getStore().cart.includes(producto)) {
+					getStore().cart.concat(producto.quatity = 1)
 				} else {
 					setStore({
-						cart: getStore().cart.concat(Producto)
+						cart: getStore().cart.concat(producto)
+
 					})
 					getActions().addTolocalStorage()
 				}
+			},
+			deleteFromCart: (producto) => {
+				setStore({
+					cart: getStore().cart.filter(carro => carro !== producto)
+				})
+				getActions().addTolocalStorage()
 			},
 
 			getLogin: async (info = { email: '', password: '' }) => {

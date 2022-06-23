@@ -1,36 +1,11 @@
 import React, { useContext } from "react";
-// import { Context } from "../store/appContext";
 import { Link } from "react-router-dom";
-import { useReducer } from "react";
 import { CartItem } from "../component/carroDeCompras/CartItem.jsx";
-import { carroDeComprasInitialState, carroDeComprasReducer } from "../component/reducersCarroDeCompras/carroDeCompraReducer.js";
-import { TYPES } from "../component/reducersCarroDeCompras/carroDeComprasActions.js";
 import { Context } from "../store/appContext";
 
-
 export const CarroDeCompras = () => {
-  // const [state, dispatch] = useReducer(carroDeComprasReducer, carroDeComprasInitialState);
 
-  // const { cart } = state;
   const { store, actions } = useContext(Context);
-  console.log(actions)
-  console.log(store.cart)
-  const deleteFromCart = (id, all = false) => {
-    if (all) {
-      dispatch({ type: TYPES.REMOVE_ALL_FROM_CART, payload: id });
-    } else {
-      dispatch({ type: TYPES.REMOVE_ONE_FROM_CART, payload: id });
-    }
-  };
-  const clearCart = () => {
-    dispatch({ type: TYPES.CLEAR_CART })
-  };
-
-  // CODIGO PARA TOMAR PRODUCTOS POR ID
-  // EL boton comprar tiene que realizar 2 acciones, 
-  // la accion de añadir el elemento al arreglo carro que hay en el reducer
-  // y añadir la información al local storage
-  // 
   return (
     <>
       <div className="container-fluid mx-0 bg-dark pb-5">
@@ -55,8 +30,10 @@ export const CarroDeCompras = () => {
           <hr />
           <span className="col-6">Total:</span>
           <span className="col-6 start-0 ">$2998</span>
-          {store.cart.map((item, index) => (<CartItem key={index} data={item} deleteFromCart={deleteFromCart} />))}
-
+          {
+            store.cart.map((item, index) => (
+              <CartItem key={index} data={item} deleteFromCart={actions.deleteFromCart} product={item} />
+            ))}
           <button
             type="button"
             className="botonPagar button btn btn-lg col-4  mt-5 rounded-pill text-white"
