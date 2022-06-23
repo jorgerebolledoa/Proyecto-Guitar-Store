@@ -4,10 +4,10 @@ import { TYPES } from "./carroDeComprasActions";
 
 
 export const carroDeComprasInitialState = {
-    products: JSON.parse(localStorage.getItem("cart")) || [],
+    products: [],
     cart: []
 }
-console.log(carroDeComprasInitialState)
+// console.log(carroDeComprasInitialState)
 
 export function carroDeComprasReducer(state, actions) {
     switch (actions.type) {

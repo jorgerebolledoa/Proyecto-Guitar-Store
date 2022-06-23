@@ -2,7 +2,7 @@ import React from "react";
 import { AiFillMinusCircle, AiTwotoneDelete } from "react-icons/ai";
 
 export const CartItem = ({ data, deleteFromCart }) => {
-  let { id, name, price, quantity, img } = data;
+  let { id, name, price, img1, sku } = data;
 
   return (
     <>
@@ -12,16 +12,17 @@ export const CartItem = ({ data, deleteFromCart }) => {
           className="text-danger position-absolute top-0 start-100 translate-middle fs-2"
         />
         <img
-          src={img}
+          src={img1}
           className="imgProducto img-fluid "
           alt="producto"
         />
         <div className="cajaDescripcionProducto card-body ">
           <h5 className="text-white">{name}</h5>
           <p className="card-text text-warning">
-            ${price * quantity} to {quantity} guitars
+            {/* ${price * quantity} to {quantity} guitars */}
+            ${price} to 1 guitar
           </p>
-          <h5 className="h5codigo text-white"> Codigo:{id}</h5>
+          <h5 className="h5codigo text-white"> Codigo:{sku}</h5>
         </div>
         <AiTwotoneDelete
           onClick={() => deleteFromCart(id, true)}

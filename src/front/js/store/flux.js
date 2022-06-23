@@ -4,14 +4,28 @@ const getState = ({ getStore, getActions, setStore }) => {
 			apiUrl: "https://3001-jorgereboll-proyectofin-5qyk02tzkub.ws-us47.gitpod.io",
 			currentUser: null,
 			message: null,
-
+			// products: [JSON.parse(localStorage.getItem("product"))] || [],
+			cart: []
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
 			exampleFunction: () => {
 				getActions().changeColor(0, "green");
 			},
-
+			addTolocalStorage: () => {
+				localStorage.setItem("products_list", JSON.stringify(getStore().cart))
+				console.log("producto añadido al localStorage")
+			},
+			addToCart: (Producto) => {
+				if (getStore().cart.includes(Producto)) {
+					alert("Ya se encuentra en el carro")
+				} else {
+					setStore({
+						cart: getStore().cart.concat(Producto)
+					})
+					getActions().addTolocalStorage()
+				}
+			},
 
 			getLogin: async (info = { email: '', password: '' }) => {
 				try {
