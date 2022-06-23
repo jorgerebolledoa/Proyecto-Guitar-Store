@@ -1,13 +1,10 @@
 import React from "react";
 import { useState } from "react";
 import "../../../styles/admin.css";
+import { UploadPhotos } from "./UploadPhotos.jsx";
 
 export const UploadAdm = () => {
 
-  const [img1, setImg1] = useState("");
-  const [img2, setImg2] = useState("");
-  const [img3, setImg3] = useState("");
-  const [img4, setImg4] = useState("");
   const [name, setName] = useState("");
   const [sku, setSku] = useState("");
   const [price, setPrice] = useState("");
@@ -21,6 +18,8 @@ export const UploadAdm = () => {
   const [tittleD4, setTitleD4] = useState("");
   const [descr4, setDescr4] = useState("");
 
+
+
   const enviarDatos = async e =>  {
     e.preventDefault();
 
@@ -29,6 +28,12 @@ export const UploadAdm = () => {
     formData.append("img2", img2);
     formData.append("img3", img3);
     formData.append("img4", img4);
+    data.append("upload_preset", "jdcz6c83")
+        data.append("cloud_name","dnkditswd")
+        fetch("  https://api.cloudinary.com/v1_1/dnkditswd/image/upload",{
+        method:"post",
+        body: data
+        })
     formData.append("sku", sku);
     formData.append("price", price);
     formData.append("name", name);
@@ -62,21 +67,8 @@ export const UploadAdm = () => {
         <form onSubmit={enviarDatos}>
           <a href="/adminprueba" className="text-warning float-end">volver</a>
           <h1 className="text-white opacity-70 text-center m-4">Crea tu publicación</h1>
-          <div id="FileUpload">
-            <div className="wrapper text-center">
-              
-                <label htmlFor="img1" className="form-label text-warning opacity-75">Foto 1</label>
-                <input className="form-control btn btn-outline-warning col-md-4" type="file" id="formFile" name="img1"  files={img1}  onChange={e => setImg1(e.target.files[0])} multiple={false} accept="image/png,image/jpeg"/>
-                <label htmlFor="img2" className="form-label text-warning opacity-75">Foto 2</label>
-                <input className="form-control btn btn-outline-warning col-md-4" type="file" id="formFile" name="img2" /* value={img2} */ onChange={e => setImg2(e.target.files[0])} multiple={false} accept="image/png,image/jpeg"/>
-                <label htmlFor="img3" className="form-label text-warning opacity-75">Foto 3</label>
-                <input className="form-control btn btn-outline-warning col-md-4" type="file" id="formFile" name="img3" /* value={img3} */ onChange={e => setImg3(e.target.files[0])} multiple={false} accept="image/png,image/jpeg"/>
-                <label htmlFor="img4" className="form-label text-warning opacity-75">Foto 4</label>
-                <input className="form-control btn btn-outline-warning col-md-4" type="file" id="formFile" name="img4" /* value={img4} */ onChange={e => setImg4(e.target.files[0])} multiple={false} accept="image/png,image/jpeg"/>
-
-            </div>
-          </div>
-
+      
+          <UploadPhotos/>
           <div className="mb-3">
             <label htmlFor="name" className="form-label text-warning opacity-75" >
               Titulo
