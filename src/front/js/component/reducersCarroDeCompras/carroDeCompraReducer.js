@@ -1,13 +1,4 @@
 import { TYPES } from "./carroDeComprasActions";
-// import { React, useContext } from "react";
-// import { Context } from "../store/appContext";
-
-
-export const carroDeComprasInitialState = {
-    products: [],
-    cart: []
-}
-// console.log(carroDeComprasInitialState)
 
 export function carroDeComprasReducer(state, actions) {
     switch (actions.type) {

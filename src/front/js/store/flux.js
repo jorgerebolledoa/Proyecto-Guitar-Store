@@ -1,27 +1,36 @@
+import React, { useState, useEffect } from "react";
+
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
 			apiUrl: "https://3001-jorgereboll-proyectofin-5qyk02tzkub.ws-us47.gitpod.io",
 			currentUser: null,
 			message: null,
-			// products: [JSON.parse(localStorage.getItem("product"))] || [],
-			cart: []
+			cart: [],
+			lista: null,
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
 			exampleFunction: () => {
 				getActions().changeColor(0, "green");
 			},
-			addToCart1: (producto) => {
-				let newItem = getStore().cart.includes(producto);
-				newItem ? {
-					...producto,
-					cart: producto.map((item) => item.id === producto.id ? { ...item, quantity: item.quantity + 1 }
-						: item)
-				} : {
-					...producto,
-					cart: [...cart, { ...producto, quantity: 1 }]
-				}
+
+
+			fetchDetalleDeProductos: (product) => {
+
+				const urlApi = "https://3001-jorgereboll-proyectofin-f5wtyul2spl.ws-us47.gitpod.io/api/products/id/" + product
+				useEffect(() => {
+					getTask(urlApi);
+				}, []);
+				const getTask = (url) => {
+					fetch(url)
+						.then((Response) => Response.json())
+						.then((data) => {
+							// console.log(data);
+							setStore({ lista: data });
+						})
+						.catch((error) => console.log(error));
+				};
 			},
 			addTolocalStorage: () => {
 				localStorage.setItem("products_list", JSON.stringify(getStore().cart))

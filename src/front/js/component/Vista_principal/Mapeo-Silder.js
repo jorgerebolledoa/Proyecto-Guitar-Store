@@ -1,5 +1,4 @@
 import "../../../styles/Slider.css";
-import X250 from "../../../img/X250BKfull.png";
 import React, { useEffect, useState } from "react";
 import Slider from "./Slider";
 
