@@ -28,6 +28,7 @@ import { ProductDetail } from "./pages/ProductDetail";
 import { CategoriaDetail } from "./pages/CategoriaDetail";
 import { Terminos } from "./pages/terminos";
 
+
 //create your first component
 
 const Layout = () => {
@@ -93,7 +94,7 @@ const Layout = () => {
               <EditPostAdm />
             </Route>
             <Route path="/productsview">
-              <ProductsViewAdmin/>
+              <ProductsViewAdmin />
             </Route>
             <Route path="/usersview">
               <UsersViewAdm />

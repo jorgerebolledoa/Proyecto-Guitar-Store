@@ -10,7 +10,7 @@ export const ProductDetail = () => {
 
   useEffect(() => { }, []);
   const [lista, setlista] = useState([]);
-  const urlApi = "https://3001-jorgereboll-proyectofin-f5wtyul2spl.ws-us49.gitpod.io/api/products/id/" + product
+  const urlApi = "https://3001-jorgereboll-proyectofin-f5wtyul2spl.ws-us47.gitpod.io/api/products/id/" + product
   useEffect(() => {
     getTask(urlApi);
   }, []);

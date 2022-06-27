@@ -12,13 +12,25 @@ const getState = ({ getStore, getActions, setStore }) => {
 			exampleFunction: () => {
 				getActions().changeColor(0, "green");
 			},
+			addToCart1: (producto) => {
+				let newItem = getStore().cart.includes(producto);
+				newItem ? {
+					...producto,
+					cart: producto.map((item) => item.id === producto.id ? { ...item, quantity: item.quantity + 1 }
+						: item)
+				} : {
+					...producto,
+					cart: [...cart, { ...producto, quantity: 1 }]
+				}
+			},
 			addTolocalStorage: () => {
 				localStorage.setItem("products_list", JSON.stringify(getStore().cart))
 				console.log("producto añadido al localStorage")
 			},
 			addToCart: (producto) => {
-				if (getStore().cart.includes(producto)) {
-					getStore().cart.concat(producto.quatity = 1)
+				let newItem = getStore().cart.includes(producto);
+				if (newItem) {
+					alert("Ya se encuentra en el carro")
 				} else {
 					setStore({
 						cart: getStore().cart.concat(producto)

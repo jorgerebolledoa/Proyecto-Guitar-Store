@@ -6,6 +6,7 @@ export const CartItem = ({ data, deleteFromCart, product }) => {
 
   return (
     <>
+
       <div className="cajaProducto card mx-auto flex-row mb-5  ">
         <AiFillMinusCircle
           onClick={() => deleteFromCart(product)}

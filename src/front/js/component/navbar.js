@@ -83,7 +83,7 @@ export const Navbar = () => {
 
               </Link>
               <ul className="navbar-nav">
-              <li className="nav-item">
+                <li className="nav-item">
                   <Link className="nav-link active text-warning" to="/register">Registrate</Link>
                 </li>
 
@@ -98,17 +98,26 @@ export const Navbar = () => {
                     </Link>
                   )}
                 </li>
-  
+
+              </ul>
+            </div>
+            <div className="dropdown">
+              <button className="btn btn-none dropdown-toggle text-warning" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                <FaShoppingCart />
+                <span className="badge bg-danger rounded-circle">0</span>
+              </button>
+              <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                <li><a className="dropdown-item" href="#">Cart it's empty</a></li>
+                <Link
+                  className="btn btn-outline text-warning"
+                  to="/carroDeCompras"
+                  href="/carroDeCompras"
+                >
+                  <li><a className="dropdown-item" href="#">ir al carro</a></li>
+                </Link>
               </ul>
             </div>
 
-            <Link
-              className="btn btn-outline text-warning"
-              to="/carroDeCompras"
-              href="/carroDeCompras"
-            >
-              <FaShoppingCart />
-            </Link>
             <form />
           </div>
         </div>
@@ -116,4 +125,6 @@ export const Navbar = () => {
     </div>
   );
 };
+
+
 
