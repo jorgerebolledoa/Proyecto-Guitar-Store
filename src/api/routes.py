@@ -123,7 +123,7 @@ def delete_roles(roles_id):
 @jwt_required()
 def profile():
     id = get_jwt_identity()
-    user = User.query.get(id)
+    users = User.query.get(id)
     return jsonify(user.serialize()), 200
 
 

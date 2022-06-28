@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
-			apiUrl: "https://3001-jorgereboll-proyectofin-5qyk02tzkub.ws-us47.gitpod.io",
+			apiUrl: "https://3001-jorgereboll-proyectofin-f5wtyul2spl.ws-us47.gitpod.io",
 			currentUser: null,
 			message: null,
 			cart: [],
@@ -109,7 +109,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				try {
 
 					const resp = await fetch(
-						"https://3001-jorgereboll-proyectofin-5qyk02tzkub.ws-us47.gitpod.io/api/users",
+						"https://3001-jorgereboll-proyectofin-f5wtyul2spl.ws-us47.gitpod.io/api/users",
 						//"https://3001-jorgereboll-proyectofin-f5wtyul2spl.ws-us46.gitpod.io/api/users",
 						opts
 					)

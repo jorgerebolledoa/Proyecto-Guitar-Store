@@ -63,14 +63,15 @@ export const UploadAdm = () => {
       <br id="pageTop"></br>
       <br></br>
       <br></br>
-      <div className="container col-md-6 p-5 rounded bg-dark">
+      <div className="body_form">
+      <div className="container col-md-8 p-5 rounded">
         <form onSubmit={enviarDatos}>
           <a href="/adminprueba" className="text-warning float-end">volver</a>
           <h1 className="text-white opacity-70 text-center m-4">Crea tu publicación</h1>
       
           <UploadPhotos/>
           <div className="mb-3">
-            <label htmlFor="name" className="form-label text-warning opacity-75" >
+            <label htmlFor="name" className="form-label text-warning " >
               Titulo
             </label>
             <input
@@ -151,11 +152,12 @@ export const UploadAdm = () => {
             Submit
           </button>
         </form>
-
-        <a className="scroll-to-top rounded d-flex justify-content-center" href="#pageTop">
+      </div>
+      <a className="scroll-to-top rounded d-flex justify-content-center" href="#pageTop">
           <i className="fas fa-angle-up bg-dark text-white col-1 d-flex justify-content-center fs-1" />
         </a>
       </div>
+      
     </>
   );
 };
