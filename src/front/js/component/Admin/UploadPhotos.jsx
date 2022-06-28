@@ -32,13 +32,13 @@ export const UploadPhotos = () => {
         <div id="FileUpload">
             <div className="wrapper text-center">
 
-                <label htmlFor="img1" className="form-label text-warning opacity-75">Foto 1</label>
+                <label htmlFor="img1" className="form-label text-warning ">Foto 1</label>
                 <input className="form-control btn btn-outline-warning col-md-4" type="file" id="img1" name="img1" files={img1} onChange={e => setImg1(e.target.files[0])} multiple={false} accept="image/*" />
-                <label htmlFor="img2" className="form-label text-warning opacity-75">Foto 2</label>
+                <label htmlFor="img2" className="form-label text-warning ">Foto 2</label>
                 <input className="form-control btn btn-outline-warning col-md-4" type="file" id="img2" name="img2" files={img2} onChange={e => setImg2(e.target.files[0])} multiple={false} accept="image/*" />
-                <label htmlFor="img3" className="form-label text-warning opacity-75">Foto 3</label>
+                <label htmlFor="img3" className="form-label text-warning ">Foto 3</label>
                 <input className="form-control btn btn-outline-warning col-md-4" type="file" id="img3" name="img3" files={img3} onChange={e => setImg3(e.target.files[0])} multiple={false} accept="image/*" />
-                <label htmlFor="img4" className="form-label text-warning opacity-75">Foto 4</label>
+                <label htmlFor="img4" className="form-label text-warning ">Foto 4</label>
                 <input className="form-control btn btn-outline-warning col-md-4" type="file" id="img4" name="img4" files={img4} onChange={e => setImg4(e.target.files[0])} multiple={false} accept="image/*" />
                 
             </div>
