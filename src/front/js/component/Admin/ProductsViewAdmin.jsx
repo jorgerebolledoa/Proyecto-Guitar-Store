@@ -7,7 +7,8 @@ export const ProductsViewAdmin = () => {
       <br id="pageTop"></br>
       <br></br>
       <br></br>
-      <div className="container p-4 rounded bg-dark">
+      <div className="body_list">
+      <div className="container p-4 rounded ">
       <div className="card-body">
               <div className="card-title ">
                 <h6>
@@ -16,6 +17,7 @@ export const ProductsViewAdmin = () => {
                 </h6>
               </div>
       <MapProducts />
+      </div>
       </div>
       </div>
     </>

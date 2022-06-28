@@ -6,13 +6,14 @@ export const UsersViewAdm = () => {
       <br id="pageTop"></br>
       <br></br>
       <br></br>
-      <div className="container p-4 col-md-10 p-4 rounded bg-dark">
+      <div className="body_list">
+      <div className="container p-4 col-md-10 p-4 rounded ">
       <a href="/adminprueba" className="text-warning float-end">volver</a>
   <div className="row flex-lg-nowrap">
   <div className="col">
     <div className="row flex-lg-nowrap">
       <div className="col mb-3">
-        <div className="e-panel card bg-dark border-white">
+        <div className="e-panel card  bg-dark border-white">
           <div className="card-body">
             <div className="card-title">
               <h6 className="mr-2">
@@ -727,6 +728,7 @@ export const UsersViewAdm = () => {
 <a className="scroll-to-top rounded d-flex justify-content-center" href="#pageTop">
         <i className="fas fa-angle-up bg-dark text-white col-1 d-flex justify-content-center fs-1" />
       </a>
+  </div>
   </div>
       </>
     );

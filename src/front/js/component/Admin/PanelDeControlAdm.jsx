@@ -12,10 +12,11 @@ export const PanelDeControlAdm = () => {
       <br></br>
       <br></br>
       <br></br>
-      <div className="container p-4 rounded bg-dark">
+      <div className="body_admin">
+      <div className="container p-4 rounded ">
         <div className="row p-4">
           <div className=" col-xl-4 col-md-6 mb-4">
-            <div className="card border-left-primary shadow h-100 py-2 bg-dark text-white">
+            <div className="card border-left-primary shadow h-100 py-2 bg-dark opacity-75 text-white">
               <div className="card-body ">
                 <div className="row align-items-center ">
                   <div className="col mr-2 ">
@@ -34,7 +35,7 @@ export const PanelDeControlAdm = () => {
             </div>
           </div>
           <div className="col-xl-4 col-md-6 mb-4">
-            <div className="card border-left-info shadow h-100 py-2 bg-dark text-white">
+            <div className="card border-left-info shadow h-100 py-2 bg-dark opacity-75 text-white">
               <div className="card-body">
                 <div className="row no-gutters align-items-center">
                   <div className="col mr-2">
@@ -71,9 +72,9 @@ export const PanelDeControlAdm = () => {
 
           <a
             href="/contactadmin"
-            className="bg-dark text-white col-xl-4 col-md-6 mb-4 text-decoration-none"
+            className="bg-dark text-white col-xl-4 col-md-6 mb-4 text-decoration-none opacity-75"
           >
-            <div className="card border-left-white shadow h-100 py-2 bg-dark text-white">
+            <div className="card border-left-white shadow h-100 py-2 bg-dark   text-white">
               <div className="card-body">
                 <div className="row no-gutters align-items-center">
                   <div className="col mr-2">
@@ -118,15 +119,18 @@ export const PanelDeControlAdm = () => {
         </div>
         <div className="row">
           <div className="col-lg-12 mb-4">
+            <br/>
+            <br/>
             <TodoListAdmin />
           </div>
         </div>
       </div>
-
-      <a className="scroll-to-top rounded d-flex justify-content-center mt-4" href="#pageTop">
-        <i className="fas fa-angle-up bg-dark text-white col-1 d-flex justify-content-center fs-1" />
-      </a>
       <div />
+      <a className="scroll-to-top rounded d-flex justify-content-center mt-4" href="#pageTop">
+        <i className="fas fa-angle-up bg-dark text-white col-1 d-flex justify-content-center fs-1 opacity-75" />
+      </a>
+      </div>
+      
     </>
   );
 };
