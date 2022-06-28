@@ -25,10 +25,10 @@ export const EditPostAdm = () => {
       <br></br>
       <br></br>
       <br></br>
-
-      <div className="container col-md-6 p-4 rounded bg-dark">
+      <div className="body_form">
+      <div className="container col-md-6 p-4 rounded bg-dark opacity-75">
       <a href="/adminprueba" className="text-warning float-end">volver</a>
-        <h1 className="text-white text-center opacity-75 m-4">Edita tu publicación</h1>
+        <h1 className="text-white text-center m-4">Edita tu publicación</h1>
       <div id="FileUpload">
   <div className="wrapper">
     <div className="upload">
@@ -41,32 +41,32 @@ export const EditPostAdm = () => {
 </div>
       <form>
   <div className="mb-3">
-    <label htmlFor="exampleInputEmail1" className="form-label text-warning opacity-75">
+    <label htmlFor="exampleInputEmail1" className="form-label text-warning ">
       Titulo
     </label>
     <input
       type="text-white"
-      className="form-control bg-white opacity-50"
+      className="form-control bg-white "
       placeholder="Guitarra electrica PRS 24 Eriza Verde"
       name="titulo"
       onChange={handleInputChange}
     />
   </div>
   <div className="mb-3">
-    <label htmlFor="exampleInputPassword1" className="form-label text-warning opacity-75">
+    <label htmlFor="exampleInputPassword1" className="form-label text-warning ">
       Marca
     </label>
     <input
       type="text"
-      className="form-control bg-white opacity-50"
+      className="form-control bg-white "
       placeholder="prs 24 Custom"
       name="marca"
       onChange={handleInputChange}
     />
   </div>
   <div class="mb-3">
-  <label for="exampleFormControlTextarea1" class="form-label text-warning opacity-75">Descripción</label>
-  <textarea className="form-control bg-white opacity-50 " id="exampleFormControlTextarea1" name="descripcion" onChange={handleInputChange} rows="5" placeholder="With the PRS SE Custom 24-08 solidbody electric guitar, PRS brings one of their most sonically versatile guitars to their most affordable line of instruments. It's loaded with a pair of TCI (Tuned Capacitance and Inductance) humbucking pickups and advanced switching options to yield every type of tone a modern guitarist could ask for. Two mini toggle switches serve as coil taps for each pickup, allowing you to switch between fat humbucking tones and chiming single-coil tones instantly —"></textarea>
+  <label for="exampleFormControlTextarea1" class="form-label text-warning ">Descripción</label>
+  <textarea className="form-control bg-white  " id="exampleFormControlTextarea1" name="descripcion" onChange={handleInputChange} rows="5" placeholder="With the PRS SE Custom 24-08 solidbody electric guitar, PRS brings one of their most sonically versatile guitars to their most affordable line of instruments. It's loaded with a pair of TCI (Tuned Capacitance and Inductance) humbucking pickups and advanced switching options to yield every type of tone a modern guitarist could ask for. Two mini toggle switches serve as coil taps for each pickup, allowing you to switch between fat humbucking tones and chiming single-coil tones instantly —"></textarea>
 </div>
   <button type="submit" className="btn btn-warning mb-4">
     Submit
@@ -78,6 +78,7 @@ export const EditPostAdm = () => {
       </a>
   
 
+  </div>
   </div>
       </>
     );
