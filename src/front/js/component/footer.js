@@ -31,7 +31,7 @@ export const Footer = () => {
         </section>
         <div className="container-fluid ">
           <h6 className="font-weight-bold">
-            <Link to="/adminprueba" href="/adminprueba" className="text-warning text-decoration-none ">Admin Test</Link>
+            <Link to="/adminprueba" href="/adminprueba" className="text-warning text-decoration-none ">Admin</Link>
           </h6>
           <section className="mb-2">
             <a className="btn btn-outline-warning btn-floating m-3" id="btnFooter" href="https://www.facebook.com/" role="button">
