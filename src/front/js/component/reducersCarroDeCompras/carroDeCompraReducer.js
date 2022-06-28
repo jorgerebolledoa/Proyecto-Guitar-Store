@@ -1,44 +1,21 @@
-import { TYPES } from "./carroDeComprasActions";
 
-export function carroDeComprasReducer(state, actions) {
-    switch (actions.type) {
-        case TYPES.ADD_TO_CART: {
-            // newItem captura la información del los productos y los busca 1 por 1
-            let newItem = state.products.find((item) => item.id === newItem.id);
-            // console.log(newItem)
-            let itemAddedInCart = state.cart.find((item) => item.id === newItem.id)
-            return itemAddedInCart ?
-                {
-                    ...state,
-                    cart: state.cart.map((item) => item.id === actions.payload.id ? { ...item, quantity: item.quantity + 1 }
-                        : item)
-                } :
-                {
-                    ...state,
-                    cart: [...state.cart, { ...actions.payload, quantity: 1 }]
-                }
-
-        }
-        case TYPES.REMOVE_ONE_FROM_CART: {
-            let itemToDelete = state.cart.find(item => item.id === actions.payload)
-            return itemToDelete.quantity > 1 ? {
-                ...state,
-                cart: state.cart.map((item) => item.id === actions.payload ? { ...item, quantity: item.quantity - 1 } : item)
-            } : {
-                ...state,
-                cart: state.cart.filter(item => item.id !== actions.payload)
-            }
-        }
-        case TYPES.REMOVE_ALL_FROM_CART: {
+export const cartReducer = (state, action) => {
+    switch (action.type) {
+        case "ADD_TO_CART":
+            return { ...state, cart: [...state.cart, { ...action.payload, qty: 1 }] };
+        case "REMOVE_FROM_CART":
             return {
                 ...state,
-                cart: state.cart.filter(item => item.id !== actions.payload)
-            }
-        }
-        case TYPES.CLEAR_CART: {
-            return carroDeComprasInitialState
-        }
+                cart: state.cart.filter((c) => c.id !== action.payload.id),
+            };
+        case "CHANGE_CART_QTY":
+            return {
+                ...state,
+                cart: state.cart.filter((c) =>
+                    c.id === action.payload.id ? (c.qty = action.payload.qty) : c.qty
+                ),
+            };
         default:
             return state;
     }
-}
+};

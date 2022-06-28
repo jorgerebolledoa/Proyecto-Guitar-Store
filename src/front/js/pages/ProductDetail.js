@@ -3,12 +3,17 @@ import "../../styles/img.css";
 import { useParams } from "react-router-dom";
 import Slider from "../component/Vista_principal/Slider";
 import { Context } from "../store/appContext";
+import { CartState } from "../store/cartContext";
 
 export const ProductDetail = () => {
   const { product } = useParams();
   const { store, actions } = useContext(Context);
 
   actions.fetchDetalleDeProductos(product)
+
+  const addToLocalStorage = {
+
+  }
 
   return (
     <div key={store.lista?.id}>
