@@ -27,6 +27,7 @@ import { Page_forgot_password } from "./pages/forgot_password";
 import { ProductDetail } from "./pages/ProductDetail";
 import { CategoriaDetail } from "./pages/CategoriaDetail";
 import { Terminos } from "./pages/terminos";
+import { Profile } from "./pages/profile";
 
 
 //create your first component
@@ -65,6 +66,9 @@ const Layout = () => {
             </Route>
             <Route exact path="/register">
               <Page_register />
+            </Route>
+            <Route exact path="/profile">
+              <Profile />
             </Route>
             <Route exact path="/forgot_password">
               <Page_forgot_password />

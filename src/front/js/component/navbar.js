@@ -83,17 +83,24 @@ export const Navbar = () => {
 
               </Link>
               <ul className="navbar-nav">
-                <li className="nav-item">
-                  <Link className="nav-link active text-warning" to="/register">Registrate</Link>
-                </li>
 
+
+                {store.currentUser === null ? (
+                  <Link to="/register" className="nav-link active text-warning" href="/register">
+                    Registrate
+                  </Link>
+                ) : (
+                  <Link to="/profile" className="nav-link active text-warning" href="">
+                    Perfil
+                  </Link>
+                )}
                 <li>
                   {store.currentUser === null ? (
                     <Link to="/login" className="nav-link active text-warning" href="/login">
                       Ingresa
                     </Link>
                   ) : (
-                    <Link className="nav-link active text-warning" to="/" onClick={() => actions.getlogout()}>
+                    <Link to="/" className="nav-link active text-warning" onClick={() => actions.getlogout()}>
                       Cerrar sesion
                     </Link>
                   )}
