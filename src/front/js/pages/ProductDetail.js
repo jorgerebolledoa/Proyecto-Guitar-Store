@@ -19,7 +19,8 @@ export const ProductDetail = () => {
     <div key={store.lista?.id}>
       <nav className="navbar bg-secondary fixed-top m-5 ">
         <div className="container-fluid d-flex justify-content-end">
-          <button className="navbar-brand border-none" href={"/carroDeCompras/" + store.lista?.id} onClick={() => actions.addToCart(store.lista)} >Añadir al carrito</button>
+          <button type="button" class="btn btn-secondary" href={"/carroDeCompras/" + store.lista?.id} onClick={() => actions.addToCart(store.lista)} >Añadir al carrito</button>
+
 
         </div>
       </nav>
