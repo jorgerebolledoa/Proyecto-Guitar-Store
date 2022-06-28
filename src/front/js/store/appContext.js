@@ -21,6 +21,7 @@ const injectContext = (PassedComponent) => {
       })
     );
 
+
     useEffect(() => {
 
       state.actions.checkSession();
