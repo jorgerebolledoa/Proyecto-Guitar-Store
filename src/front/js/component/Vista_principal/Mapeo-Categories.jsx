@@ -7,7 +7,7 @@ const Mapeo_Categories = () => {
   const { id_categori } = useParams();
   const [lista, setlista] = useState([]);
 
-  const urlApi = "https://3001-jorgereboll-proyectofin-f5wtyul2spl.ws-us47.gitpod.io/api/products/id_categori/" + id_categori
+  const urlApi = "https://3001-jorgereboll-proyectofin-f5wtyul2spl.ws-us51.gitpod.io/api/products/id_categori/" + id_categori
 
   useEffect(() => {
     getTask(urlApi);

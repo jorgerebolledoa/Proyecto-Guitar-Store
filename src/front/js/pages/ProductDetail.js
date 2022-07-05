@@ -11,16 +11,12 @@ export const ProductDetail = () => {
 
   actions.fetchDetalleDeProductos(product)
 
-  const addToLocalStorage = {
-
-  }
 
   return (
     <div key={store.lista?.id}>
       <nav className="navbar bg-secondary fixed-top m-5 ">
         <div className="container-fluid d-flex justify-content-end">
-          <button type="button" class="btn btn-secondary" href={"/carroDeCompras/" + store.lista?.id} onClick={() => actions.addToCart(store.lista)} >Añadir al carrito</button>
-
+          <button className="navbar-brand border-none" href={"/carroDeCompras/" + store.lista?.id} onClick={() => actions.addToCart1(store.lista)} >Añadir al carrito</button>
 
         </div>
       </nav>

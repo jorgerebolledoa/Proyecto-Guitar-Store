@@ -5,7 +5,7 @@ import Slider from "./Slider";
 const Mapeo_Slider = () => {
     useEffect(() => { }, []);
     const [lista, setlista] = useState([]);
-    const urlApi = "https://3001-jorgereboll-proyectofin-f5wtyul2spl.ws-us47.gitpod.io/api/categories"
+    const urlApi = "https://3001-jorgereboll-proyectofin-f5wtyul2spl.ws-us51.gitpod.io/api/categories"
     useEffect(() => {
         getTask(urlApi);
     }, []);

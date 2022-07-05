@@ -108,7 +108,7 @@ export const Navbar = () => {
 
               </ul>
             </div>
-            <div className="dropdown">
+            <div className="dropdown zindex-tooltip">
               <button className="btn btn-none dropdown-toggle text-warning" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                 <FaShoppingCart />
                 <span className="badge bg-danger rounded-circle">0</span>

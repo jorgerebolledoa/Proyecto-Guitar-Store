@@ -10,9 +10,10 @@ export const CarroDeCompras = () => {
     <>
       <div className="container-fluid mx-0 bg-dark pb-5">
         <h1 className="tituloCarro text-warning mx-auto">
-          Tu carro{" "} <button onClick={() => "clearCart()"}>Limpiar Carro</button>
+          Tu carro{" "}
+          {/* <button onClick={() => "clearCart()"}>Limpiar Carro</button> */}
           <Link
-            className="LinkCarro btn btn-outline"
+            className="LinkCarro btn btn-outline text-1 text-warning"
             to="/carroDeComprasVacio"
             href="/carroDeComprasVacio"
           >

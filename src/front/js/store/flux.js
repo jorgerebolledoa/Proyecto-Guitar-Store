@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
-			apiUrl: "https://3001-jorgereboll-proyectofin-f5wtyul2spl.ws-us47.gitpod.io",
+			apiUrl: "https://3001-jorgereboll-proyectofin-f5wtyul2spl.ws-us51.gitpod.io",
 			currentUser: null,
 			message: null,
 			cart: [],
@@ -14,11 +14,11 @@ const getState = ({ getStore, getActions, setStore }) => {
 			exampleFunction: () => {
 				getActions().changeColor(0, "green");
 			},
-
+			// tengo que crear las funciones para manipular la  
 
 			fetchDetalleDeProductos: (product) => {
 
-				const urlApi = "https://3001-jorgereboll-proyectofin-f5wtyul2spl.ws-us47.gitpod.io/api/products/id/" + product
+				const urlApi = "https://3001-jorgereboll-proyectofin-f5wtyul2spl.ws-us51.gitpod.io/api/products/id/" + product
 				useEffect(() => {
 					getTask(urlApi);
 				}, []);
@@ -38,8 +38,11 @@ const getState = ({ getStore, getActions, setStore }) => {
 			},
 			addToCart: (producto) => {
 				let newItem = getStore().cart.includes(producto);
+
 				if (newItem) {
-					alert("Ya se encuentra en el carro")
+					setStore({
+						cart: getStore().cart.concat(producto)
+					})
 				} else {
 					setStore({
 						cart: getStore().cart.concat(producto)
@@ -48,6 +51,17 @@ const getState = ({ getStore, getActions, setStore }) => {
 					getActions().addTolocalStorage()
 				}
 			},
+			addToCart1: (producto) => {
+				let newItem = getStore().cart.includes(producto);
+				console.log(newItem)
+
+				if (newItem) {
+					return { ...cart, cart: [...cart.producto, { quantity: 1 }] }
+				} else {
+					return { ...cart, cart: [...cart.producto, { quantity: quantity + 1 }] }
+				}
+			},
+
 			deleteFromCart: (producto) => {
 				setStore({
 					cart: getStore().cart.filter(carro => carro !== producto)
