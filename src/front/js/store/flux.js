@@ -56,9 +56,9 @@ const getState = ({ getStore, getActions, setStore }) => {
 				console.log(newItem)
 
 				if (newItem) {
-					return { ...cart, cart: [...cart.producto, { quantity: 1 }] }
-				} else {
 					return { ...cart, cart: [...cart.producto, { quantity: quantity + 1 }] }
+				} else {
+					return { ...cart, cart: [...cart.producto, { quantity: 1 }] }
 				}
 			},
 
